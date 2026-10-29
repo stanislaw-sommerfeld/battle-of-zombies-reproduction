@@ -1,0 +1,19 @@
+[
+  { "id": "ash", "colors": ["#3a3530", "#3d3732", "#37322d"], "decor": "stones" },
+  { "id": "dry_grass", "colors": ["#4a4232", "#4d4535", "#463f30"], "decor": "grass", "flammable": true },
+  { "id": "road", "colors": ["#4f4a44", "#4b4640"], "decor": "cobble" },
+  { "id": "planks", "colors": ["#4a3826", "#4d3a28"], "decor": "planks" },
+  { "id": "grave_soil", "colors": ["#2c2b30", "#2f2d33", "#2a292e"], "decor": "stones" },
+  { "id": "mire", "colors": ["#2f3328", "#32362a", "#2d3126"], "decor": "roots", "slow": 0.9 },
+  { "id": "scorched", "colors": ["#2a2522", "#2d2724", "#282320"], "decor": "stones" },
+  { "id": "shallow_water", "colors": ["#2b3a3f", "#2d3c41"], "liquid": "water", "slow": 0.72 },
+  { "id": "deep_water", "colors": ["#16252e"], "liquid": "water", "solid": true, "blocksProjectiles": false },
+  { "id": "ink_water", "colors": ["#241a2c", "#261c2f"], "liquid": "ink", "slow": 0.8 },
+  { "id": "oil_seep", "colors": ["#2b2720", "#2e2a22"], "liquid": "oil", "slow": 0.9 },
+  { "id": "rock", "colors": ["#4b4640", "#48433d", "#4e4943"], "solid": true, "height": 14, "top": "#5a544c" },
+  { "id": "boulder", "colors": ["#514b44"], "solid": true, "height": 8, "top": "#5d564e" },
+  { "id": "palisade", "colors": ["#4e3a26", "#523d28"], "solid": true, "height": 16, "top": "#6a5034" },
+  { "id": "gravestone", "colors": ["#2c2b30", "#2f2d33"], "top": "#6a6670", "solid": true, "height": 1, "decor": "graves", "blocksProjectiles": false },
+  { "id": "dead_tree", "colors": ["#2f3328", "#32362a"], "solid": true, "height": 1, "decor": "tree", "blocksProjectiles": false },
+  { "id": "cracked_wall", "colors": ["#4b4640"], "solid": true, "height": 14, "top": "#57514a", "breakable": { "into": "planks", "requires": "heavy", "flag": "cider_house_opened" } }
+]

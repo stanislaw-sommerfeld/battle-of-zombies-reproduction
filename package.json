@@ -1,0 +1,19 @@
+{
+  "name": "ash-ledger",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ash Ledger - a systemic dark-fantasy action RPG that runs in the browser.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs && node scripts/validate-data.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "validate": "node scripts/build.mjs && node scripts/validate-data.mjs",
+    "test": "node scripts/build.mjs && node scripts/validate-data.mjs && node --test tests/*.test.mjs",
+    "preview": "node scripts/serve.mjs dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "license": "MIT"
+}

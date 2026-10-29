@@ -1,0 +1,65 @@
+[
+  {
+    "id": "hound_lore",
+    "name": "Oily Pelts",
+    "text": "Mire Hounds' pelts are slick with mire-oil. Set one alight and it panics — strike it then (+60% damage to burning hounds).",
+    "learnOn": [{ "event": "StatusApplied", "match": { "targetId": "mire_hound", "status": "burning" } }],
+    "perks": ["hound_lore"],
+    "xp": 30
+  },
+  {
+    "id": "ink_burns_clean",
+    "name": "Ink Burns Clean",
+    "text": "Living ink is oil that remembers. Fire makes it forget — and burning ink near you condenses into Ember.",
+    "learnOn": [{ "event": "SurfaceReacted", "match": { "reaction": "ink_burn" }, "count": 4 }],
+    "perks": ["ink_reader"],
+    "xp": 30
+  },
+  {
+    "id": "thrall_rhythm",
+    "name": "The Hollow Rhythm",
+    "text": "Thralls strike on the beat of a bell no one else hears. Dodge through the beat and they're open: a perfect dodge primes a guaranteed critical.",
+    "learnOn": [
+      { "event": "PerfectDodge", "match": { "attackerId": "ash_thrall" }, "count": 2 },
+      { "event": "PerfectDodge", "match": { "attackerId": "bellwarden" }, "count": 1 }
+    ],
+    "perks": ["thrall_rhythm"],
+    "xp": 40
+  },
+  {
+    "id": "return_knowing",
+    "name": "Counting the Uncounted",
+    "text": "Under the Edict of Return, echoes rise only when no one is near to remember them. Stand close and they wait; harvest them there without Fray.",
+    "learnOn": [{ "event": "EchoRisen", "count": 3 }],
+    "perks": ["return_knowing"],
+    "xp": 40
+  },
+  {
+    "id": "hard_water",
+    "name": "Hard Water",
+    "text": "Rime makes water hold — deep water too, for a little while. A frozen pool is a bridge.",
+    "learnOn": [{ "event": "SurfaceReacted", "match": { "reaction": "freeze_water" }, "count": 4 }],
+    "xp": 20
+  },
+  {
+    "id": "kettle_breath",
+    "name": "Kettle's Breath",
+    "text": "Nothing sees through steam. Fire on water makes cover.",
+    "learnOn": [{ "event": "SurfaceReacted", "match": { "reaction": "steam" }, "count": 3 }],
+    "xp": 20
+  },
+  {
+    "id": "scavengers",
+    "name": "Scavengers",
+    "text": "Hounds eat echoes. Leave a kill unharvested and the pack will come for it — and grow stronger.",
+    "learnOn": [{ "event": "EchoEaten" }],
+    "xp": 20
+  },
+  {
+    "id": "ash_remembers",
+    "name": "Ash Remembers",
+    "text": "Every page you read is a law someone wrote. Somebody wrote you, too.",
+    "learnOn": [{ "event": "LoreRead", "count": 5 }],
+    "xp": 60
+  }
+]

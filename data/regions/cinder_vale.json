@@ -1,0 +1,615 @@
+{
+  "id": "cinder_vale",
+  "name": "The Cinder Vale",
+  "tileSize": 32,
+  "legend": {
+    "#": "rock",
+    ".": "ash",
+    ",": "dry_grass",
+    "=": "road",
+    "+": "planks",
+    "H": "palisade",
+    "_": "grave_soil",
+    "g": "gravestone",
+    "m": "mire",
+    "T": "dead_tree",
+    "w": "shallow_water",
+    "~": "deep_water",
+    "i": "ink_water",
+    "o": "oil_seep",
+    "C": "cracked_wall",
+    "x": "scorched",
+    "r": "boulder"
+  },
+  "zones": [
+    "cinder_road",
+    "ash_crater",
+    "lanternfast",
+    "drowned_orchard",
+    "orchard_spring",
+    "cider_house",
+    "the_hush",
+    "hush_chapel"
+  ],
+  "spawns": [
+    {
+      "id": "start",
+      "kind": "player",
+      "ref": "player",
+      "at": [
+        40,
+        51
+      ]
+    },
+    {
+      "id": "crater_stone",
+      "kind": "prop",
+      "ref": "edict_stone",
+      "at": [
+        42,
+        48
+      ],
+      "params": {
+        "lore": "rising_stone"
+      }
+    },
+    {
+      "id": "crater_note",
+      "kind": "prop",
+      "ref": "page",
+      "at": [
+        38,
+        52
+      ],
+      "params": {
+        "lore": "note_own_hand"
+      }
+    },
+    {
+      "id": "crater_corpse",
+      "kind": "prop",
+      "ref": "corpse",
+      "at": [
+        44,
+        52
+      ],
+      "params": {
+        "loot": "corpse_scavenger"
+      }
+    },
+    {
+      "id": "crater_waystone",
+      "kind": "prop",
+      "ref": "waystone",
+      "at": [
+        37,
+        48
+      ]
+    },
+    {
+      "id": "road_hound",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        40,
+        40
+      ]
+    },
+    {
+      "id": "road_barrel_1",
+      "kind": "prop",
+      "ref": "oil_barrel",
+      "at": [
+        38,
+        40
+      ]
+    },
+    {
+      "id": "road_barrel_2",
+      "kind": "prop",
+      "ref": "oil_barrel",
+      "at": [
+        37,
+        42
+      ]
+    },
+    {
+      "id": "road_hound_2",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        32,
+        28
+      ]
+    },
+    {
+      "id": "road_hound_3",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        34,
+        27
+      ]
+    },
+    {
+      "id": "road_thrall",
+      "kind": "enemy",
+      "ref": "ash_thrall",
+      "at": [
+        48,
+        23
+      ]
+    },
+    {
+      "id": "road_cache",
+      "kind": "prop",
+      "ref": "chest",
+      "at": [
+        50,
+        21
+      ]
+    },
+    {
+      "id": "road_barrel_3",
+      "kind": "prop",
+      "ref": "oil_barrel",
+      "at": [
+        46,
+        30
+      ]
+    },
+    {
+      "id": "lf_ilse",
+      "kind": "npc",
+      "ref": "ilse",
+      "at": [
+        38,
+        9
+      ]
+    },
+    {
+      "id": "lf_well",
+      "kind": "prop",
+      "ref": "well",
+      "at": [
+        36,
+        9
+      ]
+    },
+    {
+      "id": "lf_cale",
+      "kind": "npc",
+      "ref": "cale",
+      "at": [
+        47,
+        11
+      ]
+    },
+    {
+      "id": "lf_brazier",
+      "kind": "prop",
+      "ref": "brazier",
+      "at": [
+        46,
+        9
+      ],
+      "params": {
+        "lit": true
+      }
+    },
+    {
+      "id": "lf_brazier_2",
+      "kind": "prop",
+      "ref": "brazier",
+      "at": [
+        34,
+        16
+      ],
+      "params": {
+        "lit": true
+      }
+    },
+    {
+      "id": "lf_waystone",
+      "kind": "prop",
+      "ref": "waystone",
+      "at": [
+        44,
+        16
+      ]
+    },
+    {
+      "id": "lf_notice",
+      "kind": "prop",
+      "ref": "page",
+      "at": [
+        42,
+        16
+      ],
+      "params": {
+        "lore": "lanternfast_notice"
+      }
+    },
+    {
+      "id": "lf_odo",
+      "kind": "npc",
+      "ref": "odo",
+      "at": [
+        33,
+        12
+      ],
+      "when": {
+        "flag": "well_clean",
+        "eq": true
+      }
+    },
+    {
+      "id": "or_waystone",
+      "kind": "prop",
+      "ref": "waystone",
+      "at": [
+        57,
+        32
+      ]
+    },
+    {
+      "id": "or_hound_1",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        62,
+        27
+      ]
+    },
+    {
+      "id": "or_hound_2",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        64,
+        28
+      ]
+    },
+    {
+      "id": "or_hound_3",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        60,
+        27
+      ]
+    },
+    {
+      "id": "or_barrel_1",
+      "kind": "prop",
+      "ref": "oil_barrel",
+      "at": [
+        58,
+        27
+      ]
+    },
+    {
+      "id": "or_barrel_2",
+      "kind": "prop",
+      "ref": "oil_barrel",
+      "at": [
+        64,
+        31
+      ]
+    },
+    {
+      "id": "or_barrel_3",
+      "kind": "prop",
+      "ref": "oil_barrel",
+      "at": [
+        59,
+        43
+      ]
+    },
+    {
+      "id": "or_leech_1",
+      "kind": "enemy",
+      "ref": "ink_leech",
+      "at": [
+        63,
+        36
+      ]
+    },
+    {
+      "id": "or_leech_2",
+      "kind": "enemy",
+      "ref": "ink_leech",
+      "at": [
+        70,
+        37
+      ]
+    },
+    {
+      "id": "or_leech_3",
+      "kind": "enemy",
+      "ref": "ink_leech",
+      "at": [
+        68,
+        44
+      ]
+    },
+    {
+      "id": "or_matron",
+      "kind": "enemy",
+      "ref": "leech_matron",
+      "at": [
+        71,
+        40
+      ]
+    },
+    {
+      "id": "or_shrine",
+      "kind": "prop",
+      "ref": "spring_shrine",
+      "at": [
+        59,
+        40
+      ]
+    },
+    {
+      "id": "or_reliquary",
+      "kind": "prop",
+      "ref": "chest",
+      "at": [
+        66,
+        40
+      ],
+      "params": {
+        "loot": "drowned_reliquary",
+        "lore": "reliquary"
+      }
+    },
+    {
+      "id": "or_tamsin",
+      "kind": "prop",
+      "ref": "corpse",
+      "at": [
+        58,
+        46
+      ],
+      "params": {
+        "lore": "tamsins_note",
+        "loot": "tamsin_body"
+      }
+    },
+    {
+      "id": "or_hound_4",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        62,
+        52
+      ]
+    },
+    {
+      "id": "or_hound_5",
+      "kind": "enemy",
+      "ref": "mire_hound",
+      "at": [
+        64,
+        53
+      ]
+    },
+    {
+      "id": "or_door",
+      "kind": "prop",
+      "ref": "scriptorium_door",
+      "at": [
+        66,
+        15
+      ]
+    },
+    {
+      "id": "cider_chest",
+      "kind": "prop",
+      "ref": "chest",
+      "at": [
+        74,
+        22
+      ],
+      "params": {
+        "loot": "cider_cache"
+      }
+    },
+    {
+      "id": "cider_page",
+      "kind": "prop",
+      "ref": "page",
+      "at": [
+        72,
+        24
+      ],
+      "params": {
+        "lore": "page_of_stillness"
+      }
+    },
+    {
+      "id": "cider_note",
+      "kind": "prop",
+      "ref": "page",
+      "at": [
+        74,
+        25
+      ],
+      "params": {
+        "lore": "cider_marginalia"
+      }
+    },
+    {
+      "id": "hush_thrall_1",
+      "kind": "enemy",
+      "ref": "ash_thrall",
+      "at": [
+        12,
+        21
+      ]
+    },
+    {
+      "id": "hush_thrall_2",
+      "kind": "enemy",
+      "ref": "ash_thrall",
+      "at": [
+        19,
+        30
+      ]
+    },
+    {
+      "id": "hush_thrall_3",
+      "kind": "enemy",
+      "ref": "ash_thrall",
+      "at": [
+        8,
+        44
+      ]
+    },
+    {
+      "id": "hush_thrall_4",
+      "kind": "enemy",
+      "ref": "ash_thrall",
+      "at": [
+        16,
+        50
+      ]
+    },
+    {
+      "id": "hush_thrall_5",
+      "kind": "enemy",
+      "ref": "ash_thrall",
+      "at": [
+        20,
+        38
+      ]
+    },
+    {
+      "id": "hush_bellwarden",
+      "kind": "enemy",
+      "ref": "bellwarden",
+      "at": [
+        11,
+        30
+      ]
+    },
+    {
+      "id": "hush_brazier_1",
+      "kind": "prop",
+      "ref": "brazier",
+      "at": [
+        8,
+        28
+      ]
+    },
+    {
+      "id": "hush_brazier_2",
+      "kind": "prop",
+      "ref": "brazier",
+      "at": [
+        14,
+        28
+      ]
+    },
+    {
+      "id": "hush_folio",
+      "kind": "prop",
+      "ref": "page",
+      "at": [
+        11,
+        28
+      ],
+      "params": {
+        "lore": "chapel_folio"
+      }
+    },
+    {
+      "id": "hush_hoard",
+      "kind": "prop",
+      "ref": "chest",
+      "at": [
+        14,
+        32
+      ],
+      "params": {
+        "loot": "chapel_hoard"
+      }
+    },
+    {
+      "id": "hush_pilgrim",
+      "kind": "prop",
+      "ref": "corpse",
+      "at": [
+        20,
+        42
+      ],
+      "params": {
+        "lore": "choir_hymn",
+        "loot": "corpse_scavenger"
+      }
+    }
+  ],
+  "map": [
+    "################################################################################",
+    "################################################################################",
+    "################################################################################",
+    "############################.HHHHHHHHHHHHHHHHHHHHHHH.###########################",
+    "############################.H++++++++++=++++++++++H.###########################",
+    "############################.H+HHHHH++++=++++HHHHH+H.###########################",
+    "############################.H+HHHHH++++=++++HHHHH+H.###########################",
+    "############################.H+HHHHH++++=++++HHHHH+H.###########################",
+    "############################,H++++++++++=++++++++++H.###########################",
+    "############################.H++++++++++=++++++++++H.###########################",
+    "############################.H=====================H.###########################",
+    "############################.H++++++++++=++++++++++H.###########################",
+    "############################,H++++++++++=++++++++++H.###########################",
+    "############################.H+HHHH+++++=+++++HHHH+H.###########################",
+    "############################.H+HHHH+++++=+++++HHHH+H.###########################",
+    "############################.H+HHHH+++++=++++++++++H,,##mm,,mmm,mm,mm,mmm,,m,m##",
+    "############################,H++++++++++=++++++++++H.,##,mmmmmmmmmmm,mmm,m,mmm##",
+    "############################.HHHHHHHHHH===HHHHHHHHHH..##mmmm,mmTm,m,mTm,mTmmmm##",
+    "##______________________##...,.,......,===............##mmTmmmm,mmmT,mm,mmm,,m##",
+    "##___,__________________##.,...,.......===.....,......##mm,mmm,m,mmm,mm,mmmm,m##",
+    "##____________,_________##.,.,.,.,......=......,..,...##,m,mm,mmmm,m,m#######m##",
+    "##_____________g_,g_,___##......,.,.....=.......,..,.,##mmTmmmmmommmmm#+++++#,##",
+    "##,_,___,_____,__,__g_g_##..,......,....=,.....,.,..,.##,mm,moTooomTmm#+++++#m##",
+    "##,___,______________g_,##.....,,......,=.........,.,.##m,mmooomom,m,mC+++++#m##",
+    "##,_________________,___##.,..,....,...,=.....,,..,...##m,,ooooommmmmm#+++++#,##",
+    "##______________________##...,,......,..=...........,.##mmTmoTommm,,mm#+++++#,##",
+    "##_g__###_#######_,_gg__##,.......,.....=...,.........##mmm,mommmmT,mT#######m##",
+    "##____#+++++++++#_______##.....,........=.......,...,.##mm,mm,mmm,mmmmm,mmmmm,##",
+    "##_g__#+++++++++#___g___##.........,..,,=......,,..,..##,m,,mmmmmmm,,,,mmmmmm,##",
+    "##_g___+++++++++#_______##..............=.,.,.,.,.....=====,,TmmmT,mm,,mmmmT,,##",
+    "##,___#+++++++++#_______##....,..,...,.,===================mm,mmmm,,mTm,m,m,m,##",
+    "##__,_#+++++++++#__,____##.,,...,,,....,=..,..........=====mmmmmm,,m,mmmmmm,mm##",
+    "##____#+++++++++#_____g_##...........,..=..,........,.##wmmm,mmmmmmmmmm,mmmm,m##",
+    "##____#+++++++++#_______##.............,=.,....,.,...,##mwmmmmmm,,,mmmTmmm,mmm##",
+    "##___,####++#####___g,__##..........,...=,.,,.........##mw,mmT,mmmiimmmmmTm,m,##",
+    "##____________________g,##......,....,..=.,,,....,....##mmwmm,miiwiiii,,mmmmmm##",
+    "##____________g_________##,........,.,,,=.,,,....,....##mmwm,,iiiiiiiiimmmm,mm##",
+    "##_______g______________==,.....,.,,...,=.,,,,..,...,.##mmmw,iiiw~~~wwiimmm,mm##",
+    "##____________===========================.............##,m,Twiii~~~~~iiw,,Tmmm##",
+    "##__,______g,__,________==..,.,.,,..,,,,=...,..,..,,..##mmmmmii~~~~~~~iii,mmmm##",
+    "##_____________,_____g,_##...,....,.,,,,=.............##mmm,iww~~~.~~~iiimm,,,##",
+    "##_______,______________##..,.....,.,,,,=...,,..,.....##mTmmiiw~~~~~~~iiimTmmm##",
+    "##_______g___g_________,##..........,,,,=.....,......,##mmmmmiww~~~~~wwimmm,,m##",
+    "##_____________g________##,.,........,,.=.,.......,...##,m,mm,iii~~~iiii,mmm,,##",
+    "##_________________,__,_##.,.........,..=,............##,mmmmmiiiiiwiii,mmmm,,##",
+    "##____g______,_____g,___##.......,....xx=xxrr.....,.,.##,TmmmmmiiiiiiimmmmT,,m##",
+    "##___,___g_____g_g______##.,..,......xxx=xxx.r........##,mmmmmmm,iii,,mmmmmmmm##",
+    "##________,_____________##...,....r.xxxxxxxxx.........##,mmmmmmmmmmmmmm,,mmmmm##",
+    "##___________________g__##.,,......xxxxxxxxxxx....,..,,,m,,mmmm,mmmm,mmm,,mmmm##",
+    "##_g_________,__________##,........xxxxxxxxxxx...,....,,mmTmmm,mmTmmmmTm,Tmmmm##",
+    "##___,______,___________##...,.,...xxxxxxxxxxx........##m,m,mTm,m,mmmmm,,mmm,,##",
+    "##______,,____,_________##....,...rxxxxxxxxxxx........##mmm,,mmmmmmmm,,,,mmm,m##",
+    "##,_______g___________g_##,......,.xxxxxxxxxxx...,...,##mm,,mmmmmmmm,mm,,mmmmm##",
+    "##_______________,,_____##..........xxxxxxxxx....,....##m,m,,,,mmmmmmTmmmT,m,m##",
+    "##____________g____,______.,,......r,xxxxxxx.r........##,mTmmTmm,Tmmmmmmmmm,mm##",
+    "##_________g____,,____g_##.,,......,r.xxxxx....,..,...##,m,mmmmmm,,mmmmmmmm,m,##",
+    "##_____,_____g_______g__##.,.,,..,.,,..,.rr...........##mmmmm,mmmmmmm,mm,mmmmm##",
+    "##___________,_____,____##...............,.,.,........##mmm,mm,m,m,m,mm,m,mmmm##",
+    "################################################################################",
+    "################################################################################"
+  ]
+}

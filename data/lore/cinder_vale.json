@@ -1,0 +1,62 @@
+[
+  {
+    "id": "note_own_hand",
+    "title": "A note in your own hand",
+    "text": "The paper is folded small and tucked into your collar. The handwriting is yours. You know it the way you know your own voice.\n\n\"If you are reading this, it worked, and you have forgotten. Good.\nDo not look for your name. It burned for a reason.\nGo north, to the lantern. They will take you in.\nDo not trust anyone who sings.\"\n\nThe signature is a smear of ash.",
+    "effects": [{ "setFlag": "read_own_note", "value": true }]
+  },
+  {
+    "id": "rising_stone",
+    "title": "The Page That Fell Upward",
+    "text": "The stone is warm. Letters older than any alphabet you know crawl across its face, and you can read them anyway:\n\nHERE, ASH RETURNS TO THE SKY.\n\nFifty years ago the Ledger burned — the great book in which every law of the world was written. Its pages scattered as ash. Where a page came to rest, its law still holds: in one valley fire is hungry, in another the dead get up again. Between them lies the Blank, where nothing is promised at all.\n\nThis page fell here. Around it, the ash is still trying to go home.",
+    "effects": [{ "giveXp": 20 }]
+  },
+  {
+    "id": "lanternfast_notice",
+    "title": "Notice, nailed to the gate",
+    "text": "BY ORDER OF THE WARDEN\n\nThe well is NOT to be drunk from until further word.\nBoil nothing. Burn nothing near the cistern.\nThe Choir is NOT to sing at the well. Brother Cale, that means you.\n\nAnyone who has seen Tamsin (runner, red scarf) — speak to Warden Marrow.",
+    "effects": []
+  },
+  {
+    "id": "tamsins_note",
+    "title": "Tamsin's last note",
+    "text": "Warden —\n\nFound it. The spring is choked black and something huge lies in it, fat as a cart. Small ones too. The ink moves toward you when you get close.\n\nThe hounds won't go near it when it's burning. I saw a lamp fall in the oil by the old cart and the whole bank went up and they ran howling. If ink burns like oil, maybe we can burn the spring clean.\n\nI'm going to try. If I don't come back, don't send anyone else. Burn it.\n\n— T.",
+    "effects": [{ "setFlag": "read_tamsin_note", "value": true }, { "grantInsight": "ink_burns_clean" }]
+  },
+  {
+    "id": "page_of_stillness",
+    "title": "A Page of Stillness",
+    "text": "This page did not burn. It is cold enough to hurt, and the law written on it is short:\n\nWATER SHALL HOLD.\n\nWhen you read it aloud the cold climbs your arm and settles behind your eyes. You could say it again, you think. You could make water hold.\n\n(You learned Rime Lance — press R.)",
+    "effects": [{ "learnAbility": "rime_lance" }, { "giveXp": 30 }]
+  },
+  {
+    "id": "cider_marginalia",
+    "title": "Scribe's marginalia",
+    "text": "Scrawled in the margins of a cider-house ledger, in a scribe's neat hand:\n\n\"The Archivist says the ink is not a poison. It is the Ledger's own ink, and it has begun to write without a hand. Every word it writes is a law, and every law it writes is the same: BE STILL.\n\nA field it touches stops growing. A man it touches stops aging, and then stops. We call it the Rubric.\n\nWe hid one page here, the Page of Stillness. The Rubric wants it. Do not let it have the cold.\"",
+    "effects": [{ "setFlag": "knows_rubric", "value": true }]
+  },
+  {
+    "id": "chapel_folio",
+    "title": "Folio of the Uncounted",
+    "text": "A charred folio, chained to a lectern. Most of it is a list of names, each one struck through.\n\nAt the end, in a different hand:\n\n\"On the last night the Scribes did not flee the fire. We lit it.\n'It is writing itself now,' the Archivist said. 'Every page it touches goes still. Better no law at all than its law.'\nSo we burned the Ledger, and our own names with it, so the Rubric could not write us.\n\nOne of us volunteered to forget, to carry the last match out of the Scriptorium. If you are reading this —\"\n\nThe rest has burned away.",
+    "effects": [{ "setFlag": "knows_burning", "value": true }, { "giveXp": 40 }]
+  },
+  {
+    "id": "choir_hymn",
+    "title": "Hymn-sheet of the Cinder Choir",
+    "text": "Sing the ink back to the well,\nsing the well back to the book,\nsing the book back to the hand\nthat wrote us still, that wrote us safe.\n\nNo more Blank and no more Fray,\nno more hounds and no more hunger.\nWhen every page is written whole\nwe will not have to change again.",
+    "effects": [{ "setFlag": "read_choir_hymn", "value": true }]
+  },
+  {
+    "id": "reliquary",
+    "title": "The Drowned Reliquary",
+    "text": "A stone box on an island no one could reach, until you made the water hold. Inside, wrapped in waxed cloth, an eye of blue glass.\n\nA saint drowned herself in this spring rather than be written still. The orchard folk kept her eye. They said it could look at the Blank and not go mad.",
+    "effects": []
+  },
+  {
+    "id": "scriptorium_door",
+    "title": "The Sealed Door",
+    "text": "The Scriptorium's door is shut with ink. It fills every seam and pulses slowly, like something asleep.\n\nAcross the lintel, letters move as you watch them, forming a sentence with its last word missing:\n\nTHE ONE WHO BURNED THE LEDGER IS ____.\n\nThe ink waits for a name. You don't have one.\n\n(The Scriptorium will open in a later chapter.)",
+    "effects": [{ "setFlag": "saw_scriptorium", "value": true }]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  { "id": "kindled", "name": "Kindled", "slot": "prefix", "appliesTo": ["weapon"], "weight": 3, "text": "Light hits may set targets burning.", "perks": ["kindled_edge"] },
+  { "id": "rimed", "name": "Rimed", "slot": "prefix", "appliesTo": ["weapon"], "weight": 3, "text": "Hits chill.", "perks": ["rime_edge"] },
+  { "id": "unwritten", "name": "Unwritten", "slot": "prefix", "appliesTo": ["weapon"], "weight": 2, "text": "+30% damage, but hits add Fray.", "damageMult": 1.3, "drawbacks": ["unwritten_edge"] },
+  { "id": "hungering", "name": "Hungering", "slot": "prefix", "appliesTo": ["weapon", "charm"], "weight": 2, "text": "Kills restore Ember.", "perks": ["ember_hunger"] },
+  { "id": "of_smoke", "name": "of Smoke", "slot": "suffix", "appliesTo": ["weapon", "coat"], "weight": 2, "text": "Dodging leaves steam cover.", "perks": ["smoke_step"] },
+  { "id": "of_shattering", "name": "of Shattering", "slot": "suffix", "appliesTo": ["weapon"], "weight": 2, "text": "Heavy hits shatter frozen foes.", "perks": ["shatter"] },
+  { "id": "of_the_tallow_saint", "name": "of the Tallow Saint", "slot": "suffix", "appliesTo": ["charm", "coat"], "weight": 3, "text": "+15 max health.", "maxHealth": 15 },
+  { "id": "of_ashwalking", "name": "of Ash-Walking", "slot": "suffix", "appliesTo": ["coat", "charm"], "weight": 2, "text": "Burning ground can't hurt you.", "perks": ["ashwalker"] },
+  { "id": "of_the_quiet_mind", "name": "of the Quiet Mind", "slot": "suffix", "appliesTo": ["charm"], "weight": 2, "text": "Less Fray from casting.", "perks": ["steady_mind"] },
+  { "id": "of_scavenging", "name": "of the Scavenger", "slot": "suffix", "appliesTo": ["charm", "coat"], "weight": 2, "text": "More loot; echoes linger.", "perks": ["scavenger_sense"] }
+]

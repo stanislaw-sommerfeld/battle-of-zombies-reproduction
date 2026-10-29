@@ -1,0 +1,43 @@
+{
+  "id": "q_fouled_well",
+  "title": "Ink in the Well",
+  "summary": "Lanternfast's well has gone black with living ink. Its water comes from the spring in the Drowned Orchard.",
+  "start": "find_spring",
+  "stages": {
+    "find_spring": {
+      "text": "Find what fouls Lanternfast's well. Its channel comes from the spring in the Drowned Orchard, east.",
+      "hint": "Follow the road east through the gap in the ridge.",
+      "triggers": [
+        { "event": "Check", "if": { "flag": "spring_state", "exists": true }, "to": "report" },
+        { "event": "AreaEntered", "match": { "zone": "orchard_spring" }, "to": "deal" },
+        { "event": "WorldStateChanged", "match": { "key": "spring_state" }, "to": "report" }
+      ]
+    },
+    "deal": {
+      "text": "The Black Spring is choked with living ink, and something vast feeds in it.",
+      "hint": "Kill the Leech-Mother — or, if you understand the ink, burn it all clean. Brother Cale wants something else entirely.",
+      "triggers": [
+        { "event": "Check", "if": { "flag": "spring_state", "exists": true }, "to": "report" },
+        { "event": "WorldStateChanged", "match": { "key": "spring_state" }, "to": "report" }
+      ]
+    },
+    "report": {
+      "text": "Return to Warden Ilse in Lanternfast.",
+      "triggers": []
+    }
+  },
+  "outcomes": {
+    "slain": {
+      "text": "The Leech-Mother is dead. Lanternfast's water runs grey, but drinkable.",
+      "effects": [{ "setFlag": "well_clean", "value": true }, { "faction": "lanternfast", "delta": 2 }, { "giveXp": 120 }]
+    },
+    "burned": {
+      "text": "You burned the ink out of the spring. The water runs clear for the first time in fifty years.",
+      "effects": [{ "setFlag": "well_clean", "value": true }, { "faction": "lanternfast", "delta": 3 }, { "giveXp": 150 }]
+    },
+    "choir": {
+      "text": "You completed the Choir's rite. Lanternfast's well sings.",
+      "effects": [{ "setFlag": "well_singing", "value": true }, { "faction": "lanternfast", "delta": -3 }, { "faction": "choir", "delta": 3 }, { "giveXp": 120 }]
+    }
+  }
+}

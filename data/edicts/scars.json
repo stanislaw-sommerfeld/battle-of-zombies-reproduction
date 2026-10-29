@@ -1,0 +1,50 @@
+[
+  {
+    "id": "hearth_dimmed",
+    "name": "Edict of the Hearth (Dimmed)",
+    "text": "The hearth-page still holds, barely. The well sings beneath it, and the warmth is thin.",
+    "ambient": "#0e0a10",
+    "darkness": 0.51,
+    "regen": 1,
+    "frayDecay": 3,
+    "fireSpread": 0.3,
+    "sanctuary": true,
+    "ash": "down"
+  },
+  {
+    "id": "choir_song",
+    "name": "Edict of the Choir",
+    "text": "Here, the ink sings, and fire forgets how to spread. Echoes rise.",
+    "ambient": "#0c0614",
+    "darkness": 0.61,
+    "fireSpread": 0.15,
+    "deadRise": true,
+    "frayDecay": 0.5,
+    "ash": "up",
+    "fog": 0.7
+  },
+  {
+    "id": "clear_water",
+    "name": "Edict of Clear Water",
+    "text": "Here, water remembers being clean. Wounds close slowly; Fray washes away.",
+    "ambient": "#060c12",
+    "darkness": 0.44,
+    "regen": 1.5,
+    "healing": 1.5,
+    "frayDecay": 5,
+    "fireSpread": 1,
+    "ash": "none",
+    "fog": 0.3
+  },
+  {
+    "id": "quiet_return",
+    "name": "Edict of Return (Broken)",
+    "text": "With the bell silenced, the dead of the Hush rest. Echoes no longer rise.",
+    "ambient": "#08080e",
+    "darkness": 0.61,
+    "healing": 1,
+    "frayDecay": 1,
+    "ash": "none",
+    "fog": 0.6
+  }
+]

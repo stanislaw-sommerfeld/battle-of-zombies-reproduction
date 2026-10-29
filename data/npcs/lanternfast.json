@@ -1,0 +1,39 @@
+[
+  {
+    "id": "ilse",
+    "name": "Ilse Marrow",
+    "title": "Warden of Lanternfast",
+    "dialogue": "ilse",
+    "faction": "lanternfast",
+    "visual": { "color": "#5a4632", "accent": "#8a6a4a", "lantern": true },
+    "barks": [
+      { "text": "Don't drink from the well.", "if": { "not": { "flag": "well_clean", "eq": true } } },
+      { "text": "Tamsin should have been back by now...", "if": { "not": { "flag": "read_tamsin_note", "eq": true } } },
+      { "text": "The hearth holds. For now.", "if": { "not": { "flag": "well_singing", "eq": true } } },
+      { "text": "Clear water. I keep tasting it to be sure.", "if": { "flag": "well_clean", "eq": true } },
+      { "text": "...make it stop singing...", "if": { "flag": "well_singing", "eq": true } }
+    ]
+  },
+  {
+    "id": "cale",
+    "name": "Brother Cale",
+    "title": "of the Cinder Choir",
+    "dialogue": "cale",
+    "faction": "choir",
+    "visual": { "color": "#3a2a3a", "accent": "#7a4a6a" },
+    "barks": [
+      "Can you hear it? The ink is singing.",
+      "Every well is a page, friend.",
+      { "text": "Listen... listen to the well.", "if": { "flag": "well_singing", "eq": true } }
+    ]
+  },
+  {
+    "id": "odo",
+    "name": "Odo Fenn",
+    "title": "Tinker",
+    "dialogue": "odo",
+    "faction": "lanternfast",
+    "visual": { "color": "#4a4a3a", "accent": "#9a8a5a", "lantern": true },
+    "barks": ["Flasks! Oil and water, two things the world still agrees on.", "Mind the Hush. That bell still rings."]
+  }
+]
