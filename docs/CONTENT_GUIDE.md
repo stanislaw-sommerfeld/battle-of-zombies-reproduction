@@ -52,6 +52,14 @@ Events are listed in `src/core/events.ts` (`GameEvents`).
 - **Spawns** with `when` appear as soon as their condition holds (e.g. Odo appears once `well_clean` is set).
 - **World scars:** `zones[].edictWhen` swaps a zone's law when a condition holds.
 
+## Merchant (data only)
+
+A shop is a dialogue: options with `if: { hasItem: "cinder_mark", count: N }` and the effects `takeItem` + `giveItem` loop back to the shop node. See Odo in `data/dialogue/places.json`.
+
+## Tips and tutorials
+
+Add a world rule with a `toast` effect and `"kind": "hint"`. Rules fire once by default, e.g. on the first `PlayerDamaged`.
+
 ## Zone, edict, region
 
 - Edict (`data/edicts`): `fireSpread`, `fireDamage`, `healing`, `regen`, `frayDecay`, `deadRise`, `sanctuary`, and atmosphere (`ambient`, `darkness`, `ash`, `fog`).

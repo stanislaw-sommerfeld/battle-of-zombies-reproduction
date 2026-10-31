@@ -38,6 +38,7 @@ function checkEffects(effects, where) {
       if (e.outcome && !c.quests[e.completeQuest]?.outcomes[e.outcome]) err(`${where}: quest ${e.completeQuest} has no outcome "${e.outcome}"`);
     }
     if (e.grantInsight) has("insights", e.grantInsight, where);
+    if (e.readLore) has("lore", e.readLore, where);
     if (e.learnAbility) has("abilities", e.learnAbility, where);
     if (e.faction) has("factions", e.faction, where);
     if (e.clearLiquid) has("zones", e.clearLiquid.zone, where);

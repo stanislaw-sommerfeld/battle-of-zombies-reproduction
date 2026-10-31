@@ -2,42 +2,253 @@
   {
     "id": "matron_slain",
     "on": "EnemyKilled",
-    "match": { "enemyId": "leech_matron" },
-    "if": { "not": { "flag": "spring_state", "exists": true } },
-    "effects": [{ "setFlag": "spring_state", "value": "leech_slain" }]
+    "match": {
+      "enemyId": "leech_matron"
+    },
+    "if": {
+      "not": {
+        "flag": "spring_state",
+        "exists": true
+      }
+    },
+    "effects": [
+      {
+        "setFlag": "spring_state",
+        "value": "leech_slain"
+      }
+    ]
   },
   {
     "id": "spring_burned",
     "on": "RealityShifted",
-    "match": { "kind": "ink_cleared", "zone": "orchard_spring" },
-    "if": { "not": { "flag": "spring_state", "exists": true } },
-    "effects": [{ "setFlag": "spring_state", "value": "burned_clean" }]
+    "match": {
+      "kind": "ink_cleared",
+      "zone": "orchard_spring"
+    },
+    "if": {
+      "not": {
+        "flag": "spring_state",
+        "exists": true
+      }
+    },
+    "effects": [
+      {
+        "setFlag": "spring_state",
+        "value": "burned_clean"
+      }
+    ]
   },
   {
     "id": "choir_mourns_matron",
     "on": "WorldStateChanged",
-    "match": { "key": "spring_state", "value": "leech_slain" },
-    "effects": [{ "faction": "choir", "delta": -2 }]
+    "match": {
+      "key": "spring_state",
+      "value": "leech_slain"
+    },
+    "effects": [
+      {
+        "faction": "choir",
+        "delta": -2
+      }
+    ]
   },
   {
     "id": "choir_mourns_spring",
     "on": "WorldStateChanged",
-    "match": { "key": "spring_state", "value": "burned_clean" },
-    "effects": [{ "faction": "choir", "delta": -2 }]
-  },
-  {
-    "id": "bellwarden_slain",
-    "on": "EnemyKilled",
-    "match": { "enemyId": "bellwarden" },
+    "match": {
+      "key": "spring_state",
+      "value": "burned_clean"
+    },
     "effects": [
-      { "setFlag": "bellwarden_slain", "value": true },
-      { "toast": "The bell stops. Across the Hush, something exhales — the dead will stay down now." }
+      {
+        "faction": "choir",
+        "delta": -2
+      }
     ]
   },
   {
     "id": "cider_house_found",
     "on": "TileBroken",
-    "match": { "tile": "cracked_wall" },
-    "effects": [{ "toast": "The rotten wall gives way. Cold air breathes out of the dark." }, { "giveXp": 25 }]
+    "match": {
+      "tile": "cracked_wall"
+    },
+    "effects": [
+      {
+        "toast": "The rotten wall gives way. Cold air breathes out of the dark."
+      },
+      {
+        "giveXp": 25
+      }
+    ]
+  },
+  {
+    "id": "bellwarden_slain",
+    "on": "EnemyKilled",
+    "match": {
+      "enemyId": "bellwarden"
+    },
+    "if": {
+      "not": {
+        "flag": "hush_quieted",
+        "exists": true
+      }
+    },
+    "effects": [
+      {
+        "setFlag": "hush_quieted",
+        "value": "slain"
+      }
+    ]
+  },
+  {
+    "id": "hush_brazier_1",
+    "on": "PropInteracted",
+    "match": {
+      "spawnId": "hush_brazier_1"
+    },
+    "effects": [
+      {
+        "addFlag": "hush_braziers",
+        "value": 1
+      },
+      {
+        "toast": "A funeral fire catches. Somewhere a bell falters."
+      }
+    ]
+  },
+  {
+    "id": "hush_brazier_2",
+    "on": "PropInteracted",
+    "match": {
+      "spawnId": "hush_brazier_2"
+    },
+    "effects": [
+      {
+        "addFlag": "hush_braziers",
+        "value": 1
+      },
+      {
+        "toast": "A funeral fire catches. Somewhere a bell falters."
+      }
+    ]
+  },
+  {
+    "id": "hush_rites_done",
+    "on": "WorldStateChanged",
+    "match": {
+      "key": "hush_braziers",
+      "value": 2
+    },
+    "if": {
+      "not": {
+        "flag": "hush_quieted",
+        "exists": true
+      }
+    },
+    "effects": [
+      {
+        "setFlag": "hush_quieted",
+        "value": "rites"
+      }
+    ]
+  },
+  {
+    "id": "hush_quiet_toast",
+    "on": "WorldStateChanged",
+    "match": {
+      "key": "hush_quieted"
+    },
+    "effects": [
+      {
+        "toast": "The bell stops. Across the Hush, something exhales — the dead will stay down now."
+      }
+    ]
+  },
+  {
+    "id": "hush_quest_start",
+    "on": "AreaEntered",
+    "match": {
+      "zone": "the_hush"
+    },
+    "effects": [
+      {
+        "startQuest": "q_hush_bell"
+      }
+    ]
+  },
+  {
+    "id": "hint_road",
+    "on": "AreaEntered",
+    "match": {
+      "zone": "cinder_road"
+    },
+    "effects": [
+      {
+        "toast": "Tip: oil barrels burst when struck, and fire (Q, aimed with the mouse) ignites oil. Pick your ground.",
+        "kind": "hint"
+      }
+    ]
+  },
+  {
+    "id": "hint_hurt",
+    "on": "PlayerDamaged",
+    "effects": [
+      {
+        "toast": "Tip: red shapes on the ground are attacks about to land. Dodge (Space) through them — you can't be hit mid-roll.",
+        "kind": "hint"
+      }
+    ]
+  },
+  {
+    "id": "hint_echo",
+    "on": "EnemyKilled",
+    "match": {
+      "byPlayer": true
+    },
+    "effects": [
+      {
+        "toast": "Tip: the slain leave echoes. E harvests them: +Ember for spells, but +Fray. Hounds eat what you leave.",
+        "kind": "hint"
+      }
+    ]
+  },
+  {
+    "id": "hint_gear_u",
+    "on": "ItemAcquired",
+    "match": {
+      "rarity": "uncommon"
+    },
+    "effects": [
+      {
+        "toast": "Tip: press I to equip. Gear changes how you fight, not just how hard.",
+        "kind": "hint"
+      }
+    ]
+  },
+  {
+    "id": "hint_gear_r",
+    "on": "ItemAcquired",
+    "match": {
+      "rarity": "rare"
+    },
+    "effects": [
+      {
+        "toast": "Tip: press I to equip. Rare gear changes how you fight — read its perks.",
+        "kind": "hint"
+      }
+    ]
+  },
+  {
+    "id": "hint_marks",
+    "on": "ItemAcquired",
+    "match": {
+      "itemId": "cinder_mark"
+    },
+    "effects": [
+      {
+        "toast": "Cinder marks: Lanternfast's currency. A tinker would trade for them.",
+        "kind": "hint"
+      }
+    ]
   }
 ]

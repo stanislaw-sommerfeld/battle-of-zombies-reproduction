@@ -26,6 +26,7 @@ import { killEnemy, damageEnemy, damagePlayer, shatter } from "./combat/combat.j
 import { updateSimulation } from "./simulation/reality.js";
 import { interact, nearestInteractable, type Interactable } from "./world/interact.js";
 import { WorldRules } from "./narrative/worldrules.js";
+import { PathField } from "./ai/pathfield.js";
 
 export interface UiBridge {
   openDialogue(): void;
@@ -64,6 +65,11 @@ export class Game implements EffectHost, RuleContext {
 
   region!: RegionDef;
   map!: TileMap;
+  paths!: PathField;
+  /** 1 per explored tile. */
+  explored!: Uint8Array;
+  exploredCount = 0;
+  private pathRefresh = 0;
   surfaces!: SurfaceGrid;
   private zoneGrid!: Int16Array;
   private zoneList: ZoneDef[] = [];
@@ -214,6 +220,9 @@ export class Game implements EffectHost, RuleContext {
       }
     // deep water becomes walkable when frozen
     this.map.walkable = (cx, cy) => this.map.get(cx, cy) === "deep_water" && this.surfaces.getLiquid(cx, cy) === Liquid.Ice;
+    this.paths = new PathField(this.map);
+    this.explored = decodeBits(this.world.explored, this.map.w * this.map.h);
+    this.exploredCount = this.explored.reduce((s, v) => s + v, 0);
     this.buildZones();
     this.refreshEdicts();
     this.surfaces.spreadAt = (cx, cy) => this.edictAtCell(cx, cy).fireSpread ?? 1;
@@ -254,6 +263,7 @@ export class Game implements EffectHost, RuleContext {
     } else if (kind === "prop") {
       const def = this.content.props[ref];
       if (!def) return console.warn("Unknown prop", ref);
+      if (this.world.get(`lit_${spawnId}`)) params.lit = true;
       this.props.push({ id: newId(), def, spawnId, pos, hp: def.health ?? 1, used: this.world.usedSpawns.has(spawnId), dead: false, params });
     } else {
       const def = this.content.npcs[ref];
@@ -291,6 +301,12 @@ export class Game implements EffectHost, RuleContext {
   }
   private zoneEdicts: EdictDef[] = [];
 
+  /** The law currently governing a zone, after world scars. */
+  zoneEdict(zoneId: string): EdictDef | undefined {
+    const i = this.zoneList.findIndex((z) => z.id === zoneId);
+    return i >= 0 ? this.zoneEdicts[i] : undefined;
+  }
+
   edictAtCell(cx: number, cy: number): EdictDef {
     if (cx < 0 || cy < 0 || cx >= this.map.w || cy >= this.map.h) return this.content.edicts.blank;
     const i = this.zoneGrid[cy * this.map.w + cx];
@@ -314,6 +330,7 @@ export class Game implements EffectHost, RuleContext {
     const zone = this.zoneAtCell(cx, cy)?.id ?? "";
     const pos = { x: (cx + 0.5) * this.map.ts, y: (cy + 0.5) * this.map.ts };
     this.fx.reaction(r, pos);
+    if (r !== "steam" && r !== "melt" && r !== "extinguish" && r !== "freeze_water" && r !== "ink_purified") this.lightBraziers(pos, 30);
     if (r === "fire_spread" || r === "flame") return; // too frequent to broadcast
     this.bus.emit("SurfaceReacted", { reaction: r, zone, x: cx, y: cy });
     if (r === "ink_burn" && this.hasPerk("ink_reader") && this.time > this.inkTick && dist(pos, this.player.pos) < 6 * this.map.ts) {
@@ -349,6 +366,11 @@ export class Game implements EffectHost, RuleContext {
     this.time += dt;
     this.playTime += dt;
     updatePlayer(this, dt);
+    this.reveal();
+    // terrain can change (broken walls, frozen pools), so force a rebuild now and then
+    this.pathRefresh -= dt;
+    this.paths.update(this.player.pos, this.pathRefresh <= 0);
+    if (this.pathRefresh <= 0) this.pathRefresh = 1;
     for (const e of this.enemies) if (!e.dead) updateEnemy(this, e, dt);
     updateProjectiles(this, dt);
     this.surfaces.update(dt);
@@ -395,6 +417,17 @@ export class Game implements EffectHost, RuleContext {
     const applied = outcome === "froze" ? "frozen" : outcome === "fizzled" ? "steam" : s;
     if (outcome !== "refreshed")
       this.bus.emit("StatusApplied", { targetId: isPlayer ? "player" : (a as Enemy).def.id, status: applied, isPlayer });
+  }
+
+  /** Lights unlit braziers near a point (any fire source). Remembered by the world. */
+  lightBraziers(p: Vec, radius = 40): void {
+    for (const pr of this.props) {
+      if (pr.def.shape !== "brazier" || pr.params.lit || dist(pr.pos, p) > radius) continue;
+      pr.params.lit = true;
+      this.fx.reaction("ignite_oil", pr.pos);
+      this.world.set(`lit_${pr.spawnId}`, true);
+      this.bus.emit("PropInteracted", { propId: pr.def.id, spawnId: pr.spawnId, zone: this.zoneAt(pr.pos)?.id ?? "" });
+    }
   }
 
   igniteAt(p: Vec, radiusTiles: number): void {
@@ -517,8 +550,23 @@ export class Game implements EffectHost, RuleContext {
 
   // ---------------------------------------------------------------- save
 
+  private reveal(): void {
+    const [px, py] = this.map.cellAt(this.player.pos);
+    const r = 7;
+    for (let y = py - r; y <= py + r; y++)
+      for (let x = px - r; x <= px + r; x++) {
+        if (x < 0 || y < 0 || x >= this.map.w || y >= this.map.h || (x - px) ** 2 + (y - py) ** 2 > r * r) continue;
+        const i = y * this.map.w + x;
+        if (!this.explored[i]) {
+          this.explored[i] = 1;
+          this.exploredCount++;
+        }
+      }
+  }
+
   makeSave(): SaveData {
     const p = this.player;
+    this.world.explored = encodeBits(this.explored);
     return {
       version: SAVE_VERSION,
       savedAt: Date.now(),
@@ -624,8 +672,8 @@ export class Game implements EffectHost, RuleContext {
     const f = this.content.factions[id];
     this.toast(`${f?.name ?? id}: ${delta > 0 ? "+" : ""}${delta} standing`);
   }
-  toast(text: string): void {
-    this.bus.emit("Toast", { text });
+  toast(text: string, kind?: string): void {
+    this.bus.emit("Toast", { text, kind });
   }
   heal(n: number): void {
     this.healPlayer(n);
@@ -654,3 +702,24 @@ export const RARITY_COLOR: Record<string, string> = {
   rare: "#6fb3ff",
   relic: "#ffb347",
 };
+
+/** Packs a 0/1 array into base64 (compact enough for localStorage). */
+export function encodeBits(bits: Uint8Array): string {
+  const bytes = new Uint8Array(Math.ceil(bits.length / 8));
+  for (let i = 0; i < bits.length; i++) if (bits[i]) bytes[i >> 3] |= 1 << (i & 7);
+  let s = "";
+  for (const b of bytes) s += String.fromCharCode(b);
+  return btoa(s);
+}
+
+export function decodeBits(b64: string, n: number): Uint8Array {
+  const out = new Uint8Array(n);
+  if (!b64) return out;
+  try {
+    const s = atob(b64);
+    for (let i = 0; i < n; i++) out[i] = (s.charCodeAt(i >> 3) >> (i & 7)) & 1;
+  } catch {
+    /* corrupt or missing: start unexplored */
+  }
+  return out;
+}

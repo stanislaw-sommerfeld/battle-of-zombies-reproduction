@@ -891,6 +891,28 @@ export class Renderer {
         ctx.arc(x + 11, y + 2, 4, 0, Math.PI * 2);
         ctx.fill();
         break;
+      case "lectern": {
+        this.shadow(x, y, 9);
+        ctx.fillStyle = "#3a2c22";
+        ctx.fillRect(x - 2, y - 14, 4, 16);
+        ctx.fillStyle = "#4e3a2a";
+        ctx.beginPath();
+        ctx.moveTo(x - 11, y - 14);
+        ctx.lineTo(x + 11, y - 18);
+        ctx.lineTo(x + 11, y - 22);
+        ctx.lineTo(x - 11, y - 18);
+        ctx.fill();
+        ctx.fillStyle = "#d9cba8";
+        ctx.fillRect(x - 8, y - 22, 7, 5);
+        ctx.fillRect(x + 1, y - 23, 7, 5);
+        ctx.strokeStyle = "#5a5a60";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x - 11, y - 16);
+        ctx.quadraticCurveTo(x - 16, y - 6, x - 10, y + 2);
+        ctx.stroke();
+        break;
+      }
       case "spring":
         ctx.fillStyle = "#3d3a36";
         ctx.fillRect(x - 6, y - 18, 12, 20);

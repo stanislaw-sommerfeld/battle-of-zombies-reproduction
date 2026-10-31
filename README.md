@@ -34,6 +34,7 @@ You wake in a crater where the ash falls upward. A note in your own handwriting 
 - **Systemic surfaces:** oil, water, ink, ice, fire and steam on a cell grid. Fire spreads through oil, ink and dry grass. Fire on water makes steam, and nothing can see through steam. Frost freezes water, and frozen deep water can be walked on. Ink burns away.
 - **Character building:** 3 origins, 4 attributes, 11 traits that change how you fight (e.g. heavy attacks shatter frozen enemies), equipment with qualitative perks and drawbacks, random affixes, and a relic or two.
 - **A quest with three resolutions:** kill the Leech-Mother, burn the spring clean, or complete the Cinder Choir's rite. D&D-style d20 skill checks appear in dialogue. The choice permanently rewrites local laws, NPC dialogue and who lives in town.
+- **A second quest** in the Hush (kill the boss, light the funeral fires, or read the dead's names aloud). **Odo's shop** with cinder marks, contextual tips, a **minimap** with fog of war.
 - **Save/load** (versioned, localStorage) at waystones and from the pause menu. When you die you rise at your last rest.
 
 ## Scripts

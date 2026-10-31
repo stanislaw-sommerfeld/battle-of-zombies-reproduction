@@ -1,0 +1,123 @@
+{
+  "id": "q_hush_bell",
+  "title": "The Bell That Counts",
+  "summary": "Something in the Hush still rings a bell for the dead. Under the Edict of Return, nothing there stays down.",
+  "start": "enter",
+  "stages": {
+    "enter": {
+      "text": "A bell tolls somewhere in the Hush. Find what rings it.",
+      "hint": "The chapel stands in the middle of the graveyard.",
+      "triggers": [
+        {
+          "event": "Check",
+          "if": {
+            "flag": "hush_quieted",
+            "eq": "slain"
+          },
+          "complete": "slain"
+        },
+        {
+          "event": "Check",
+          "if": {
+            "flag": "hush_quieted",
+            "eq": "rites"
+          },
+          "complete": "rites"
+        },
+        {
+          "event": "Check",
+          "if": {
+            "flag": "hush_quieted",
+            "eq": "named"
+          },
+          "complete": "named"
+        },
+        {
+          "event": "AreaEntered",
+          "match": {
+            "zone": "hush_chapel"
+          },
+          "to": "bell"
+        }
+      ]
+    },
+    "bell": {
+      "text": "The Bellwarden tolls for the uncounted dead. Silence the bell.",
+      "hint": "Break it — or finish the rites it has waited fifty years for: light both chapel braziers. Or, if you know whose names these are, read them aloud at the lectern.",
+      "triggers": [
+        {
+          "event": "Check",
+          "if": {
+            "flag": "hush_quieted",
+            "eq": "slain"
+          },
+          "complete": "slain"
+        },
+        {
+          "event": "Check",
+          "if": {
+            "flag": "hush_quieted",
+            "eq": "rites"
+          },
+          "complete": "rites"
+        },
+        {
+          "event": "Check",
+          "if": {
+            "flag": "hush_quieted",
+            "eq": "named"
+          },
+          "complete": "named"
+        }
+      ]
+    }
+  },
+  "outcomes": {
+    "slain": {
+      "text": "You broke the Bellwarden. The Hush is quiet, though no one was ever counted.",
+      "effects": [
+        {
+          "giveXp": 100
+        },
+        {
+          "faction": "lanternfast",
+          "delta": 1
+        }
+      ]
+    },
+    "rites": {
+      "text": "You lit the funeral fires the Bellwarden had waited for. It lay down among its graves.",
+      "effects": [
+        {
+          "giveXp": 150
+        },
+        {
+          "giveItem": "bell_tongue"
+        },
+        {
+          "faction": "lanternfast",
+          "delta": 2
+        }
+      ]
+    },
+    "named": {
+      "text": "You read every struck-out name aloud. The Uncounted are counted.",
+      "effects": [
+        {
+          "giveXp": 180
+        },
+        {
+          "giveItem": "folio_locket"
+        },
+        {
+          "setFlag": "counted_the_uncounted",
+          "value": true
+        },
+        {
+          "toast": "Near the end of the list, one name is smudged with ash. The handwriting is yours.",
+          "kind": "insight"
+        }
+      ]
+    }
+  }
+}

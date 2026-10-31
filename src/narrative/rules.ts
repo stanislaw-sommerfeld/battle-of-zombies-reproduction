@@ -50,7 +50,8 @@ export interface EffectHost {
   grantInsight(id: string): void;
   learnAbility(id: string): void;
   changeFaction(id: string, delta: number): void;
-  toast(text: string): void;
+  toast(text: string, kind?: string): void;
+  readLore(id: string): void;
   heal(n: number): void;
   addFray(n: number): void;
   clearLiquid(zone: string, liquid: LiquidId): void;
@@ -72,7 +73,8 @@ export function applyEffects(effects: Effect[] | undefined, host: EffectHost): v
     else if ("grantInsight" in e) host.grantInsight(e.grantInsight);
     else if ("learnAbility" in e) host.learnAbility(e.learnAbility);
     else if ("faction" in e) host.changeFaction(e.faction, e.delta);
-    else if ("toast" in e) host.toast(e.toast);
+    else if ("toast" in e) host.toast(e.toast, e.kind);
+    else if ("readLore" in e) host.readLore(e.readLore);
     else if ("heal" in e) host.heal(e.heal);
     else if ("fray" in e) host.addFray(e.fray);
     else if ("clearLiquid" in e) host.clearLiquid(e.clearLiquid.zone, e.clearLiquid.liquid);

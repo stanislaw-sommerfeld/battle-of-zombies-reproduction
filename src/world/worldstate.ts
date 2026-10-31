@@ -11,6 +11,8 @@ export interface WorldStateData {
   brokenTiles: [number, number][];
   discovered: string[];
   factions: Record<string, number>;
+  /** Base64 bitmap of explored tiles (minimap). Optional: older saves lack it. */
+  explored?: string;
 }
 
 export class WorldState {
@@ -20,6 +22,7 @@ export class WorldState {
   brokenTiles: [number, number][] = [];
   discovered = new Set<string>();
   factions: Record<string, number> = {};
+  explored = "";
 
   constructor(private bus?: EventBus) {}
 
@@ -48,6 +51,7 @@ export class WorldState {
       brokenTiles: this.brokenTiles.map((t) => [t[0], t[1]] as [number, number]),
       discovered: [...this.discovered],
       factions: { ...this.factions },
+      explored: this.explored,
     };
   }
 
@@ -58,5 +62,6 @@ export class WorldState {
     this.brokenTiles = d.brokenTiles.map((t) => [t[0], t[1]]);
     this.discovered = new Set(d.discovered);
     this.factions = { ...d.factions };
+    this.explored = d.explored ?? "";
   }
 }

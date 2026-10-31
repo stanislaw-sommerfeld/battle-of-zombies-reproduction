@@ -17,7 +17,7 @@ src/
   world/       tilemap.ts, surfaces.ts (reaction grid), worldstate.ts (persistent memory), interact.ts
   entities/    entities.ts (plain data), player.ts (controller)
   combat/      damage.ts (pure rules), combat.ts (hits/kills), projectiles.ts
-  ai/          enemy.ts (shared state machine, archetype movement)
+  ai/          enemy.ts (shared state machine, archetype movement), pathfield.ts (BFS flow field to the player)
   effects/     perks.ts (qualitative effects referenced by id from data)
   items/       inventory.ts, loot.ts
   quests/      quests.ts (data-driven stage machine)
@@ -26,7 +26,7 @@ src/
   simulation/  reality.ts (status ticks, edicts, Fray/rupture, echoes, zones)
   save/        save.ts (versioned format + migrations)
   render/      renderer.ts, fx.ts
-  ui/          ui.ts
+  ui/          ui.ts, minimap.ts (fog of war, saved as a bitmap in WorldState.explored)
   audio/       sfx.ts (WebAudio synth, event-driven)
   game.ts      hub: owns state, implements RuleContext + EffectHost
   main.ts      boot + loop
