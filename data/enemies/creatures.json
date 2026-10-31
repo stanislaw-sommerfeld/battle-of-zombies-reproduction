@@ -1,0 +1,152 @@
+[
+  {
+    "id": "mire_hound",
+    "name": "Mire Hound",
+    "description": "Lean pack hunters with oil-slick pelts. They circle, then lunge. They eat echoes.",
+    "behavior": "lunger",
+    "faction": "beasts",
+    "health": 34,
+    "speed": 125,
+    "radius": 11,
+    "poise": 14,
+    "sight": 230,
+    "resist": { "fire": -0.25 },
+    "attacks": [
+      { "id": "bite", "kind": "melee", "damage": 8, "windup": 0.32, "recover": 0.35, "range": 22, "arc": 80, "cooldown": 0.9 },
+      { "id": "lunge", "kind": "lunge", "damage": 13, "windup": 0.55, "recover": 0.6, "range": 120, "speed": 430, "cooldown": 3.5 }
+    ],
+    "loot": "hound_drop",
+    "xp": 18,
+    "scavenger": true,
+    "pack": true,
+    "risesAs": "hollow_hound",
+    "visual": { "shape": "hound", "color": "#6b5a48", "accent": "#ffcf4a" }
+  },
+  {
+    "id": "ink_leech",
+    "name": "Ink Leech",
+    "description": "A fat slug of living ink. Keeps its distance and spits puddles that cling.",
+    "behavior": "spitter",
+    "faction": "rot",
+    "health": 26,
+    "speed": 55,
+    "radius": 10,
+    "poise": 10,
+    "sight": 260,
+    "resist": { "fire": -0.5 },
+    "immune": ["inked"],
+    "attacks": [
+      { "id": "spit", "kind": "projectile", "damage": 9, "element": "ink", "windup": 0.6, "recover": 0.5, "range": 240, "speed": 210, "cooldown": 2.2, "applies": ["inked"], "leaves": "ink" },
+      { "id": "nip", "kind": "melee", "damage": 6, "windup": 0.35, "recover": 0.4, "range": 18, "arc": 90, "cooldown": 1.2 }
+    ],
+    "loot": "leech_drop",
+    "xp": 14,
+    "risesAs": "hollow_echo",
+    "visual": { "shape": "leech", "color": "#2c1838", "accent": "#b48cff" }
+  },
+  {
+    "id": "leech_matron",
+    "name": "The Leech-Mother",
+    "description": "Bloated with a spring's worth of ink. She is the reason the well is black.",
+    "behavior": "boss",
+    "boss": true,
+    "faction": "rot",
+    "health": 240,
+    "speed": 42,
+    "radius": 20,
+    "poise": 60,
+    "sight": 300,
+    "resist": { "fire": -0.3, "physical": 0.1 },
+    "immune": ["inked"],
+    "attacks": [
+      { "id": "spew", "kind": "projectile", "damage": 12, "element": "ink", "windup": 0.7, "recover": 0.4, "range": 280, "speed": 230, "cooldown": 1.6, "applies": ["inked"], "leaves": "ink" },
+      { "id": "surge", "kind": "slam", "damage": 18, "element": "ink", "windup": 1.0, "recover": 0.9, "range": 70, "radius": 74, "cooldown": 5, "leaves": "ink", "applies": ["inked"] },
+      { "id": "maw", "kind": "melee", "damage": 15, "windup": 0.55, "recover": 0.6, "range": 30, "arc": 110, "cooldown": 1.6 }
+    ],
+    "departsWhen": { "flag": "ink_cleared_orchard_spring", "eq": true },
+    "departText": "Starved of ink, the Leech-Mother slides into the deep pool and is gone.",
+    "loot": "matron_drop",
+    "xp": 120,
+    "visual": { "shape": "matron", "color": "#22102e", "accent": "#d0a0ff", "scale": 2.1 }
+  },
+  {
+    "id": "ash_thrall",
+    "name": "Ash Thrall",
+    "description": "A hollowed person, still doing the last thing they remember. Slow, heavy, fire-proof. Its slams follow a rhythm.",
+    "behavior": "brute",
+    "faction": "hollow",
+    "health": 70,
+    "speed": 48,
+    "radius": 13,
+    "poise": 40,
+    "sight": 200,
+    "resist": { "fire": 0.5, "frost": -0.25 },
+    "immune": ["burning"],
+    "attacks": [
+      { "id": "slam", "kind": "slam", "damage": 22, "windup": 0.95, "recover": 0.9, "range": 58, "radius": 58, "cooldown": 2.8 },
+      { "id": "swipe", "kind": "melee", "damage": 12, "windup": 0.5, "recover": 0.6, "range": 30, "arc": 120, "cooldown": 1.6 }
+    ],
+    "loot": "thrall_drop",
+    "xp": 30,
+    "risesAs": "hollow_echo",
+    "visual": { "shape": "thrall", "color": "#5a5550", "accent": "#ff8a4a" }
+  },
+  {
+    "id": "bellwarden",
+    "name": "The Bellwarden",
+    "description": "It rang the chapel bell for the dead. It still does — with its fists.",
+    "behavior": "brute",
+    "boss": true,
+    "faction": "hollow",
+    "health": 340,
+    "speed": 58,
+    "radius": 18,
+    "poise": 90,
+    "sight": 260,
+    "resist": { "fire": 0.4, "physical": 0.15, "frost": -0.2 },
+    "immune": ["burning"],
+    "attacks": [
+      { "id": "toll", "kind": "slam", "damage": 30, "windup": 1.1, "recover": 1.0, "range": 90, "radius": 92, "cooldown": 4.2, "applies": ["stunned"] },
+      { "id": "cleave", "kind": "melee", "damage": 20, "windup": 0.6, "recover": 0.7, "range": 44, "arc": 140, "cooldown": 1.8 },
+      { "id": "charge", "kind": "lunge", "damage": 22, "windup": 0.8, "recover": 0.9, "range": 170, "speed": 380, "cooldown": 6 }
+    ],
+    "loot": "bellwarden_drop",
+    "xp": 220,
+    "visual": { "shape": "thrall", "color": "#4a4652", "accent": "#c9b8ff", "scale": 1.5 }
+  },
+  {
+    "id": "hollow_echo",
+    "name": "Risen Echo",
+    "description": "What is left when the dead are not remembered.",
+    "behavior": "echo",
+    "faction": "hollow",
+    "health": 30,
+    "speed": 95,
+    "radius": 10,
+    "poise": 12,
+    "sight": 280,
+    "resist": { "physical": 0.3, "fire": -0.3 },
+    "attacks": [{ "id": "claw", "kind": "melee", "damage": 10, "windup": 0.4, "recover": 0.45, "range": 22, "arc": 100, "cooldown": 1.1 }],
+    "xp": 10,
+    "visual": { "shape": "echo", "color": "#8a7cc0", "accent": "#ffffff" }
+  },
+  {
+    "id": "hollow_hound",
+    "name": "Risen Hound",
+    "description": "A hound's echo, still hungry.",
+    "behavior": "lunger",
+    "faction": "hollow",
+    "health": 26,
+    "speed": 140,
+    "radius": 11,
+    "poise": 10,
+    "sight": 280,
+    "resist": { "physical": 0.3 },
+    "attacks": [
+      { "id": "lunge", "kind": "lunge", "damage": 11, "windup": 0.5, "recover": 0.6, "range": 120, "speed": 450, "cooldown": 2.6 },
+      { "id": "bite", "kind": "melee", "damage": 7, "windup": 0.3, "recover": 0.35, "range": 22, "arc": 80, "cooldown": 0.9 }
+    ],
+    "xp": 10,
+    "visual": { "shape": "hound", "color": "#7a70b0", "accent": "#ffffff" }
+  }
+]

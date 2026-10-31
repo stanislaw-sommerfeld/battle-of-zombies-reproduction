@@ -1,0 +1,56 @@
+[
+  {
+    "id": "blank",
+    "name": "The Blank",
+    "text": "No page governs here. Reality holds by habit alone.",
+    "ambient": "#0a0c12",
+    "darkness": 0.53,
+    "frayDecay": 1.5,
+    "ash": "down"
+  },
+  {
+    "id": "hearth",
+    "name": "Edict of the Hearth",
+    "text": "Here, warmth is owed to all who shelter. Wounds close; hostile things cannot cross the threshold.",
+    "ambient": "#140c06",
+    "darkness": 0.34,
+    "regen": 4,
+    "frayDecay": 6,
+    "fireSpread": 0.3,
+    "sanctuary": true,
+    "ash": "down"
+  },
+  {
+    "id": "kindling",
+    "name": "Edict of Kindling",
+    "text": "Here, fire is hungry. Flames spread twice as fast and bite deeper.",
+    "ambient": "#0d0a06",
+    "darkness": 0.56,
+    "fireSpread": 2.2,
+    "fireDamage": 1.4,
+    "frayDecay": 1,
+    "ash": "down",
+    "fog": 0.5
+  },
+  {
+    "id": "return",
+    "name": "Edict of Return",
+    "text": "Here, the dead do not stay down. Unharvested echoes rise again. Healing is halved.",
+    "ambient": "#06070e",
+    "darkness": 0.68,
+    "healing": 0.5,
+    "deadRise": true,
+    "frayDecay": 0.5,
+    "ash": "none",
+    "fog": 1
+  },
+  {
+    "id": "rising_ash",
+    "name": "Edict of Rising Ash",
+    "text": "Here, ash falls upward \u2014 back toward the sky it came from.",
+    "ambient": "#0c0a10",
+    "darkness": 0.47,
+    "frayDecay": 3,
+    "ash": "up"
+  }
+]

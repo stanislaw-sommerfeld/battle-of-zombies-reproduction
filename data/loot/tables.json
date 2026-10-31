@@ -1,0 +1,28 @@
+[
+  { "id": "gear_any", "rolls": 1, "entries": [
+    { "item": "iron_hatchet", "weight": 3 }, { "item": "rusted_blade", "weight": 1 },
+    { "item": "tallow_charm", "weight": 3 }, { "item": "oilskin_coat", "weight": 2 }
+  ] },
+  { "id": "supplies", "rolls": 1, "entries": [
+    { "item": "ashbread", "weight": 4, "count": [1, 2] }, { "item": "oil_flask", "weight": 3, "count": [1, 2] }, { "item": "water_flask", "weight": 2 }
+  ] },
+  { "id": "hound_drop", "rolls": 1, "chance": 0.35, "entries": [
+    { "item": "ashbread", "weight": 5 }, { "item": "oil_flask", "weight": 3 }, { "table": "gear_any", "weight": 1 }
+  ] },
+  { "id": "leech_drop", "rolls": 1, "chance": 0.4, "entries": [
+    { "item": "water_flask", "weight": 3 }, { "item": "oil_flask", "weight": 2 }, { "item": "ashbread", "weight": 3 }, { "item": "oilskin_coat", "weight": 1 }
+  ] },
+  { "id": "thrall_drop", "rolls": 1, "chance": 0.6, "entries": [
+    { "item": "ashbread", "weight": 3 }, { "table": "gear_any", "weight": 3 }
+  ] },
+  { "id": "matron_drop", "rolls": 3, "entries": [
+    { "item": "ashbread", "weight": 2, "count": [2, 3] }, { "table": "gear_any", "weight": 2 }, { "item": "water_flask", "weight": 1, "count": [1, 2] }
+  ] },
+  { "id": "bellwarden_drop", "rolls": 1, "entries": [{ "item": "gravewrit_maul", "weight": 1 }] },
+  { "id": "roadside_cache", "rolls": 2, "entries": [{ "table": "supplies", "weight": 3 }, { "table": "gear_any", "weight": 2 }] },
+  { "id": "corpse_scavenger", "rolls": 2, "entries": [{ "item": "ashbread", "weight": 1 }, { "item": "oil_flask", "weight": 1 }] },
+  { "id": "tamsin_body", "rolls": 1, "entries": [{ "item": "oil_flask", "weight": 1, "count": [2, 2] }] },
+  { "id": "cider_cache", "rolls": 1, "entries": [{ "item": "rimeglass_shard", "weight": 1 }] },
+  { "id": "drowned_reliquary", "rolls": 1, "entries": [{ "item": "drowned_saint_eye", "weight": 1 }] },
+  { "id": "chapel_hoard", "rolls": 3, "entries": [{ "table": "supplies", "weight": 2 }, { "table": "gear_any", "weight": 2 }, { "item": "warden_coat", "weight": 1 }] }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "matron_slain",
+    "on": "EnemyKilled",
+    "match": { "enemyId": "leech_matron" },
+    "if": { "not": { "flag": "spring_state", "exists": true } },
+    "effects": [{ "setFlag": "spring_state", "value": "leech_slain" }]
+  },
+  {
+    "id": "spring_burned",
+    "on": "RealityShifted",
+    "match": { "kind": "ink_cleared", "zone": "orchard_spring" },
+    "if": { "not": { "flag": "spring_state", "exists": true } },
+    "effects": [{ "setFlag": "spring_state", "value": "burned_clean" }]
+  },
+  {
+    "id": "choir_mourns_matron",
+    "on": "WorldStateChanged",
+    "match": { "key": "spring_state", "value": "leech_slain" },
+    "effects": [{ "faction": "choir", "delta": -2 }]
+  },
+  {
+    "id": "choir_mourns_spring",
+    "on": "WorldStateChanged",
+    "match": { "key": "spring_state", "value": "burned_clean" },
+    "effects": [{ "faction": "choir", "delta": -2 }]
+  },
+  {
+    "id": "bellwarden_slain",
+    "on": "EnemyKilled",
+    "match": { "enemyId": "bellwarden" },
+    "effects": [
+      { "setFlag": "bellwarden_slain", "value": true },
+      { "toast": "The bell stops. Across the Hush, something exhales — the dead will stay down now." }
+    ]
+  },
+  {
+    "id": "cider_house_found",
+    "on": "TileBroken",
+    "match": { "tile": "cracked_wall" },
+    "effects": [{ "toast": "The rotten wall gives way. Cold air breathes out of the dark." }, { "giveXp": 25 }]
+  }
+]

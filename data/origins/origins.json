@@ -1,0 +1,29 @@
+[
+  {
+    "id": "gravedigger",
+    "name": "Gravedigger",
+    "text": "You remember the weight of a spade, and soil that had to be turned twice. The dead never frightened you. Their echoes feed you.",
+    "attributes": { "might": 4, "finesse": 2, "wits": 1, "resolve": 3 },
+    "equip": ["grave_spade", "ragged_coat"],
+    "items": ["ashbread", "ashbread", "oil_flask"],
+    "trait": "echo_eater"
+  },
+  {
+    "id": "lamplighter",
+    "name": "Lamplighter",
+    "text": "You remember climbing ladders at dusk, and the smell of lamp-oil on your hands. You know exactly how far a flask can be thrown.",
+    "attributes": { "might": 2, "finesse": 2, "wits": 4, "resolve": 2 },
+    "equip": ["rusted_blade", "ragged_coat"],
+    "items": ["oil_flask", "oil_flask", "oil_flask", "ashbread"],
+    "trait": "flask_wright"
+  },
+  {
+    "id": "cutpurse",
+    "name": "Cutpurse",
+    "text": "You remember crowds, and the exact moment a stranger looks away. You were never there when they looked back.",
+    "attributes": { "might": 1, "finesse": 4, "wits": 2, "resolve": 3 },
+    "equip": ["bent_knife", "ragged_coat"],
+    "items": ["ashbread", "ashbread", "water_flask"],
+    "trait": "smoke_step"
+  }
+]

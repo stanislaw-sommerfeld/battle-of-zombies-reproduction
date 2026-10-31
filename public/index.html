@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ash Ledger</title>
+    <meta name="description" content="A systemic dark-fantasy action RPG. The book that held the world's laws has burned." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>✶</text></svg>" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <div id="hud" class="hidden">
+      <div id="vitals">
+        <div id="level"></div>
+        <div class="bar hp"><div id="hp-fill" class="fill"></div><span id="hp-text"></span></div>
+        <div class="bar st"><div id="st-fill" class="fill"></div></div>
+        <div class="bar xp"><div id="xp-fill" class="fill"></div></div>
+        <div id="ember" title="Ember: fuels spells. Harvest echoes (E) to regain it."></div>
+        <div id="fray" title="Fray: rises with spells and harvesting. Above 50 spells are stronger. At 100 reality ruptures.">
+          <div class="bar fray"><div id="fray-fill" class="fill"></div></div>
+          <span id="fray-label"></span>
+        </div>
+        <div id="statuses"></div>
+      </div>
+      <div id="zone"></div>
+      <div id="quests"></div>
+      <div id="boss"><div id="boss-name"></div><div class="bar"><div id="boss-fill" class="fill"></div></div></div>
+      <div id="zone-banner"></div>
+      <div id="prompt"></div>
+      <div id="abilities"></div>
+      <div id="toasts"></div>
+    </div>
+    <div id="overlay"></div>
+    <div id="loading">Gathering ash…</div>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

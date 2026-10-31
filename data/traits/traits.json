@@ -1,0 +1,13 @@
+[
+  { "id": "ashwalker", "name": "Ashwalker", "text": "Burning ground does not harm you. Fight inside your own fires.", "perks": ["ashwalker"] },
+  { "id": "shatterhand", "name": "Shatterhand", "text": "Heavy attacks against frozen enemies shatter the ice and hurt everything nearby.", "perks": ["shatter"], "requires": { "might": 3 } },
+  { "id": "smoke_step", "name": "Smoke-Step", "text": "Dodging leaves a puff of steam; enemies lose sight of you inside it.", "perks": ["smoke_step"] },
+  { "id": "flask_wright", "name": "Flask-Wright", "text": "Thrown flasks splash twice as wide.", "perks": ["flask_master"] },
+  { "id": "echo_eater", "name": "Echo-Eater", "text": "Harvesting an echo heals you for 12.", "perks": ["echo_eater"] },
+  { "id": "cold_blood", "name": "Cold Blood", "text": "Below 35% health your hits chill — and chilled wet things freeze.", "perks": ["cold_blood"] },
+  { "id": "steady_mind", "name": "Steady Mind", "text": "You gain 40% less Fray from casting.", "perks": ["steady_mind"], "requires": { "wits": 3 } },
+  { "id": "fray_conduit", "name": "Fray Conduit", "text": "Above 50 Fray your spells deal double damage instead of +50%. Live near the rupture.", "perks": ["fray_conduit"], "requires": { "wits": 3 } },
+  { "id": "heavy_hand", "name": "Heavy Hand", "text": "Heavy attacks always stagger and hurl targets back — into fire, water or each other.", "perks": ["heavy_hand"], "requires": { "might": 3 } },
+  { "id": "scavenger", "name": "Scavenger's Sense", "text": "Creatures drop loot more often; echoes linger twice as long.", "perks": ["scavenger_sense"] },
+  { "id": "ember_hunger", "name": "Ember Hunger", "text": "Killing blows restore 1 Ember.", "perks": ["ember_hunger"] }
+]

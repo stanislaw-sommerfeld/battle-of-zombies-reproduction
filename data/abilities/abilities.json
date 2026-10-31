@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ember_bolt",
+    "name": "Ember Bolt",
+    "key": "Q",
+    "description": "Hurl a coal of unwritten fire at the cursor. Ignites oil, ink and dry grass; turns water to steam.",
+    "element": "fire",
+    "cost": 1,
+    "fray": 9,
+    "cooldown": 0.6,
+    "damage": 14,
+    "speed": 420,
+    "radius": 1.3,
+    "scaling": { "wits": 1 },
+    "applies": ["burning"]
+  },
+  {
+    "id": "rime_lance",
+    "name": "Rime Lance",
+    "key": "R",
+    "description": "A shard of the law WATER SHALL HOLD. Freezes water (even deep water, for a while), chills foes, freezes the wet solid.",
+    "element": "frost",
+    "cost": 1,
+    "fray": 9,
+    "cooldown": 0.8,
+    "damage": 11,
+    "speed": 480,
+    "radius": 1.7,
+    "scaling": { "wits": 1 },
+    "applies": ["chilled"]
+  }
+]

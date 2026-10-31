@@ -1,0 +1,45 @@
+[
+  { "id": "cinder_road", "name": "The Cinder Road", "edict": "blank", "rect": [26, 18, 28, 40], "description": "Between the pages, nothing is promised." },
+  { "id": "ash_crater", "name": "The Ash Crater", "edict": "rising_ash", "rect": [33, 44, 15, 13], "discoverXp": 0, "description": "You wake on warm glass. The ash is falling the wrong way." },
+  {
+    "id": "lanternfast",
+    "name": "Lanternfast",
+    "edict": "hearth",
+    "rect": [29, 3, 23, 15],
+    "discoverXp": 25,
+    "description": "Forty souls and a page of the Ledger nailed above the hearth.",
+    "edictWhen": [{ "if": { "flag": "well_singing", "eq": true }, "edict": "hearth_dimmed" }]
+  },
+  { "id": "drowned_orchard", "name": "The Drowned Orchard", "edict": "kindling", "rect": [54, 15, 24, 43], "discoverXp": 30, "description": "Dead trees in a flooded mire. Oil seeps from the ground. Here, fire is hungry." },
+  {
+    "id": "orchard_spring",
+    "name": "The Black Spring",
+    "edict": "kindling",
+    "rect": [59, 33, 15, 14],
+    "discoverXp": 20,
+    "description": "The source of Lanternfast's water. It is choked with living ink.",
+    "edictWhen": [
+      { "if": { "flag": "spring_state", "eq": "choir_rite" }, "edict": "choir_song" },
+      { "if": { "flag": "spring_state", "eq": "burned_clean" }, "edict": "clear_water" }
+    ]
+  },
+  { "id": "cider_house", "name": "The Old Cider House", "edict": "kindling", "rect": [71, 21, 5, 5], "discoverXp": 40, "description": "Walled up from the inside. Someone hid something here." },
+  {
+    "id": "the_hush",
+    "name": "The Hush",
+    "edict": "return",
+    "rect": [2, 18, 22, 40],
+    "discoverXp": 40,
+    "description": "A graveyard under the Edict of Return. Nothing here stays dead unless someone remembers it.",
+    "edictWhen": [{ "if": { "flag": "bellwarden_slain", "eq": true }, "edict": "quiet_return" }]
+  },
+  {
+    "id": "hush_chapel",
+    "name": "Chapel of the Uncounted",
+    "edict": "return",
+    "rect": [6, 26, 11, 9],
+    "discoverXp": 30,
+    "description": "The bell is silent. Something inside is not.",
+    "edictWhen": [{ "if": { "flag": "bellwarden_slain", "eq": true }, "edict": "quiet_return" }]
+  }
+]

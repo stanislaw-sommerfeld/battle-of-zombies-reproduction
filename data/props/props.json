@@ -1,0 +1,12 @@
+[
+  { "id": "oil_barrel", "name": "Oil Barrel", "shape": "barrel", "solid": true, "radius": 9, "health": 1, "onBreak": { "liquid": "oil", "radius": 1.8 } },
+  { "id": "chest", "name": "Chest", "shape": "chest", "solid": true, "radius": 11, "interact": { "prompt": "Open the chest", "once": true, "loot": "roadside_cache" } },
+  { "id": "page", "name": "Loose page", "shape": "page", "radius": 8, "interact": { "prompt": "Read the page", "once": true } },
+  { "id": "waystone", "name": "Waystone", "shape": "waystone", "solid": true, "radius": 10, "interact": { "prompt": "Rest at the waystone (heal, clear Fray, refill Ember, save)" }, "light": { "radius": 170, "color": "rgba(255,200,120,0.14)" } },
+  { "id": "well", "name": "Lanternfast Well", "shape": "well", "solid": true, "radius": 16, "interact": { "prompt": "Look into the well", "dialogue": "well" } },
+  { "id": "scriptorium_door", "name": "Sealed Door", "shape": "door", "solid": true, "radius": 16, "interact": { "prompt": "Examine the sealed door", "lore": "scriptorium_door" }, "light": { "radius": 90, "color": "rgba(150,90,220,0.15)" } },
+  { "id": "brazier", "name": "Brazier", "shape": "brazier", "solid": true, "radius": 8, "light": { "radius": 180, "color": "rgba(255,140,60,0.18)", "flicker": 1 } },
+  { "id": "edict_stone", "name": "Edict Stone", "shape": "edict_stone", "solid": true, "radius": 14, "interact": { "prompt": "Read the stone" }, "light": { "radius": 130, "color": "rgba(255,190,120,0.10)" } },
+  { "id": "corpse", "name": "Body", "shape": "corpse", "radius": 10, "interact": { "prompt": "Search the body", "once": true } },
+  { "id": "spring_shrine", "name": "Spring Shrine", "shape": "spring", "solid": true, "radius": 9, "interact": { "prompt": "Kneel at the spring shrine", "dialogue": "spring" }, "light": { "radius": 80, "color": "rgba(140,200,230,0.12)" } }
+]

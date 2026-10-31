@@ -1,0 +1,8 @@
+[
+  { "id": "unwritten", "name": "The Unwritten", "hostileTo": [], "description": "You. People whose names burned with the Ledger." },
+  { "id": "beasts", "name": "Mire Hounds", "hostileTo": ["unwritten", "rot"], "description": "Pack hunters of the mire. They eat ink-leeches and anything that bleeds." },
+  { "id": "rot", "name": "The Ink-Rot", "hostileTo": ["unwritten", "beasts"], "description": "Living ink and the leeches that carry it." },
+  { "id": "hollow", "name": "The Hollowed", "hostileTo": ["unwritten"], "description": "People and beasts whose names were unwritten. They remember only their last task." },
+  { "id": "lanternfast", "name": "Lanternfast", "hostileTo": [], "description": "Forty souls sheltering under the Edict of the Hearth." },
+  { "id": "choir", "name": "The Cinder Choir", "hostileTo": [], "description": "Believers who sing the old laws and welcome the ink as the Ledger rewriting itself." }
+]

@@ -1,0 +1,95 @@
+{
+  "id": "cale",
+  "entries": [
+    { "if": { "all": [{ "flag": "spring_state", "eq": "choir_rite" }, { "not": { "flag": "cale_rewarded", "eq": true } }] }, "node": "after_rite" },
+    { "if": { "flag": "spring_state", "eq": "choir_rite" }, "node": "friend" },
+    { "if": { "flag": "spring_state", "exists": true }, "node": "too_late" },
+    { "if": { "hasItem": "choir_tincture" }, "node": "waiting" },
+    { "if": { "flag": "cale_refused", "eq": true }, "node": "refused" },
+    { "node": "intro" }
+  ],
+  "nodes": {
+    "intro": {
+      "text": "Peace, unwritten one. I am Cale, a brother of the Cinder Choir.\n\nThe Warden thinks the spring is poisoned. She is wrong. The ink is the Ledger, writing itself back into the world — slowly, lovingly. The spring is its first new page.",
+      "options": [
+        { "text": "What do you want from me?", "goto": "ask" },
+        { "text": "Who are the Cinder Choir?", "goto": "choir" },
+        { "text": "You're not telling me everything.", "check": { "attr": "wits", "dc": 13 }, "once": "cale_pressed", "goto": "press_ok", "failGoto": "press_fail" },
+        { "text": "[Leave]", "goto": "end" }
+      ]
+    },
+    "choir": {
+      "text": "We sing the old laws so they are not forgotten. When the Ledger is whole again there will be no more Blank, no more ruptures, no more hounds. Everything will hold still, and be safe.",
+      "options": [{ "text": "And what do you want from me?", "goto": "ask" }, { "text": "[Leave]", "goto": "end" }]
+    },
+    "ask": {
+      "text": "The Leech-Mother is the ink's shepherd. Don't kill her. Instead, pour this tincture into the spring at the old shrine. It will finish the rite, and the ink will settle into Lanternfast's well as song.\n\nLanternfast will be the first town rewritten. They will thank you, in time.",
+      "options": [
+        { "text": "I'll do it. Give me the tincture.", "effects": [{ "giveItem": "choir_tincture" }], "goto": "agreed" },
+        { "text": "And if I refuse?", "goto": "refuse_q" },
+        { "text": "Intimidate: Tell me what the ink does to people, or I find out on you.", "check": { "attr": "might", "dc": 14 }, "once": "cale_threatened", "goto": "press_ok", "failGoto": "threat_fail" },
+        { "text": "No.", "effects": [{ "setFlag": "cale_refused", "value": true }], "goto": "end" }
+      ]
+    },
+    "refuse_q": {
+      "text": "Then you kill a shepherd, and the Warden drinks grey water for another fifty years. The Choir remembers its friends. A ring of our order goes to whoever completes the rite.",
+      "options": [
+        { "text": "Give me the tincture.", "effects": [{ "giveItem": "choir_tincture" }], "goto": "agreed" },
+        { "text": "No.", "effects": [{ "setFlag": "cale_refused", "value": true }], "goto": "end" }
+      ]
+    },
+    "agreed": {
+      "text": "Kneel at the shrine by the spring, and pour. Sing, if you know how.\n\nAnd unwritten one — the Warden need not know until it is done.",
+      "options": [{ "text": "[Leave]", "goto": "end" }]
+    },
+    "press_ok": {
+      "text": "...Clever. Very well. Still means still. When the ink writes a thing, the thing stops — changing, hungering, ageing. Some of us call that peace. Some of us think it is only a slower death. I have not decided.\n\nHave you?",
+      "effects": [{ "giveXp": 25 }, { "setFlag": "cale_honest", "value": true }],
+      "options": [{ "text": "Go on.", "goto": "ask" }, { "text": "[Leave]", "goto": "end" }]
+    },
+    "press_fail": {
+      "text": "I tell you everything the song allows.",
+      "options": [{ "text": "Then what do you want?", "goto": "ask" }, { "text": "[Leave]", "goto": "end" }]
+    },
+    "threat_fail": {
+      "text": "Strike me if you like. The ink will still be singing when you're done.",
+      "effects": [{ "faction": "choir", "delta": -1 }],
+      "options": [{ "text": "...Fine.", "goto": "ask" }, { "text": "[Leave]", "goto": "end" }]
+    },
+    "waiting": {
+      "text": "The tincture is warm in your hands, isn't it? The spring is waiting.",
+      "options": [
+        { "text": "Not yet.", "goto": "end" },
+        { "text": "I've changed my mind. Take it back.", "effects": [{ "takeItem": "choir_tincture" }, { "setFlag": "cale_refused", "value": true }], "goto": "disappointed" }
+      ]
+    },
+    "disappointed": {
+      "text": "Then go with whatever law you have left.",
+      "options": [{ "text": "[Leave]", "goto": "end" }]
+    },
+    "refused": {
+      "text": "Still here, unwritten? The offer stands.",
+      "options": [
+        { "text": "Give me the tincture after all.", "effects": [{ "giveItem": "choir_tincture" }, { "setFlag": "cale_refused", "value": false }], "goto": "agreed" },
+        { "text": "[Leave]", "goto": "end" }
+      ]
+    },
+    "too_late": {
+      "text": "You've made your choice, then.",
+      "variants": [
+        { "if": { "flag": "spring_state", "eq": "leech_slain" }, "text": "You killed the shepherd. The ink will scatter now, wild and unsung. I hope you can live with what grows from it." },
+        { "if": { "flag": "spring_state", "eq": "burned_clean" }, "text": "You burned the page. Fifty years of patience, and you burned it in an afternoon. The Choir will remember." }
+      ],
+      "options": [{ "text": "[Leave]", "goto": "end" }]
+    },
+    "after_rite": {
+      "text": "You did it. Listen — the well is singing. Take this. Whatever you were before, you are one of us now.",
+      "effects": [{ "giveItem": "choir_bone_ring" }, { "setFlag": "cale_rewarded", "value": true }],
+      "options": [{ "text": "[Leave]", "goto": "end" }]
+    },
+    "friend": {
+      "text": "Sing with us at dusk, sibling. The ink remembers you kindly.",
+      "options": [{ "text": "[Leave]", "goto": "end" }]
+    }
+  }
+}
