@@ -1,0 +1,113 @@
+[
+  {
+    "id": "human",
+    "name": "Human",
+    "text": "Most of the Vale's survivors. Their laws were written on common pages, and common pages burned first. They adapt, because there was never a page that said they couldn't.",
+    "sexes": [
+      { "id": "female", "name": "Female" },
+      { "id": "male", "name": "Male" }
+    ],
+    "heightCm": [150, 198],
+    "weightKg": [42, 120],
+    "races": [
+      {
+        "id": "valefolk",
+        "name": "Valefolk",
+        "text": "Orchard and road people of the Cinder Vale. Sun-browned, stubborn, fond of cider and of grudges.",
+        "skin": ["#e9c4a0", "#d9a77f", "#b98060", "#8d5a3c", "#5e3b26"],
+        "hair": ["#2a1d14", "#5a3a22", "#8a5a2e", "#c79a5a", "#9a9288", "#e6dccb"],
+        "eyes": ["#5a3a22", "#3f6a3a", "#4a6a8a", "#7a6a4a"]
+      },
+      {
+        "id": "mirefolk",
+        "name": "Mirefolk",
+        "text": "From the marshes south of the Spring. They hold their breath longer than anyone and trust water more than land.",
+        "skin": ["#c9a888", "#a88466", "#7d5d45", "#59402f", "#3d2c22"],
+        "hair": ["#14110e", "#2a221a", "#4a3a2a", "#6a5a3a"],
+        "eyes": ["#2a3a2a", "#4a5a3a", "#6a6a3a", "#2a2a2a"],
+        "heightOffset": -4
+      },
+      {
+        "id": "highash",
+        "name": "Highash folk",
+        "text": "Northerners from the ash plateaus, where the snow falls grey. Pale, tall and quiet; they count everything twice.",
+        "skin": ["#f2ddc8", "#e8cdb5", "#d4b8a0", "#c0a48c"],
+        "hair": ["#e8e0d0", "#c8b89a", "#a8784a", "#7a3a22", "#3a2a22"],
+        "eyes": ["#8ab0c8", "#6a8aa8", "#9aa8a0", "#5a6a7a"],
+        "heightOffset": 6
+      }
+    ]
+  },
+  {
+    "id": "emberkin",
+    "name": "Emberkin",
+    "text": "People whose law was written on the Hearth pages. Warm to the touch, lit from within. They are kindled from another's coals rather than born, and have no sexes. When the Ledger burned, many of them simply went out.",
+    "heightCm": [140, 185],
+    "weightKg": [40, 95],
+    "features": ["embers", "glow_eyes"],
+    "races": [
+      {
+        "id": "brandborn",
+        "name": "Brandborn",
+        "text": "Bright and quick-burning, hard to stand near for long. Their cracks glow orange.",
+        "skin": ["#3a2a24", "#4a3028", "#2e2422", "#5a3a2c"],
+        "hair": ["#ff9a3c", "#ffcf6a", "#ff6a2a", "#e84a2a"],
+        "eyes": ["#ffd27a", "#ffb04a", "#fff0b0"],
+        "feature": "#ff8a2a"
+      },
+      {
+        "id": "sootborn",
+        "name": "Sootborn",
+        "text": "Banked coals: slow, patient, nearly black. Their light only shows when they are angry.",
+        "skin": ["#1e1c1c", "#2a2624", "#24201e", "#33302c"],
+        "hair": ["#5a5450", "#8a8078", "#3a3430", "#c8a07a"],
+        "eyes": ["#c87a3a", "#a85a2a", "#e8a05a"],
+        "feature": "#c8501e",
+        "heightOffset": 4
+      }
+    ]
+  },
+  {
+    "id": "glossed",
+    "name": "Glossed",
+    "text": "When the Ledger burned, some of the notes in its margins stood up and walked away. Paper-pale and ink-veined, they were written rather than born, and each remembers the hand that wrote them. The Choir calls them proof that the book is alive.",
+    "sexes": [
+      { "id": "female", "name": "Female" },
+      { "id": "male", "name": "Male" }
+    ],
+    "heightCm": [155, 200],
+    "weightKg": [38, 85],
+    "features": ["ink_veins"],
+    "headScale": 0.95,
+    "races": [
+      {
+        "id": "rubricated",
+        "name": "Rubricated",
+        "text": "Written in red ink, the colour of headings and warnings. People do what they say without knowing why.",
+        "skin": ["#efe6d4", "#e6dcc6", "#ddd0b8"],
+        "hair": ["#8a1e1e", "#5a1414", "#2a1010"],
+        "eyes": ["#8a1e1e", "#2a1a1a"],
+        "feature": "#9a2a2a"
+      },
+      {
+        "id": "interlinear",
+        "name": "Interlinear",
+        "text": "Squeezed between other lines: thin, precise and easily overlooked.",
+        "skin": ["#e8e2d6", "#d8d2c4", "#c8c2b4"],
+        "hair": ["#1a1a22", "#2a2a34", "#3a3a44"],
+        "eyes": ["#1a1a22", "#3a3a5a"],
+        "feature": "#2a2a3a",
+        "heightOffset": 4
+      },
+      {
+        "id": "illuminated",
+        "name": "Illuminated",
+        "text": "Written by a patient hand in gold leaf and lapis. Beautiful, vain and easily torn.",
+        "skin": ["#f2e8d2", "#e8dcc0"],
+        "hair": ["#d9b26a", "#2a4a8a", "#e8d8a8"],
+        "eyes": ["#2a4a8a", "#d9b26a"],
+        "feature": "#d9b26a"
+      }
+    ]
+  }
+]

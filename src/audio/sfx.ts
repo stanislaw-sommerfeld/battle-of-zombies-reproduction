@@ -5,6 +5,8 @@ export class Sfx {
   private ctx?: AudioContext;
   private master?: GainNode;
   muted = false;
+  /** 0..1 from settings; 0.5 matches the original mix. */
+  private volume = 0.7;
 
   constructor(bus: EventBus) {
     const unlock = () => {
@@ -12,7 +14,7 @@ export class Sfx {
         try {
           this.ctx = new AudioContext();
           this.master = this.ctx.createGain();
-          this.master.gain.value = 0.35;
+          this.master.gain.value = this.gain();
           this.master.connect(this.ctx.destination);
         } catch {
           /* audio unavailable */
@@ -48,10 +50,14 @@ export class Sfx {
     bus.on("PerfectDodge", () => this.tone(1200, 0.15, "sine", 0.1, 600));
   }
 
-  toggle(): boolean {
-    this.muted = !this.muted;
-    if (this.master) this.master.gain.value = this.muted ? 0 : 0.35;
-    return this.muted;
+  private gain(): number {
+    return this.muted ? 0 : this.volume * 0.5;
+  }
+
+  setVolume(volume: number, muted: boolean): void {
+    this.volume = volume;
+    this.muted = muted;
+    if (this.master) this.master.gain.value = this.gain();
   }
 
   private tone(freq: number, dur: number, type: OscillatorType, vol: number, to?: number): void {

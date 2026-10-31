@@ -24,9 +24,11 @@ src/
   dialogue/    dialogue.ts (node graph + d20 checks)
   narrative/   rules.ts (conditions/effects DSL), insight.ts, worldrules.ts
   simulation/  reality.ts (status ticks, edicts, Fray/rupture, echoes, zones)
-  save/        save.ts (versioned format + migrations)
+  save/        save.ts (versioned format, migrations, slots, file export/import)
+  character/   look.ts (appearance from the character creator; cosmetic only)
+  i18n/        en.ts / fr.ts (interface strings), content.ts (content overlays), keys.ts (key labels)
   render/      renderer.ts, fx.ts
-  ui/          ui.ts, minimap.ts (fog of war, saved as a bitmap in WorldState.explored)
+  ui/          ui.ts (HUD, title, pause, panels), creator.ts, settings.ts, saves.ts, minimap.ts (fog of war, saved as a bitmap in WorldState.explored)
   audio/       sfx.ts (WebAudio synth, event-driven)
   game.ts      hub: owns state, implements RuleContext + EffectHost
   main.ts      boot + loop
@@ -52,6 +54,8 @@ src/
 
 ## Save format
 
+Saves live in four slots (`auto` plus `1`–`3`) under `ash-ledger.slot.<id>`; waystones and new games write `auto`. A slot can be exported to a JSON file and imported back; imports go through the same migration and a structural check, then are checked against the content (region, origin). Settings (`src/core/settings.ts`) are stored apart under `ash-ledger.settings` and can be exported too.
+
 `SaveData` (`src/save/save.ts`) carries `version`. To change it, bump `SAVE_VERSION` and add `MIGRATIONS[oldVersion]`. On load, items, traits, insights and quests whose definitions no longer exist are dropped instead of crashing.
 
 ## Testing
@@ -75,3 +79,14 @@ src/
 | zone / edict / world scar | data only |
 | faction | `data/factions` |
 | new surface reaction | `world/surfaces.ts` |
+
+## Localization
+
+- Interface strings: `src/i18n/en.ts` is the source; `src/i18n/fr.ts` must define every key (the compiler checks). Use `t("key", { param })` in code.
+- Content text stays in English in `/data`. Each other language has `locales/<lang>.content.json`, keyed by a path into the bundle (`items/rusted_blade/name`). The build flattens it to `dist/locales/<lang>.json`; the game rewrites the live content in place when the language changes, so no reload is needed.
+- `node scripts/i18n.mjs sync fr` adds new strings and drops removed ones; `node scripts/i18n.mjs check` lists missing and outdated translations (the English changed after translating). `npm test` reports the totals but never fails on them.
+- Content text can name a control as `{key:spell1}`; the UI shows the key the player bound.
+
+## Controls
+
+`src/core/input.ts` maps physical key codes (`KeyboardEvent.code`, plus `Mouse0`–`Mouse2`) to actions. Codes follow key position, so the defaults (WASD) are ZQSD on AZERTY keyboards. Labels use the browser's keyboard layout map where available. Rebinding happens in the settings screen; a key can belong to one action only.

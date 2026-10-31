@@ -3,18 +3,22 @@
 import type { EventBus } from "../core/events.js";
 import type { DialogueDef, DialogueNode, DialogueOption } from "../data/types.js";
 import { applyEffects, evaluate, skillCheck, type EffectHost, type RuleContext } from "../narrative/rules.js";
+import { t } from "../i18n/i18n.js";
+import type { UiKey } from "../i18n/en.js";
 
 export interface DialogueView {
   speaker: string;
   text: string;
   options: { index: number; text: string; check?: string }[];
   lastCheck?: string;
+  lastCheckOk?: boolean;
 }
 
 export class DialogueRunner {
   private def?: DialogueDef;
   private nodeId?: string;
   private lastCheck?: string;
+  private lastCheckOk?: boolean;
   speakerFallback = "";
 
   constructor(
@@ -74,9 +78,10 @@ export class DialogueRunner {
       options: (opts.length ? opts : [[{ text: "[Leave]", goto: "end" }, -1] as [DialogueOption, number]]).map(([o, i]) => ({
         index: i,
         text: o.text,
-        check: o.check ? `${o.check.attr.toUpperCase()} ${o.check.dc}` : undefined,
+        check: o.check ? t("dialogue.checkTag", { attr: t(`attr.${o.check.attr}.short` as UiKey), dc: o.check.dc }) : undefined,
       })),
       lastCheck: this.lastCheck,
+      lastCheckOk: this.lastCheckOk,
     };
   }
 
@@ -91,7 +96,8 @@ export class DialogueRunner {
     if (o.check) {
       const attr = this.rules.attribute(o.check.attr);
       const r = skillCheck(attr, o.check.dc, this.d20());
-      this.lastCheck = `${o.check.attr.toUpperCase()} check: d20 ${r.roll} + ${attr} = ${r.total} vs DC ${o.check.dc} — ${r.success ? "SUCCESS" : "FAILURE"}`;
+      this.lastCheck = t("dialogue.checkResult", { attr: t(`attr.${o.check.attr}.name` as UiKey), roll: r.roll, bonus: attr, total: r.total, dc: o.check.dc, result: t(r.success ? "dialogue.success" : "dialogue.failure") });
+      this.lastCheckOk = r.success;
       this.bus.emit("SkillCheck", { attr: o.check.attr, dc: o.check.dc, roll: r.roll, total: r.total, success: r.success });
       if (r.success) {
         applyEffects(o.effects, this.host);

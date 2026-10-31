@@ -184,7 +184,7 @@
     },
     "effects": [
       {
-        "toast": "Tip: oil barrels burst when struck, and fire (Q, aimed with the mouse) ignites oil. Pick your ground.",
+        "toast": "Tip: oil barrels burst when struck, and fire ({key:spell1}, aimed with the mouse) ignites oil. Pick your ground.",
         "kind": "hint"
       }
     ]
@@ -194,7 +194,7 @@
     "on": "PlayerDamaged",
     "effects": [
       {
-        "toast": "Tip: red shapes on the ground are attacks about to land. Dodge (Space) through them — you can't be hit mid-roll.",
+        "toast": "Tip: red shapes on the ground are attacks about to land. Dodge ({key:dodge}) through them — you can't be hit mid-roll.",
         "kind": "hint"
       }
     ]
@@ -207,7 +207,7 @@
     },
     "effects": [
       {
-        "toast": "Tip: the slain leave echoes. E harvests them: +Ember for spells, but +Fray. Hounds eat what you leave.",
+        "toast": "Tip: the slain leave echoes. {key:interact} harvests them: +Ember for spells, but +Fray. Hounds eat what you leave.",
         "kind": "hint"
       }
     ]
@@ -220,7 +220,7 @@
     },
     "effects": [
       {
-        "toast": "Tip: press I to equip. Gear changes how you fight, not just how hard.",
+        "toast": "Tip: press {key:inventory} to equip. Gear changes how you fight, not just how hard.",
         "kind": "hint"
       }
     ]
@@ -233,7 +233,7 @@
     },
     "effects": [
       {
-        "toast": "Tip: press I to equip. Rare gear changes how you fight — read its perks.",
+        "toast": "Tip: press {key:inventory} to equip. Rare gear changes how you fight — read its perks.",
         "kind": "hint"
       }
     ]

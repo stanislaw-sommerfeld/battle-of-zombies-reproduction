@@ -1,0 +1,1946 @@
+{
+  "abilities/ember_bolt/name": {
+    "en": "Ember Bolt",
+    "fr": "Trait de braise"
+  },
+  "abilities/ember_bolt/description": {
+    "en": "Hurl a coal of unwritten fire at the cursor. Ignites oil, ink and dry grass; turns water to steam.",
+    "fr": "Projette un charbon de feu désécrit vers le curseur. Enflamme l'huile, l'encre et l'herbe sèche ; change l'eau en vapeur."
+  },
+  "abilities/rime_lance/name": {
+    "en": "Rime Lance",
+    "fr": "Lance de givre"
+  },
+  "abilities/rime_lance/description": {
+    "en": "A shard of the law WATER SHALL HOLD. Freezes water (even deep water, for a while), chills foes, freezes the wet solid.",
+    "fr": "Un éclat de la loi L'EAU TIENDRA. Gèle l'eau (même profonde, pour un temps), glace les ennemis, gèle sur place ceux qui sont trempés."
+  },
+  "affixes/kindled/name": {
+    "en": "Kindled",
+    "fr": "Embrasé"
+  },
+  "affixes/kindled/text": {
+    "en": "Light hits may set targets burning.",
+    "fr": "Les coups légers peuvent enflammer la cible."
+  },
+  "affixes/rimed/name": {
+    "en": "Rimed",
+    "fr": "Givré"
+  },
+  "affixes/rimed/text": {
+    "en": "Hits chill.",
+    "fr": "Les coups glacent."
+  },
+  "affixes/unwritten/name": {
+    "en": "Unwritten",
+    "fr": "Désécrit"
+  },
+  "affixes/unwritten/text": {
+    "en": "+30% damage, but hits add Fray.",
+    "fr": "+30 % de dégâts, mais chaque coup ajoute de l'Effiloche."
+  },
+  "affixes/hungering/name": {
+    "en": "Hungering",
+    "fr": "Affamé"
+  },
+  "affixes/hungering/text": {
+    "en": "Kills restore Ember.",
+    "fr": "Les victimes rendent de la Braise."
+  },
+  "affixes/of_smoke/name": {
+    "en": "of Smoke",
+    "fr": "de fumée"
+  },
+  "affixes/of_smoke/text": {
+    "en": "Dodging leaves steam cover.",
+    "fr": "L'esquive laisse un voile de vapeur."
+  },
+  "affixes/of_shattering/name": {
+    "en": "of Shattering",
+    "fr": "de l'éclat"
+  },
+  "affixes/of_shattering/text": {
+    "en": "Heavy hits shatter frozen foes.",
+    "fr": "Les coups lourds font éclater les ennemis gelés."
+  },
+  "affixes/of_the_tallow_saint/name": {
+    "en": "of the Tallow Saint",
+    "fr": "de la Sainte de suif"
+  },
+  "affixes/of_the_tallow_saint/text": {
+    "en": "+15 max health.",
+    "fr": "+15 santé max."
+  },
+  "affixes/of_ashwalking/name": {
+    "en": "of Ash-Walking",
+    "fr": "du marche-cendre"
+  },
+  "affixes/of_ashwalking/text": {
+    "en": "Burning ground can't hurt you.",
+    "fr": "Le sol en feu ne peut pas vous blesser."
+  },
+  "affixes/of_the_quiet_mind/name": {
+    "en": "of the Quiet Mind",
+    "fr": "de l'esprit calme"
+  },
+  "affixes/of_the_quiet_mind/text": {
+    "en": "Less Fray from casting.",
+    "fr": "Moins d'Effiloche en lançant des sorts."
+  },
+  "affixes/of_scavenging/name": {
+    "en": "of the Scavenger",
+    "fr": "du charognard"
+  },
+  "affixes/of_scavenging/text": {
+    "en": "More loot; echoes linger.",
+    "fr": "Plus de butin ; les échos s'attardent."
+  },
+  "cosmetics/cloth/name": {
+    "en": "Cloth dyes",
+    "fr": "Teintures"
+  },
+  "cosmetics/hair_none/name": {
+    "en": "Shaved",
+    "fr": "Rasé"
+  },
+  "cosmetics/hair_short/name": {
+    "en": "Cropped",
+    "fr": "Court"
+  },
+  "cosmetics/hair_long/name": {
+    "en": "Long",
+    "fr": "Long"
+  },
+  "cosmetics/hair_braid/name": {
+    "en": "Braid",
+    "fr": "Tresse"
+  },
+  "cosmetics/hair_topknot/name": {
+    "en": "Topknot",
+    "fr": "Chignon haut"
+  },
+  "cosmetics/hair_wild/name": {
+    "en": "Unkempt",
+    "fr": "Hirsute"
+  },
+  "cosmetics/hair_flame/name": {
+    "en": "Flame crest",
+    "fr": "Crête de flammes"
+  },
+  "cosmetics/hair_smoulder/name": {
+    "en": "Smouldering locks",
+    "fr": "Mèches couvantes"
+  },
+  "cosmetics/hair_quill/name": {
+    "en": "Quill fringe",
+    "fr": "Frange de plumes"
+  },
+  "cosmetics/outfit_cloak/name": {
+    "en": "Wayfarer's cloak",
+    "fr": "Cape de voyage"
+  },
+  "cosmetics/outfit_coat/name": {
+    "en": "Long coat",
+    "fr": "Manteau long"
+  },
+  "cosmetics/outfit_robe/name": {
+    "en": "Scribe's robe",
+    "fr": "Robe de scribe"
+  },
+  "cosmetics/outfit_jerkin/name": {
+    "en": "Jerkin and breeches",
+    "fr": "Pourpoint et culottes"
+  },
+  "cosmetics/outfit_wraps/name": {
+    "en": "Grave wrappings",
+    "fr": "Bandelettes funéraires"
+  },
+  "cosmetics/mark_none/name": {
+    "en": "None",
+    "fr": "Aucune"
+  },
+  "cosmetics/mark_scar/name": {
+    "en": "Scar",
+    "fr": "Cicatrice"
+  },
+  "cosmetics/mark_freckles/name": {
+    "en": "Freckles",
+    "fr": "Taches de rousseur"
+  },
+  "cosmetics/mark_ash/name": {
+    "en": "Ash tattoos",
+    "fr": "Tatouages de cendre"
+  },
+  "cosmetics/mark_paint/name": {
+    "en": "War paint",
+    "fr": "Peinture de guerre"
+  },
+  "cosmetics/mark_blot/name": {
+    "en": "Ink blot",
+    "fr": "Pâté d'encre"
+  },
+  "dialogue/cale/nodes/intro/text": {
+    "en": "Peace, unwritten one. I am Cale, a brother of the Cinder Choir.\n\nThe Warden thinks the spring is poisoned. She is wrong. The ink is the Ledger, writing itself back into the world — slowly, lovingly. The spring is its first new page.",
+    "fr": "Paix, âme désécrite. Je suis Cale, frère du Chœur des Cendres.\n\nLa Gardienne croit la source empoisonnée. Elle se trompe. L'encre, c'est le Registre qui se réécrit dans le monde, lentement, avec amour. La source est sa première page nouvelle."
+  },
+  "dialogue/cale/nodes/intro/options/0/text": {
+    "en": "What do you want from me?",
+    "fr": "Qu'attendez-vous de moi ?"
+  },
+  "dialogue/cale/nodes/intro/options/1/text": {
+    "en": "Who are the Cinder Choir?",
+    "fr": "Qui est le Chœur des Cendres ?"
+  },
+  "dialogue/cale/nodes/intro/options/2/text": {
+    "en": "You're not telling me everything.",
+    "fr": "Vous ne me dites pas tout."
+  },
+  "dialogue/cale/nodes/intro/options/3/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/choir/text": {
+    "en": "We sing the old laws so they are not forgotten. When the Ledger is whole again there will be no more Blank, no more ruptures, no more hounds. Everything will hold still, and be safe.",
+    "fr": "Nous chantons les lois anciennes pour qu'on ne les oublie pas. Quand le Registre sera de nouveau entier, il n'y aura plus de Blanc, plus de ruptures, plus de chiens. Tout tiendra immobile, et tout sera sauf."
+  },
+  "dialogue/cale/nodes/choir/options/0/text": {
+    "en": "And what do you want from me?",
+    "fr": "Et qu'attendez-vous de moi ?"
+  },
+  "dialogue/cale/nodes/choir/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/ask/text": {
+    "en": "The Leech-Mother is the ink's shepherd. Don't kill her. Instead, pour this tincture into the spring at the old shrine. It will finish the rite, and the ink will settle into Lanternfast's well as song.\n\nLanternfast will be the first town rewritten. They will thank you, in time.",
+    "fr": "La Mère-Sangsue est la bergère de l'encre. Ne la tuez pas. Versez plutôt cette teinture dans la source, au vieil autel. Elle achèvera le rite, et l'encre se déposera en chant dans le puits de Tiens-Lanterne.\n\nTiens-Lanterne sera la première ville réécrite. On vous en remerciera, avec le temps."
+  },
+  "dialogue/cale/nodes/ask/options/0/text": {
+    "en": "I'll do it. Give me the tincture.",
+    "fr": "Je le ferai. Donnez-moi la teinture."
+  },
+  "dialogue/cale/nodes/ask/options/1/text": {
+    "en": "And if I refuse?",
+    "fr": "Et si je refuse ?"
+  },
+  "dialogue/cale/nodes/ask/options/2/text": {
+    "en": "Intimidate: Tell me what the ink does to people, or I find out on you.",
+    "fr": "Intimider : Dites-moi ce que l'encre fait aux gens, ou je le découvre sur vous."
+  },
+  "dialogue/cale/nodes/ask/options/3/text": {
+    "en": "No.",
+    "fr": "Non."
+  },
+  "dialogue/cale/nodes/refuse_q/text": {
+    "en": "Then you kill a shepherd, and the Warden drinks grey water for another fifty years. The Choir remembers its friends. A ring of our order goes to whoever completes the rite.",
+    "fr": "Alors vous tuerez une bergère, et la Gardienne boira de l'eau grise cinquante ans de plus. Le Chœur n'oublie pas ses amis. Une bague de notre ordre revient à qui achève le rite."
+  },
+  "dialogue/cale/nodes/refuse_q/options/0/text": {
+    "en": "Give me the tincture.",
+    "fr": "Donnez-moi la teinture."
+  },
+  "dialogue/cale/nodes/refuse_q/options/1/text": {
+    "en": "No.",
+    "fr": "Non."
+  },
+  "dialogue/cale/nodes/agreed/text": {
+    "en": "Kneel at the shrine by the spring, and pour. Sing, if you know how.\n\nAnd unwritten one — the Warden need not know until it is done.",
+    "fr": "Agenouillez-vous à l'autel près de la source, et versez. Chantez, si vous savez.\n\nEt, âme désécrite… la Gardienne n'a pas besoin de savoir avant que ce soit fait."
+  },
+  "dialogue/cale/nodes/agreed/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/press_ok/text": {
+    "en": "...Clever. Very well. Still means still. When the ink writes a thing, the thing stops — changing, hungering, ageing. Some of us call that peace. Some of us think it is only a slower death. I have not decided.\n\nHave you?",
+    "fr": "…Habile. Soit. Immobile veut dire immobile. Quand l'encre écrit une chose, la chose s'arrête : elle cesse de changer, d'avoir faim, de vieillir. Certains d'entre nous appellent cela la paix. D'autres pensent que ce n'est qu'une mort plus lente. Je n'ai pas tranché.\n\nEt vous ?"
+  },
+  "dialogue/cale/nodes/press_ok/options/0/text": {
+    "en": "Go on.",
+    "fr": "Continuez."
+  },
+  "dialogue/cale/nodes/press_ok/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/press_fail/text": {
+    "en": "I tell you everything the song allows.",
+    "fr": "Je vous dis tout ce que le chant permet."
+  },
+  "dialogue/cale/nodes/press_fail/options/0/text": {
+    "en": "Then what do you want?",
+    "fr": "Alors que voulez-vous ?"
+  },
+  "dialogue/cale/nodes/press_fail/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/threat_fail/text": {
+    "en": "Strike me if you like. The ink will still be singing when you're done.",
+    "fr": "Frappez-moi si cela vous chante. L'encre chantera encore quand vous aurez fini."
+  },
+  "dialogue/cale/nodes/threat_fail/options/0/text": {
+    "en": "...Fine.",
+    "fr": "…Bien."
+  },
+  "dialogue/cale/nodes/threat_fail/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/waiting/text": {
+    "en": "The tincture is warm in your hands, isn't it? The spring is waiting.",
+    "fr": "La teinture est tiède entre vos mains, n'est-ce pas ? La source attend."
+  },
+  "dialogue/cale/nodes/waiting/options/0/text": {
+    "en": "Not yet.",
+    "fr": "Pas encore."
+  },
+  "dialogue/cale/nodes/waiting/options/1/text": {
+    "en": "I've changed my mind. Take it back.",
+    "fr": "J'ai changé d'avis. Reprenez-la."
+  },
+  "dialogue/cale/nodes/disappointed/text": {
+    "en": "Then go with whatever law you have left.",
+    "fr": "Alors allez avec ce qu'il vous reste de loi."
+  },
+  "dialogue/cale/nodes/disappointed/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/refused/text": {
+    "en": "Still here, unwritten? The offer stands.",
+    "fr": "Encore là, âme désécrite ? L'offre tient toujours."
+  },
+  "dialogue/cale/nodes/refused/options/0/text": {
+    "en": "Give me the tincture after all.",
+    "fr": "Donnez-moi la teinture, finalement."
+  },
+  "dialogue/cale/nodes/refused/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/too_late/text": {
+    "en": "You've made your choice, then.",
+    "fr": "Vous avez donc fait votre choix."
+  },
+  "dialogue/cale/nodes/too_late/variants/0/text": {
+    "en": "You killed the shepherd. The ink will scatter now, wild and unsung. I hope you can live with what grows from it.",
+    "fr": "Vous avez tué la bergère. L'encre va se disperser, sauvage et sans chant. J'espère que vous saurez vivre avec ce qui en poussera."
+  },
+  "dialogue/cale/nodes/too_late/variants/1/text": {
+    "en": "You burned the page. Fifty years of patience, and you burned it in an afternoon. The Choir will remember.",
+    "fr": "Vous avez brûlé la page. Cinquante ans de patience, brûlés en un après-midi. Le Chœur s'en souviendra."
+  },
+  "dialogue/cale/nodes/too_late/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/after_rite/text": {
+    "en": "You did it. Listen — the well is singing. Take this. Whatever you were before, you are one of us now.",
+    "fr": "Vous l'avez fait. Écoutez : le puits chante. Prenez ceci. Quoi que vous ayez été avant, vous êtes des nôtres à présent."
+  },
+  "dialogue/cale/nodes/after_rite/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/cale/nodes/friend/text": {
+    "en": "Sing with us at dusk, sibling. The ink remembers you kindly.",
+    "fr": "Chantez avec nous au crépuscule. L'encre garde de vous un souvenir tendre."
+  },
+  "dialogue/cale/nodes/friend/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/intro/text": {
+    "en": "You walked out of the Crater. People don't, usually.\n\nI'm Ilse Marrow. I keep the hearth-page of Lanternfast, and the hearth keeps us. Whatever you are, you're welcome to the warmth — but not the water. Our well's gone black.",
+    "fr": "Quelqu'un qui sort du Cratère sur ses deux jambes. Ça n'arrive pas, d'habitude.\n\nJe suis Ilse Marrow. Je garde la page du foyer de Tiens-Lanterne, et le foyer nous garde. Qui que vous soyez, la chaleur vous est ouverte. L'eau, non. Notre puits est devenu noir."
+  },
+  "dialogue/ilse/nodes/intro/options/0/text": {
+    "en": "What happened to the well?",
+    "fr": "Qu'est-il arrivé au puits ?"
+  },
+  "dialogue/ilse/nodes/intro/options/1/text": {
+    "en": "What is this place?",
+    "fr": "Quel est cet endroit ?"
+  },
+  "dialogue/ilse/nodes/intro/options/2/text": {
+    "en": "The ash in the Crater fell upward. Does that happen often?",
+    "fr": "Dans le Cratère, la cendre tombait vers le haut. C'est fréquent ?"
+  },
+  "dialogue/ilse/nodes/intro/options/3/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/menu/text": {
+    "en": "Anything else?",
+    "fr": "Autre chose ?"
+  },
+  "dialogue/ilse/nodes/menu/options/0/text": {
+    "en": "What happened to the well?",
+    "fr": "Qu'est-il arrivé au puits ?"
+  },
+  "dialogue/ilse/nodes/menu/options/1/text": {
+    "en": "What is this place?",
+    "fr": "Quel est cet endroit ?"
+  },
+  "dialogue/ilse/nodes/menu/options/2/text": {
+    "en": "The ash in the Crater fell upward. Does that happen often?",
+    "fr": "Dans le Cratère, la cendre tombait vers le haut. C'est fréquent ?"
+  },
+  "dialogue/ilse/nodes/menu/options/3/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/well/text": {
+    "en": "Three days ago the water came up thick and dark and moving. Living ink — the kind that crawls off torn pages. Our well is fed by a channel from the spring in the Drowned Orchard, east past the ridge.\n\nI sent Tamsin, my runner. She hasn't come back.",
+    "fr": "Il y a trois jours, l'eau est remontée épaisse, sombre, et elle bougeait. De l'encre vivante, celle qui rampe hors des pages déchirées. Notre puits est alimenté par un canal qui vient de la source du Verger noyé, à l'est, derrière la crête.\n\nJ'ai envoyé Tamsin, ma messagère. Elle n'est pas revenue."
+  },
+  "dialogue/ilse/nodes/well/options/0/text": {
+    "en": "I'll find out what's fouling the spring.",
+    "fr": "Je vais trouver ce qui souille la source."
+  },
+  "dialogue/ilse/nodes/well/options/1/text": {
+    "en": "What's in it for me?",
+    "fr": "Qu'est-ce que j'y gagne ?"
+  },
+  "dialogue/ilse/nodes/well/options/2/text": {
+    "en": "Not my problem.",
+    "fr": "Ce n'est pas mon problème."
+  },
+  "dialogue/ilse/nodes/reward/text": {
+    "en": "Honest, at least. I have a warden's hook that has burned three hounds to cinders, and Tamsin's knife — if it comes to that. Clean water, and one of them is yours.",
+    "fr": "C'est franc, au moins. J'ai un crochet de gardienne qui a réduit trois chiens en cendres, et le couteau de Tamsin, s'il le faut. De l'eau claire, et l'un des deux est à vous."
+  },
+  "dialogue/ilse/nodes/reward/options/0/text": {
+    "en": "Deal.",
+    "fr": "Marché conclu."
+  },
+  "dialogue/ilse/nodes/reward/options/1/text": {
+    "en": "I'll think about it.",
+    "fr": "Je vais y réfléchir."
+  },
+  "dialogue/ilse/nodes/accept/text": {
+    "en": "Thank you. Take the road south and east, through the gap in the ridge. The orchard lives under the Edict of Kindling — anything there burns twice as hot. Mind the oil seeps. Use them, if you're clever.\n\nAnd if you find Tamsin... bring her home. One way or another.",
+    "fr": "Merci. Prenez la route au sud puis à l'est, par la brèche dans la crête. Le verger vit sous l'Édit de l'Embrasement : tout y brûle deux fois plus fort. Attention aux suintements d'huile. Servez-vous-en, si vous avez de la jugeote.\n\nEt si vous trouvez Tamsin… ramenez-la. D'une façon ou d'une autre."
+  },
+  "dialogue/ilse/nodes/accept/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/place/text": {
+    "en": "Lanternfast. Forty souls and a page of the Ledger nailed above the hearth. It says warmth is owed to all who shelter here, and the world still listens: wounds close, and the hounds can't follow you through the gate.\n\nOutside our walls, every law is somebody else's.",
+    "fr": "Tiens-Lanterne. Quarante âmes et une page du Registre clouée au-dessus du foyer. Elle dit que la chaleur est due à quiconque s'abrite ici, et le monde l'écoute encore : les plaies se ferment, et les chiens ne passent pas la porte.\n\nHors de nos murs, chaque loi appartient à quelqu'un d'autre."
+  },
+  "dialogue/ilse/nodes/place/options/0/text": {
+    "en": "Ask something else.",
+    "fr": "Demander autre chose."
+  },
+  "dialogue/ilse/nodes/place/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/crater_ok/text": {
+    "en": "You noticed. Most don't — they're too busy being grateful to be alive.\n\nThe Crater holds a page that remembers the sky. The old scribes said places like that are where the Ledger is trying to put itself back together. Don't tell Brother Cale I said so. He'd make a hymn of it.",
+    "fr": "Vous l'avez remarqué. La plupart ne voient rien, trop occupés à se réjouir d'être en vie.\n\nLe Cratère abrite une page qui se souvient du ciel. Les vieux scribes disaient que ces lieux-là sont ceux où le Registre essaie de se recomposer. Ne répétez pas ça à Frère Cale. Il en ferait un hymne."
+  },
+  "dialogue/ilse/nodes/crater_ok/options/0/text": {
+    "en": "Ask something else.",
+    "fr": "Demander autre chose."
+  },
+  "dialogue/ilse/nodes/crater_ok/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/crater_fail/text": {
+    "en": "Ash does what ash likes. That's the whole trouble with the world.",
+    "fr": "La cendre fait ce qu'elle veut. C'est tout le problème du monde."
+  },
+  "dialogue/ilse/nodes/crater_fail/options/0/text": {
+    "en": "Ask something else.",
+    "fr": "Demander autre chose."
+  },
+  "dialogue/ilse/nodes/crater_fail/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/progress/text": {
+    "en": "The spring. East, through the ridge. Tamsin went that way.",
+    "fr": "La source. À l'est, par la crête. Tamsin est partie par là."
+  },
+  "dialogue/ilse/nodes/progress/variants/0/text": {
+    "en": "You've learned something out there; I can see it on you. Ink burns, doesn't it? Then burn it clean, if you can.",
+    "fr": "Vous avez appris quelque chose là-bas, ça se voit. L'encre brûle, n'est-ce pas ? Alors brûlez-la jusqu'à ce que l'eau soit propre, si vous le pouvez."
+  },
+  "dialogue/ilse/nodes/progress/options/0/text": {
+    "en": "I found Tamsin. The hounds got to her first.",
+    "fr": "J'ai trouvé Tamsin. Les chiens l'ont eue avant moi."
+  },
+  "dialogue/ilse/nodes/progress/options/1/text": {
+    "en": "On my way.",
+    "fr": "J'y vais."
+  },
+  "dialogue/ilse/nodes/early_report/text": {
+    "en": "You've been to the spring already, haven't you? Something's changed in the well. Tell me.",
+    "fr": "Vous revenez déjà de la source, n'est-ce pas ? Quelque chose a changé dans le puits. Racontez-moi."
+  },
+  "dialogue/ilse/nodes/early_report/options/0/text": {
+    "en": "Let me tell you what happened.",
+    "fr": "Laissez-moi vous raconter."
+  },
+  "dialogue/ilse/nodes/report/text": {
+    "en": "Tell me what you found.",
+    "fr": "Dites-moi ce que vous avez trouvé."
+  },
+  "dialogue/ilse/nodes/report/variants/0/text": {
+    "en": "The water's coming up grey instead of black. Grey I can boil. You killed it, didn't you — whatever was in the spring.",
+    "fr": "L'eau remonte grise au lieu de noire. Le gris, je sais le faire bouillir. Vous l'avez tuée, n'est-ce pas ? La chose dans la source."
+  },
+  "dialogue/ilse/nodes/report/variants/1/text": {
+    "en": "The water is... clear. Clear. I haven't seen it clear since I was a girl. What did you do?",
+    "fr": "L'eau est… claire. Claire. Je ne l'avais pas vue claire depuis que j'étais petite. Qu'avez-vous fait ?"
+  },
+  "dialogue/ilse/nodes/report/variants/2/text": {
+    "en": "The well is singing. Do you hear it? It's singing, and the children won't stop listening to it. What did you DO out there?",
+    "fr": "Le puits chante. Vous l'entendez ? Il chante, et les enfants n'arrêtent pas de l'écouter. Qu'avez-vous FAIT là-bas ?"
+  },
+  "dialogue/ilse/nodes/report/options/0/text": {
+    "en": "I found Tamsin. The hounds got to her first.",
+    "fr": "J'ai trouvé Tamsin. Les chiens l'ont eue avant moi."
+  },
+  "dialogue/ilse/nodes/report/options/1/text": {
+    "en": "A bloated leech-mother was feeding the ink. She's dead.",
+    "fr": "Une mère-sangsue boursouflée nourrissait l'encre. Elle est morte."
+  },
+  "dialogue/ilse/nodes/report/options/2/text": {
+    "en": "I burned the ink out of the spring. The mother fled into the deep.",
+    "fr": "J'ai brûlé l'encre de la source. La mère s'est enfuie dans les profondeurs."
+  },
+  "dialogue/ilse/nodes/report/options/3/text": {
+    "en": "Brother Cale asked me to finish the Choir's rite. I did.",
+    "fr": "Frère Cale m'a demandé d'achever le rite du Chœur. C'est fait."
+  },
+  "dialogue/ilse/nodes/report/options/4/text": {
+    "en": "The ink is gone. Nothing was ever wrong.",
+    "fr": "L'encre est partie. Il n'y a jamais rien eu de mal."
+  },
+  "dialogue/ilse/nodes/tamsin_told/text": {
+    "en": "...Then she found it before I did. She always did run ahead.\n\nThank you for telling me. Most wouldn't have bothered.",
+    "fr": "…Alors elle l'a trouvé avant moi. Elle courait toujours devant.\n\nMerci de me l'avoir dit. La plupart ne s'en seraient pas donné la peine."
+  },
+  "dialogue/ilse/nodes/tamsin_told/options/0/text": {
+    "en": "Go on.",
+    "fr": "Continuez."
+  },
+  "dialogue/ilse/nodes/tamsin_told/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/reward_choice/text": {
+    "en": "Then I keep my word. Take your pick.",
+    "fr": "Alors je tiens parole. Choisissez."
+  },
+  "dialogue/ilse/nodes/reward_choice/options/0/text": {
+    "en": "The Lanternhook. (Fire hook: heavy attacks ignite what they strike.)",
+    "fr": "Le Crochet-lanterne. (Crochet de feu : les attaques lourdes enflamment ce qu'elles frappent.)"
+  },
+  "dialogue/ilse/nodes/reward_choice/options/1/text": {
+    "en": "Tamsin's quiet knife. (Fast knife: backstabs, steam on dodge.)",
+    "fr": "Le couteau silencieux de Tamsin. (Couteau rapide : attaques dans le dos, vapeur à l'esquive.)"
+  },
+  "dialogue/ilse/nodes/reward_choice/options/2/text": {
+    "en": "I'll take both. I earned them.",
+    "fr": "Je prends les deux. Je les ai méritées."
+  },
+  "dialogue/ilse/nodes/both_ok/text": {
+    "en": "...Ha. Fine. Fine! Take both and get out of my sight before I change my mind.",
+    "fr": "…Ha. Soit. Soit ! Prenez les deux et disparaissez avant que je change d'avis."
+  },
+  "dialogue/ilse/nodes/both_ok/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/both_fail/text": {
+    "en": "No. Pick one, or pick none.",
+    "fr": "Non. Choisissez-en une, ou aucune."
+  },
+  "dialogue/ilse/nodes/both_fail/options/0/text": {
+    "en": "Fine.",
+    "fr": "Bien."
+  },
+  "dialogue/ilse/nodes/thanks/text": {
+    "en": "Lanternfast won't forget this. Neither will I. If you're looking for trouble, the Hush lies west — the old graveyard. Nothing there stays dead. Don't go until you're ready.",
+    "fr": "Tiens-Lanterne n'oubliera pas. Moi non plus. Si vous cherchez les ennuis, le Silence est à l'ouest : le vieux cimetière. Là-bas, rien ne reste mort. N'y allez pas tant que vous n'êtes pas de taille."
+  },
+  "dialogue/ilse/nodes/thanks/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/choir_end/text": {
+    "en": "Get out.\n\n...No. Stay. You're the only one who came back. But don't ever ask me for anything again.",
+    "fr": "Dehors.\n\n…Non. Restez. Personne d'autre n'est revenu. Mais ne me demandez plus jamais rien."
+  },
+  "dialogue/ilse/nodes/choir_end/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/lie_ok/text": {
+    "en": "...Nothing wrong. Yes. Yes, you're right. Listen to it — it's almost beautiful. Thank you, stranger.\n\n(She believes you. You are not sure that is better.)",
+    "fr": "…Rien de mal. Oui. Oui, vous avez raison. Écoutez-le, c'est presque beau. Merci.\n\n(Elle vous croit. Rien ne dit que ce soit mieux.)"
+  },
+  "dialogue/ilse/nodes/lie_ok/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/lie_fail/text": {
+    "en": "Don't. I've buried enough liars to know the look. The Choir got to you.",
+    "fr": "Non. J'ai enterré assez de menteurs pour reconnaître cet air-là. Le Chœur vous a eu."
+  },
+  "dialogue/ilse/nodes/lie_fail/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/after/text": {
+    "en": "Back again.",
+    "fr": "Vous revoilà."
+  },
+  "dialogue/ilse/nodes/after/variants/0/text": {
+    "en": "The children are drinking from the well again. That's your doing, stranger. Lanternfast remembers.",
+    "fr": "Les enfants boivent de nouveau au puits. C'est votre œuvre. Tiens-Lanterne s'en souvient."
+  },
+  "dialogue/ilse/nodes/after/variants/1/text": {
+    "en": "The well sings at night. I've stopped sleeping.",
+    "fr": "Le puits chante la nuit. J'ai cessé de dormir."
+  },
+  "dialogue/ilse/nodes/after/options/0/text": {
+    "en": "The bell in the Hush has stopped.",
+    "fr": "La cloche du Silence s'est tue."
+  },
+  "dialogue/ilse/nodes/after/options/1/text": {
+    "en": "What lies behind the sealed door in the orchard cliffs?",
+    "fr": "Qu'y a-t-il derrière la porte scellée, dans les falaises du verger ?"
+  },
+  "dialogue/ilse/nodes/after/options/2/text": {
+    "en": "I've read about the night the Ledger burned. The Scribes lit the fire themselves.",
+    "fr": "J'ai lu un récit de la nuit où le Registre a brûlé. Les Scribes ont allumé le feu eux-mêmes."
+  },
+  "dialogue/ilse/nodes/after/options/3/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/scriptorium/text": {
+    "en": "The Scriptorium. Where the Ledger was kept. Ink seals it now, and they say the lock wants a name — the name of whoever struck the match. Nobody living knows it.\n\nYou look at me like you might.",
+    "fr": "Le Scriptorium. C'est là qu'on gardait le Registre. L'encre le scelle aujourd'hui, et on dit que la serrure réclame un nom : celui de qui a frotté l'allumette. Personne de vivant ne le connaît.\n\nVous me regardez comme si vous, peut-être."
+  },
+  "dialogue/ilse/nodes/scriptorium/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/burning/text": {
+    "en": "The Scribes? On purpose?\n\n...My grandmother said the fire started in the Scriptorium and walked out of it on two legs. I thought it was a story for frightening children.",
+    "fr": "Les Scribes ? Exprès ?\n\n…Ma grand-mère disait que le feu avait pris dans le Scriptorium et en était sorti sur deux jambes. Je croyais que c'était une histoire pour effrayer les enfants."
+  },
+  "dialogue/ilse/nodes/burning/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/ilse/nodes/hush_told/text": {
+    "en": "I heard. Half the town came out to listen to the quiet.\n\nTake these marks. It isn't much, but it's what we have.",
+    "fr": "Je sais. La moitié du village est sortie écouter le silence.\n\nPrenez ces marques. Ce n'est pas grand-chose, mais c'est ce que nous avons."
+  },
+  "dialogue/ilse/nodes/hush_told/variants/0/text": {
+    "en": "You read them? All of them? My grandmother's sister is in that book.\n\nTake these marks. It isn't much, but it's what we have.",
+    "fr": "Vous les avez lus ? Tous ? La sœur de ma grand-mère est dans ce livre.\n\nPrenez ces marques. Ce n'est pas grand-chose, mais c'est ce que nous avons."
+  },
+  "dialogue/ilse/nodes/hush_told/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/spring/nodes/shrine/speaker": {
+    "en": "Spring Shrine",
+    "fr": "Autel de la source"
+  },
+  "dialogue/spring/nodes/shrine/text": {
+    "en": "A little shrine of river stones. Ink laps at its base and draws back, laps and draws back, like breathing. In the deep pool, something vast turns over in its sleep.",
+    "fr": "Un petit autel de galets. L'encre lèche sa base et se retire, lèche et se retire, comme une respiration. Au fond du bassin, quelque chose d'immense se retourne dans son sommeil."
+  },
+  "dialogue/spring/nodes/shrine/options/0/text": {
+    "en": "Pour the Choir's tincture into the spring.",
+    "fr": "Verser la teinture du Chœur dans la source."
+  },
+  "dialogue/spring/nodes/shrine/options/1/text": {
+    "en": "(Remember: ink burns like oil.) Think about fire.",
+    "fr": "(Souvenez-vous : l'encre brûle comme l'huile.) Penser au feu."
+  },
+  "dialogue/spring/nodes/shrine/options/2/text": {
+    "en": "Study the ink.",
+    "fr": "Étudier l'encre."
+  },
+  "dialogue/spring/nodes/shrine/options/3/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/spring/nodes/poured/speaker": {
+    "en": "Spring Shrine",
+    "fr": "Autel de la source"
+  },
+  "dialogue/spring/nodes/poured/text": {
+    "en": "The tincture spreads through the ink like a bruise. The ink goes still... and then begins, very softly, to hum.\n\nFar to the west, in Lanternfast, you imagine the well beginning to sing.",
+    "fr": "La teinture se répand dans l'encre comme un hématome. L'encre s'immobilise… puis se met, très doucement, à bourdonner.\n\nLoin à l'ouest, à Tiens-Lanterne, vous imaginez le puits qui commence à chanter."
+  },
+  "dialogue/spring/nodes/poured/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/spring/nodes/think/speaker": {
+    "en": "Spring Shrine",
+    "fr": "Autel de la source"
+  },
+  "dialogue/spring/nodes/think/text": {
+    "en": "The ink shrinks from heat the way it shrinks from you. Under the Edict of Kindling, one good flame would run all the way around the pool. Burn enough of it and the spring will remember being water — and whatever feeds here will have nothing left to eat.",
+    "fr": "L'encre se rétracte devant la chaleur comme elle se rétracte devant vous. Sous l'Édit de l'Embrasement, une bonne flamme ferait tout le tour du bassin. Brûlez-en assez, et la source se souviendra d'avoir été de l'eau. Ce qui se nourrit ici n'aura plus rien à manger."
+  },
+  "dialogue/spring/nodes/think/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/spring/nodes/study_ok/speaker": {
+    "en": "Spring Shrine",
+    "fr": "Autel de la source"
+  },
+  "dialogue/spring/nodes/study_ok/text": {
+    "en": "You watch long enough to see the ink flinch from a falling ember, then catch, briefly, with a violet flame. It burns. Ink is only oil that remembers.",
+    "fr": "Vous observez assez longtemps pour voir l'encre tressaillir sous une braise qui tombe, puis s'embraser un instant d'une flamme violette. Elle brûle. L'encre n'est que de l'huile qui se souvient."
+  },
+  "dialogue/spring/nodes/study_ok/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/spring/nodes/study_fail/speaker": {
+    "en": "Spring Shrine",
+    "fr": "Autel de la source"
+  },
+  "dialogue/spring/nodes/study_fail/text": {
+    "en": "The ink watches you back. You look away first.",
+    "fr": "L'encre vous regarde à son tour. C'est vous qui détournez les yeux en premier."
+  },
+  "dialogue/spring/nodes/study_fail/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/spring/nodes/settled/speaker": {
+    "en": "Spring Shrine",
+    "fr": "Autel de la source"
+  },
+  "dialogue/spring/nodes/settled/text": {
+    "en": "The spring is quiet.",
+    "fr": "La source est calme."
+  },
+  "dialogue/spring/nodes/settled/variants/0/text": {
+    "en": "Clear water bubbles up between the stones. You can see the bottom of the pool, and something glinting on the little island in its middle.",
+    "fr": "Une eau claire bouillonne entre les pierres. On voit le fond du bassin, et quelque chose qui brille sur l'îlot en son milieu."
+  },
+  "dialogue/spring/nodes/settled/variants/1/text": {
+    "en": "Without its mother the ink is thinning, drifting apart in slow black threads.",
+    "fr": "Sans sa mère, l'encre s'éclaircit et se défait en lents filaments noirs."
+  },
+  "dialogue/spring/nodes/settled/variants/2/text": {
+    "en": "The spring hums to itself. When you lean close, the ink rearranges into letters you almost recognise.",
+    "fr": "La source fredonne pour elle-même. Quand vous vous penchez, l'encre se réarrange en lettres que vous reconnaissez presque."
+  },
+  "dialogue/spring/nodes/settled/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/well/nodes/fouled/speaker": {
+    "en": "Lanternfast Well",
+    "fr": "Puits de Tiens-Lanterne"
+  },
+  "dialogue/well/nodes/fouled/text": {
+    "en": "The well is full to the brim with something black that moves against the wind. A bucket hangs in it, half-dissolved.",
+    "fr": "Le puits est plein à ras bord d'une chose noire qui bouge contre le vent. Un seau y pend, à moitié dissous."
+  },
+  "dialogue/well/nodes/fouled/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/well/nodes/clean/speaker": {
+    "en": "Lanternfast Well",
+    "fr": "Puits de Tiens-Lanterne"
+  },
+  "dialogue/well/nodes/clean/text": {
+    "en": "Cold, clean water. You drink, and feel a little more like whoever you used to be.",
+    "fr": "Une eau froide et propre. Vous buvez, et vous ressemblez un peu plus à la personne que vous étiez."
+  },
+  "dialogue/well/nodes/clean/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/well/nodes/singing/speaker": {
+    "en": "Lanternfast Well",
+    "fr": "Puits de Tiens-Lanterne"
+  },
+  "dialogue/well/nodes/singing/text": {
+    "en": "The water hums. Your reflection mouths words you don't know, and does not blink when you do.",
+    "fr": "L'eau bourdonne. Votre reflet articule des mots que vous ne connaissez pas, et ne cligne pas des yeux quand vous le faites."
+  },
+  "dialogue/well/nodes/singing/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/odo/nodes/gift/text": {
+    "en": "Odo Fenn, tinker. Came back the moment I heard the water ran clean. Here — flasks, on the house.\n\nA tinker's advice: oil on hounds, then fire. Water on anything burning, including you. Water then rime, and a thing stays put.",
+    "fr": "Odo Fenn, rétameur. Je suis revenu dès que j'ai su que l'eau coulait claire. Tiens : des fioles, c'est la maison qui offre.\n\nUn conseil de rétameur : de l'huile sur les chiens, puis le feu. De l'eau sur tout ce qui brûle, toi compris. De l'eau puis du givre, et la chose ne bouge plus."
+  },
+  "dialogue/odo/nodes/gift/options/0/text": {
+    "en": "Show me what you sell.",
+    "fr": "Montrez-moi ce que vous vendez."
+  },
+  "dialogue/odo/nodes/gift/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/odo/nodes/later/text": {
+    "en": "Flasks are cheap; skin's expensive. And mind the Hush — there's a bell in that chapel that still rings.",
+    "fr": "Les fioles, c'est pas cher ; la peau, si. Et méfie-toi du Silence : il y a une cloche dans cette chapelle qui sonne encore."
+  },
+  "dialogue/odo/nodes/later/variants/0/text": {
+    "en": "Heard the bell stop. First quiet night in fifty years. What do you need?",
+    "fr": "J'ai entendu la cloche s'arrêter. Première nuit tranquille en cinquante ans. Qu'est-ce qu'il te faut ?"
+  },
+  "dialogue/odo/nodes/later/options/0/text": {
+    "en": "Show me what you sell.",
+    "fr": "Montrez-moi ce que vous vendez."
+  },
+  "dialogue/odo/nodes/later/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/odo/nodes/shop/text": {
+    "en": "Cinder marks only. Hounds swallow them, don't ask me why.",
+    "fr": "Marques de cendre uniquement. Les chiens en avalent, me demande pas pourquoi."
+  },
+  "dialogue/odo/nodes/shop/options/0/text": {
+    "en": "Two oil flasks — 3 marks",
+    "fr": "Deux fioles d'huile — 3 marques"
+  },
+  "dialogue/odo/nodes/shop/options/1/text": {
+    "en": "Two water flasks — 3 marks",
+    "fr": "Deux fioles d'eau — 3 marques"
+  },
+  "dialogue/odo/nodes/shop/options/2/text": {
+    "en": "Three loaves of ashbread — 4 marks",
+    "fr": "Trois miches de pain de cendre — 4 marques"
+  },
+  "dialogue/odo/nodes/shop/options/3/text": {
+    "en": "An oilskin coat — 10 marks",
+    "fr": "Un manteau de toile cirée — 10 marques"
+  },
+  "dialogue/odo/nodes/shop/options/4/text": {
+    "en": "Haggle: “Lanternfast owes me, Odo.”",
+    "fr": "Marchander : « Tiens-Lanterne a une dette envers moi, Odo. »"
+  },
+  "dialogue/odo/nodes/shop/options/5/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/odo/nodes/haggle/text": {
+    "en": "...The Warden does speak well of you. Fine. Take these back, call it a loan I'll forget about.",
+    "fr": "…La Gardienne dit du bien de toi, c'est vrai. Soit. Reprends ça, disons que c'est un prêt que j'oublierai."
+  },
+  "dialogue/odo/nodes/haggle/options/0/text": {
+    "en": "Back to the wares.",
+    "fr": "Revenir à la marchandise."
+  },
+  "dialogue/odo/nodes/haggle/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/folio/nodes/lectern/speaker": {
+    "en": "Chained Lectern",
+    "fr": "Lutrin enchaîné"
+  },
+  "dialogue/folio/nodes/lectern/text": {
+    "en": "A charred folio, chained to the lectern. Page after page of names, every one struck through. The bell tolls each time your eyes move down the list.",
+    "fr": "Un folio calciné, enchaîné au lutrin. Des pages et des pages de noms, tous barrés. La cloche sonne chaque fois que vos yeux descendent la liste."
+  },
+  "dialogue/folio/nodes/lectern/options/0/text": {
+    "en": "Read the folio.",
+    "fr": "Lire le folio."
+  },
+  "dialogue/folio/nodes/lectern/options/1/text": {
+    "en": "Read the names aloud, every one, so they are counted.",
+    "fr": "Lire les noms à voix haute, tous, pour qu'ils soient comptés."
+  },
+  "dialogue/folio/nodes/lectern/options/2/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/folio/nodes/named/speaker": {
+    "en": "Chained Lectern",
+    "fr": "Lutrin enchaîné"
+  },
+  "dialogue/folio/nodes/named/text": {
+    "en": "You read until your voice is ash. With every name the bell rings softer, and the last name is barely a breath. Behind you, something enormous kneels.",
+    "fr": "Vous lisez jusqu'à ce que votre voix ne soit plus que cendre. À chaque nom la cloche sonne plus doucement, et le dernier nom n'est guère qu'un souffle. Derrière vous, quelque chose d'énorme s'agenouille."
+  },
+  "dialogue/folio/nodes/named/options/0/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/folio/nodes/falter/speaker": {
+    "en": "Chained Lectern",
+    "fr": "Lutrin enchaîné"
+  },
+  "dialogue/folio/nodes/falter/text": {
+    "en": "The names pile up in your throat. The Blank leans in close to listen. (+25 Fray. You can try again, if you dare.)",
+    "fr": "Les noms s'entassent dans votre gorge. Le Blanc se penche tout près pour écouter. (+25 d'Effiloche. Vous pouvez réessayer, si vous l'osez.)"
+  },
+  "dialogue/folio/nodes/falter/options/0/text": {
+    "en": "Try again.",
+    "fr": "Réessayer."
+  },
+  "dialogue/folio/nodes/falter/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "dialogue/folio/nodes/quiet/speaker": {
+    "en": "Chained Lectern",
+    "fr": "Lutrin enchaîné"
+  },
+  "dialogue/folio/nodes/quiet/text": {
+    "en": "The folio lies open. The ink of the struck-out lines has gone pale, as if the names have finally been allowed to rest.",
+    "fr": "Le folio est ouvert. L'encre des lignes barrées a pâli, comme si les noms avaient enfin le droit de se reposer."
+  },
+  "dialogue/folio/nodes/quiet/options/0/text": {
+    "en": "Read the folio.",
+    "fr": "Lire le folio."
+  },
+  "dialogue/folio/nodes/quiet/options/1/text": {
+    "en": "[Leave]",
+    "fr": "[Partir]"
+  },
+  "edicts/blank/name": {
+    "en": "The Blank",
+    "fr": "Le Blanc"
+  },
+  "edicts/blank/text": {
+    "en": "No page governs here. Reality holds by habit alone.",
+    "fr": "Aucune page ne gouverne ici. La réalité ne tient que par habitude."
+  },
+  "edicts/hearth/name": {
+    "en": "Edict of the Hearth",
+    "fr": "Édit du Foyer"
+  },
+  "edicts/hearth/text": {
+    "en": "Here, warmth is owed to all who shelter. Wounds close; hostile things cannot cross the threshold.",
+    "fr": "Ici, la chaleur est due à quiconque s'abrite. Les plaies se ferment ; les choses hostiles ne peuvent franchir le seuil."
+  },
+  "edicts/kindling/name": {
+    "en": "Edict of Kindling",
+    "fr": "Édit de l'Embrasement"
+  },
+  "edicts/kindling/text": {
+    "en": "Here, fire is hungry. Flames spread twice as fast and bite deeper.",
+    "fr": "Ici, le feu a faim. Les flammes se propagent deux fois plus vite et mordent plus profond."
+  },
+  "edicts/return/name": {
+    "en": "Edict of Return",
+    "fr": "Édit du Retour"
+  },
+  "edicts/return/text": {
+    "en": "Here, the dead do not stay down. Unharvested echoes rise again. Healing is halved.",
+    "fr": "Ici, les morts ne restent pas à terre. Les échos non récoltés se relèvent. Les soins sont réduits de moitié."
+  },
+  "edicts/rising_ash/name": {
+    "en": "Edict of Rising Ash",
+    "fr": "Édit de la Cendre montante"
+  },
+  "edicts/rising_ash/text": {
+    "en": "Here, ash falls upward — back toward the sky it came from.",
+    "fr": "Ici, la cendre tombe vers le haut, vers le ciel d'où elle vient."
+  },
+  "edicts/hearth_dimmed/name": {
+    "en": "Edict of the Hearth (Dimmed)",
+    "fr": "Édit du Foyer (affaibli)"
+  },
+  "edicts/hearth_dimmed/text": {
+    "en": "The hearth-page still holds, barely. The well sings beneath it, and the warmth is thin.",
+    "fr": "La page du foyer tient encore, à peine. Le puits chante dessous, et la chaleur est mince."
+  },
+  "edicts/choir_song/name": {
+    "en": "Edict of the Choir",
+    "fr": "Édit du Chœur"
+  },
+  "edicts/choir_song/text": {
+    "en": "Here, the ink sings, and fire forgets how to spread. Echoes rise.",
+    "fr": "Ici, l'encre chante et le feu oublie comment se propager. Les échos se relèvent."
+  },
+  "edicts/clear_water/name": {
+    "en": "Edict of Clear Water",
+    "fr": "Édit de l'Eau claire"
+  },
+  "edicts/clear_water/text": {
+    "en": "Here, water remembers being clean. Wounds close slowly; Fray washes away.",
+    "fr": "Ici, l'eau se souvient d'avoir été propre. Les plaies se ferment lentement ; l'Effiloche s'en va au lavage."
+  },
+  "edicts/quiet_return/name": {
+    "en": "Edict of Return (Broken)",
+    "fr": "Édit du Retour (brisé)"
+  },
+  "edicts/quiet_return/text": {
+    "en": "With the bell silenced, the dead of the Hush rest. Echoes no longer rise.",
+    "fr": "La cloche réduite au silence, les morts du Silence reposent. Les échos ne se relèvent plus."
+  },
+  "enemies/mire_hound/name": {
+    "en": "Mire Hound",
+    "fr": "Chien des marais"
+  },
+  "enemies/mire_hound/description": {
+    "en": "Lean pack hunters with oil-slick pelts. They circle, then lunge. They eat echoes.",
+    "fr": "Chasseurs en meute, efflanqués, au pelage gluant d'huile. Ils tournent, puis bondissent. Ils mangent les échos."
+  },
+  "enemies/ink_leech/name": {
+    "en": "Ink Leech",
+    "fr": "Sangsue d'encre"
+  },
+  "enemies/ink_leech/description": {
+    "en": "A fat slug of living ink. Keeps its distance and spits puddles that cling.",
+    "fr": "Une grosse limace d'encre vivante. Garde ses distances et crache des flaques collantes."
+  },
+  "enemies/leech_matron/name": {
+    "en": "The Leech-Mother",
+    "fr": "La Mère-Sangsue"
+  },
+  "enemies/leech_matron/description": {
+    "en": "Bloated with a spring's worth of ink. She is the reason the well is black.",
+    "fr": "Gonflée de toute l'encre d'une source. C'est à cause d'elle que le puits est noir."
+  },
+  "enemies/leech_matron/departText": {
+    "en": "Starved of ink, the Leech-Mother slides into the deep pool and is gone.",
+    "fr": "Privée d'encre, la Mère-Sangsue glisse dans le bassin profond et disparaît."
+  },
+  "enemies/ash_thrall/name": {
+    "en": "Ash Thrall",
+    "fr": "Serf de cendre"
+  },
+  "enemies/ash_thrall/description": {
+    "en": "A hollowed person, still doing the last thing they remember. Slow, heavy, fire-proof. Its slams follow a rhythm.",
+    "fr": "Une personne évidée, qui accomplit encore la dernière chose dont elle se souvient. Lente, lourde, insensible au feu. Ses coups suivent un rythme."
+  },
+  "enemies/bellwarden/name": {
+    "en": "The Bellwarden",
+    "fr": "Le Sonneur"
+  },
+  "enemies/bellwarden/description": {
+    "en": "It rang the chapel bell for the dead. It still does — with its fists.",
+    "fr": "Il sonnait la cloche de la chapelle pour les morts. Il la sonne encore, à coups de poing."
+  },
+  "enemies/bellwarden/departText": {
+    "en": "The Bellwarden lowers its fists, rings the bell once, softly, and lies down among the graves it kept.",
+    "fr": "Le Sonneur baisse les poings, frappe la cloche une fois, doucement, et se couche parmi les tombes qu'il gardait."
+  },
+  "enemies/hollow_echo/name": {
+    "en": "Risen Echo",
+    "fr": "Écho relevé"
+  },
+  "enemies/hollow_echo/description": {
+    "en": "What is left when the dead are not remembered.",
+    "fr": "Ce qui reste quand on ne se souvient pas des morts."
+  },
+  "enemies/hollow_hound/name": {
+    "en": "Risen Hound",
+    "fr": "Chien relevé"
+  },
+  "enemies/hollow_hound/description": {
+    "en": "A hound's echo, still hungry.",
+    "fr": "L'écho d'un chien, toujours affamé."
+  },
+  "factions/unwritten/name": {
+    "en": "The Unwritten",
+    "fr": "Les Désécrits"
+  },
+  "factions/unwritten/description": {
+    "en": "You. People whose names burned with the Ledger.",
+    "fr": "Vous. Ceux dont le nom a brûlé avec le Registre."
+  },
+  "factions/beasts/name": {
+    "en": "Mire Hounds",
+    "fr": "Chiens des marais"
+  },
+  "factions/beasts/description": {
+    "en": "Pack hunters of the mire. They eat ink-leeches and anything that bleeds.",
+    "fr": "Chasseurs en meute des marais. Ils mangent les sangsues d'encre et tout ce qui saigne."
+  },
+  "factions/rot/name": {
+    "en": "The Ink-Rot",
+    "fr": "La Pourriture d'encre"
+  },
+  "factions/rot/description": {
+    "en": "Living ink and the leeches that carry it.",
+    "fr": "L'encre vivante et les sangsues qui la portent."
+  },
+  "factions/hollow/name": {
+    "en": "The Hollowed",
+    "fr": "Les Évidés"
+  },
+  "factions/hollow/description": {
+    "en": "People and beasts whose names were unwritten. They remember only their last task.",
+    "fr": "Gens et bêtes dont le nom a été désécrit. Ils ne se souviennent que de leur dernière tâche."
+  },
+  "factions/lanternfast/name": {
+    "en": "Lanternfast",
+    "fr": "Tiens-Lanterne"
+  },
+  "factions/lanternfast/description": {
+    "en": "Forty souls sheltering under the Edict of the Hearth.",
+    "fr": "Quarante âmes abritées sous l'Édit du Foyer."
+  },
+  "factions/choir/name": {
+    "en": "The Cinder Choir",
+    "fr": "Le Chœur des Cendres"
+  },
+  "factions/choir/description": {
+    "en": "Believers who sing the old laws and welcome the ink as the Ledger rewriting itself.",
+    "fr": "Des croyants qui chantent les lois anciennes et accueillent l'encre comme le Registre qui se réécrit."
+  },
+  "insights/hound_lore/name": {
+    "en": "Oily Pelts",
+    "fr": "Pelages huileux"
+  },
+  "insights/hound_lore/text": {
+    "en": "Mire Hounds' pelts are slick with mire-oil. Set one alight and it panics — strike it then (+60% damage to burning hounds).",
+    "fr": "Le pelage des Chiens des marais est gluant d'huile. Enflammez-en un et il panique : frappez à ce moment-là (+60 % de dégâts contre les chiens en feu)."
+  },
+  "insights/ink_burns_clean/name": {
+    "en": "Ink Burns Clean",
+    "fr": "L'encre brûle propre"
+  },
+  "insights/ink_burns_clean/text": {
+    "en": "Living ink is oil that remembers. Fire makes it forget — and burning ink near you condenses into Ember.",
+    "fr": "L'encre vivante est de l'huile qui se souvient. Le feu lui fait oublier, et l'encre qui brûle près de vous se condense en Braise."
+  },
+  "insights/thrall_rhythm/name": {
+    "en": "The Hollow Rhythm",
+    "fr": "Le rythme évidé"
+  },
+  "insights/thrall_rhythm/text": {
+    "en": "Thralls strike on the beat of a bell no one else hears. Dodge through the beat and they're open: a perfect dodge primes a guaranteed critical.",
+    "fr": "Les serfs frappent au rythme d'une cloche que personne d'autre n'entend. Esquivez à travers le temps fort et ils sont à découvert : une esquive parfaite garantit un critique."
+  },
+  "insights/return_knowing/name": {
+    "en": "Counting the Uncounted",
+    "fr": "Compter les incomptés"
+  },
+  "insights/return_knowing/text": {
+    "en": "Under the Edict of Return, echoes rise only when no one is near to remember them. Stand close and they wait; harvest them there without Fray.",
+    "fr": "Sous l'Édit du Retour, les échos ne se relèvent que si personne n'est là pour se souvenir d'eux. Restez près d'eux et ils attendent ; récoltez-les sur place sans Effiloche."
+  },
+  "insights/hard_water/name": {
+    "en": "Hard Water",
+    "fr": "Eau dure"
+  },
+  "insights/hard_water/text": {
+    "en": "Rime makes water hold — deep water too, for a little while. A frozen pool is a bridge.",
+    "fr": "Le givre fait tenir l'eau, même profonde, pour un moment. Un bassin gelé est un pont."
+  },
+  "insights/kettle_breath/name": {
+    "en": "Kettle's Breath",
+    "fr": "Souffle de bouilloire"
+  },
+  "insights/kettle_breath/text": {
+    "en": "Nothing sees through steam. Fire on water makes cover.",
+    "fr": "Rien ne voit à travers la vapeur. Du feu sur de l'eau, et voilà un abri."
+  },
+  "insights/scavengers/name": {
+    "en": "Scavengers",
+    "fr": "Charognards"
+  },
+  "insights/scavengers/text": {
+    "en": "Hounds eat echoes. Leave a kill unharvested and the pack will come for it — and grow stronger.",
+    "fr": "Les chiens mangent les échos. Laissez une proie sans la récolter et la meute viendra la chercher, et s'en trouvera plus forte."
+  },
+  "insights/ash_remembers/name": {
+    "en": "Ash Remembers",
+    "fr": "La cendre se souvient"
+  },
+  "insights/ash_remembers/text": {
+    "en": "Every page you read is a law someone wrote. Somebody wrote you, too.",
+    "fr": "Chaque page que vous lisez est une loi que quelqu'un a écrite. Quelqu'un vous a écrit, vous aussi."
+  },
+  "items/ragged_coat/name": {
+    "en": "Ragged Coat",
+    "fr": "Manteau en loques"
+  },
+  "items/ragged_coat/description": {
+    "en": "It was someone's best coat once.",
+    "fr": "Ce fut, un jour, le plus beau manteau de quelqu'un."
+  },
+  "items/oilskin_coat/name": {
+    "en": "Oilskin Coat",
+    "fr": "Manteau de toile cirée"
+  },
+  "items/oilskin_coat/description": {
+    "en": "Waxed against the mire. Sheds burning oil.",
+    "fr": "Ciré contre les marais. L'huile en feu glisse dessus."
+  },
+  "items/warden_coat/name": {
+    "en": "Warden's Coat",
+    "fr": "Manteau de gardien"
+  },
+  "items/warden_coat/description": {
+    "en": "Lanternfast's colours, faded to ash.",
+    "fr": "Les couleurs de Tiens-Lanterne, fanées jusqu'à la cendre."
+  },
+  "items/tallow_charm/name": {
+    "en": "Tallow Charm",
+    "fr": "Amulette de suif"
+  },
+  "items/tallow_charm/description": {
+    "en": "A saint's candle stub on a string. Superstition, mostly.",
+    "fr": "Un bout de cierge de sainte au bout d'une ficelle. De la superstition, surtout."
+  },
+  "items/rimeglass_shard/name": {
+    "en": "Rimeglass Shard",
+    "fr": "Éclat de verre-givre"
+  },
+  "items/rimeglass_shard/description": {
+    "en": "A sliver of the Page of Stillness, frozen solid. Everything you strike remembers cold.",
+    "fr": "Un fragment de la Page de l'Immobile, gelé de part en part. Tout ce que vous frappez se souvient du froid."
+  },
+  "items/drowned_saint_eye/name": {
+    "en": "Eye of the Drowned Saint",
+    "fr": "Œil de la Sainte noyée"
+  },
+  "items/drowned_saint_eye/description": {
+    "en": "Found on an island no one could reach. It looks at the Blank without flinching.",
+    "fr": "Trouvé sur une île que personne ne pouvait atteindre. Il regarde le Blanc sans ciller."
+  },
+  "items/choir_bone_ring/name": {
+    "en": "Choir-Bone Ring",
+    "fr": "Bague d'os du Chœur"
+  },
+  "items/choir_bone_ring/description": {
+    "en": "Carved from a singer's finger-bone. It hums when echoes are near.",
+    "fr": "Taillée dans une phalange de chanteur. Elle bourdonne quand des échos sont proches."
+  },
+  "items/ashbread/name": {
+    "en": "Ashbread",
+    "fr": "Pain de cendre"
+  },
+  "items/ashbread/description": {
+    "en": "Grey, dense, filling. Restores 30 health. ({key:use})",
+    "fr": "Gris, dense, nourrissant. Rend 30 points de santé."
+  },
+  "items/oil_flask/name": {
+    "en": "Oil Flask",
+    "fr": "Fiole d'huile"
+  },
+  "items/oil_flask/description": {
+    "en": "Throw ({key:throw}) to splash oil. Oil burns. Creatures in it become Oiled — fire flares on them.",
+    "fr": "À lancer pour répandre de l'huile. L'huile brûle. Les créatures qui y passent sont huilées : le feu s'embrase sur elles."
+  },
+  "items/water_flask/name": {
+    "en": "Water Flask",
+    "fr": "Fiole d'eau"
+  },
+  "items/water_flask/description": {
+    "en": "Throw ({key:throw}) to splash water: puts out fire, soaks creatures (Wet). Wet things freeze.",
+    "fr": "À lancer pour répandre de l'eau : éteint le feu, trempe les créatures. Ce qui est trempé gèle."
+  },
+  "items/choir_tincture/name": {
+    "en": "Choir Tincture",
+    "fr": "Teinture du Chœur"
+  },
+  "items/choir_tincture/description": {
+    "en": "Warm, violet, faintly humming. Brother Cale wants it poured into the spring.",
+    "fr": "Tiède, violette, elle bourdonne faiblement. Frère Cale veut qu'on la verse dans la source."
+  },
+  "items/cinder_mark/name": {
+    "en": "Cinder Mark",
+    "fr": "Marque de cendre"
+  },
+  "items/cinder_mark/description": {
+    "en": "A stamped disc of fused ash. Lanternfast trades in them.",
+    "fr": "Un disque estampillé de cendre fondue. Tiens-Lanterne commerce avec."
+  },
+  "items/bell_tongue/name": {
+    "en": "Bell-Tongue Charm",
+    "fr": "Amulette du battant"
+  },
+  "items/bell_tongue/description": {
+    "en": "A sliver of the chapel bell. Your third strike rings.",
+    "fr": "Un éclat de la cloche de la chapelle. Votre troisième coup résonne."
+  },
+  "items/folio_locket/name": {
+    "en": "Folio-Ash Locket",
+    "fr": "Médaillon de cendre du folio"
+  },
+  "items/folio_locket/description": {
+    "en": "Ash from the Folio of the Uncounted, sealed in brass. It is warm when you say names aloud.",
+    "fr": "De la cendre du Folio des Incomptés, scellée dans du laiton. Il tiédit quand vous dites des noms à voix haute."
+  },
+  "items/rusted_blade/name": {
+    "en": "Rusted Blade",
+    "fr": "Lame rouillée"
+  },
+  "items/rusted_blade/description": {
+    "en": "Older than the Unwriting. It has been sharpened so often it is mostly memory.",
+    "fr": "Plus vieille que la Désécriture. On l'a tant aiguisée qu'elle n'est presque plus qu'un souvenir."
+  },
+  "items/grave_spade/name": {
+    "en": "Grave Spade",
+    "fr": "Bêche de fossoyeur"
+  },
+  "items/grave_spade/description": {
+    "en": "Turns soil and skulls with equal patience.",
+    "fr": "Retourne la terre et les crânes avec la même patience."
+  },
+  "items/bent_knife/name": {
+    "en": "Bent Knife",
+    "fr": "Couteau tordu"
+  },
+  "items/bent_knife/description": {
+    "en": "Bent from being used as a pry-bar. Still finds the gap between ribs.",
+    "fr": "Tordu à force de servir de levier. Trouve encore l'espace entre les côtes."
+  },
+  "items/iron_hatchet/name": {
+    "en": "Iron Hatchet",
+    "fr": "Hachette de fer"
+  },
+  "items/iron_hatchet/description": {
+    "en": "A woodcutter's tool. There is no more wood worth cutting.",
+    "fr": "Un outil de bûcheron. Il ne reste plus de bois qui vaille d'être coupé."
+  },
+  "items/lanternhook/name": {
+    "en": "Lanternhook",
+    "fr": "Crochet-lanterne"
+  },
+  "items/lanternhook/description": {
+    "en": "A lamplighter's hook with a coal still burning in its socket. Lanternfast's wardens have carried it for three generations.",
+    "fr": "Un crochet d'allumeur de réverbères, avec un charbon qui brûle encore dans sa douille. Les gardiens de Tiens-Lanterne le portent depuis trois générations."
+  },
+  "items/wardens_knife/name": {
+    "en": "Tamsin's Quiet Knife",
+    "fr": "Couteau silencieux de Tamsin"
+  },
+  "items/wardens_knife/description": {
+    "en": "The runner's knife. Its edge is wrapped in a red thread.",
+    "fr": "Le couteau de la messagère. Son tranchant est entouré d'un fil rouge."
+  },
+  "items/gravewrit_maul/name": {
+    "en": "Gravewrit Maul",
+    "fr": "Masse Graveliste"
+  },
+  "items/gravewrit_maul/description": {
+    "en": "The Bellwarden's clapper, torn from the bell. The names of the uncounted dead are scratched into it, too many to read. It wants more.",
+    "fr": "Le battant du Sonneur, arraché à la cloche. Les noms des morts incomptés y sont gravés, trop nombreux pour être lus. Il en réclame d'autres."
+  },
+  "lore/note_own_hand/title": {
+    "en": "A note in your own hand",
+    "fr": "Un mot de votre main"
+  },
+  "lore/note_own_hand/text": {
+    "en": "The paper is folded small and tucked into your collar. The handwriting is yours. You know it the way you know your own voice.\n\n\"If you are reading this, it worked, and you have forgotten. Good.\nDo not look for your name. It burned for a reason.\nGo north, to the lantern. They will take you in.\nDo not trust anyone who sings.\"\n\nThe signature is a smear of ash.",
+    "fr": "Le papier est plié tout petit et glissé dans votre col. L'écriture est la vôtre. Vous la reconnaissez comme on reconnaît sa propre voix.\n\n« Si tu lis ceci, ça a marché, et tu as oublié. Tant mieux.\nNe cherche pas ton nom. Il a brûlé pour une raison.\nVa au nord, vers la lanterne. Ils t'accueilleront.\nNe fais confiance à personne qui chante. »\n\nLa signature n'est qu'une traînée de cendre."
+  },
+  "lore/rising_stone/title": {
+    "en": "The Page That Fell Upward",
+    "fr": "La page tombée vers le haut"
+  },
+  "lore/rising_stone/text": {
+    "en": "The stone is warm. Letters older than any alphabet you know crawl across its face, and you can read them anyway:\n\nHERE, ASH RETURNS TO THE SKY.\n\nFifty years ago the Ledger burned — the great book in which every law of the world was written. Its pages scattered as ash. Where a page came to rest, its law still holds: in one valley fire is hungry, in another the dead get up again. Between them lies the Blank, where nothing is promised at all.\n\nThis page fell here. Around it, the ash is still trying to go home.",
+    "fr": "La pierre est tiède. Des lettres plus anciennes que tous les alphabets que vous connaissez rampent sur sa face, et vous savez les lire quand même :\n\nICI, LA CENDRE RETOURNE AU CIEL.\n\nIl y a cinquante ans, le Registre a brûlé : le grand livre où chaque loi du monde était écrite. Ses pages se sont dispersées en cendres. Là où une page s'est posée, sa loi tient encore : dans une vallée le feu a faim, dans une autre les morts se relèvent. Entre elles s'étend le Blanc, où rien n'est promis.\n\nCette page est tombée ici. Autour d'elle, la cendre essaie toujours de rentrer chez elle."
+  },
+  "lore/lanternfast_notice/title": {
+    "en": "Notice, nailed to the gate",
+    "fr": "Avis cloué sur la porte"
+  },
+  "lore/lanternfast_notice/text": {
+    "en": "BY ORDER OF THE WARDEN\n\nThe well is NOT to be drunk from until further word.\nBoil nothing. Burn nothing near the cistern.\nThe Choir is NOT to sing at the well. Brother Cale, that means you.\n\nAnyone who has seen Tamsin (runner, red scarf) — speak to Warden Marrow.",
+    "fr": "PAR ORDRE DE LA GARDIENNE\n\nOn NE boit PAS au puits jusqu'à nouvel ordre.\nOn ne fait rien bouillir. On ne brûle rien près de la citerne.\nLe Chœur NE chante PAS au puits. Frère Cale, c'est pour vous.\n\nQuiconque a vu Tamsin (messagère, écharpe rouge) : parlez-en à la Gardienne Marrow."
+  },
+  "lore/tamsins_note/title": {
+    "en": "Tamsin's last note",
+    "fr": "Le dernier mot de Tamsin"
+  },
+  "lore/tamsins_note/text": {
+    "en": "Warden —\n\nFound it. The spring is choked black and something huge lies in it, fat as a cart. Small ones too. The ink moves toward you when you get close.\n\nThe hounds won't go near it when it's burning. I saw a lamp fall in the oil by the old cart and the whole bank went up and they ran howling. If ink burns like oil, maybe we can burn the spring clean.\n\nI'm going to try. If I don't come back, don't send anyone else. Burn it.\n\n— T.",
+    "fr": "Gardienne,\n\nJe l'ai trouvée. La source est engorgée de noir et quelque chose d'énorme y gît, gros comme une charrette. Des petites aussi. L'encre vient vers toi quand tu approches.\n\nLes chiens n'en approchent pas quand ça brûle. J'ai vu une lampe tomber dans l'huile près de la vieille charrette : toute la berge s'est embrasée et ils ont fui en hurlant. Si l'encre brûle comme l'huile, on peut peut-être brûler la source jusqu'à ce qu'elle soit propre.\n\nJe vais essayer. Si je ne reviens pas, n'envoie personne d'autre. Brûle-la.\n\n— T."
+  },
+  "lore/page_of_stillness/title": {
+    "en": "A Page of Stillness",
+    "fr": "Une page de l'Immobile"
+  },
+  "lore/page_of_stillness/text": {
+    "en": "This page did not burn. It is cold enough to hurt, and the law written on it is short:\n\nWATER SHALL HOLD.\n\nWhen you read it aloud the cold climbs your arm and settles behind your eyes. You could say it again, you think. You could make water hold.\n\n(You learned Rime Lance — press {key:spell2}.)",
+    "fr": "Cette page n'a pas brûlé. Elle est froide à faire mal, et la loi qui y est écrite est brève :\n\nL'EAU TIENDRA.\n\nQuand vous la lisez à voix haute, le froid remonte votre bras et se loge derrière vos yeux. Vous pourriez le redire, pensez-vous. Vous pourriez faire tenir l'eau.\n\n(Vous avez appris Lance de givre : touche {key:spell2}.)"
+  },
+  "lore/cider_marginalia/title": {
+    "en": "Scribe's marginalia",
+    "fr": "Notes d'un scribe en marge"
+  },
+  "lore/cider_marginalia/text": {
+    "en": "Scrawled in the margins of a cider-house ledger, in a scribe's neat hand:\n\n\"The Archivist says the ink is not a poison. It is the Ledger's own ink, and it has begun to write without a hand. Every word it writes is a law, and every law it writes is the same: BE STILL.\n\nA field it touches stops growing. A man it touches stops aging, and then stops. We call it the Rubric.\n\nWe hid one page here, the Page of Stillness. The Rubric wants it. Do not let it have the cold.\"",
+    "fr": "Griffonné dans la marge d'un livre de comptes de la cidrerie, d'une main soignée de scribe :\n\n« L'Archiviste dit que l'encre n'est pas un poison. C'est l'encre même du Registre, et elle s'est mise à écrire sans main. Chaque mot qu'elle écrit est une loi, et chaque loi qu'elle écrit est la même : SOIS IMMOBILE.\n\nUn champ qu'elle touche cesse de pousser. Un homme qu'elle touche cesse de vieillir, puis cesse tout court. Nous l'appelons la Rubrique.\n\nNous avons caché une page ici, la Page de l'Immobile. La Rubrique la veut. Ne lui laissez pas le froid. »"
+  },
+  "lore/chapel_folio/title": {
+    "en": "Folio of the Uncounted",
+    "fr": "Folio des Incomptés"
+  },
+  "lore/chapel_folio/text": {
+    "en": "A charred folio, chained to a lectern. Most of it is a list of names, each one struck through.\n\nAt the end, in a different hand:\n\n\"On the last night the Scribes did not flee the fire. We lit it.\n'It is writing itself now,' the Archivist said. 'Every page it touches goes still. Better no law at all than its law.'\nSo we burned the Ledger, and our own names with it, so the Rubric could not write us.\n\nOne of us volunteered to forget, to carry the last match out of the Scriptorium. If you are reading this —\"\n\nThe rest has burned away.",
+    "fr": "Un folio calciné, enchaîné à un lutrin. C'est surtout une liste de noms, tous barrés.\n\nÀ la fin, d'une autre main :\n\n« La dernière nuit, les Scribes n'ont pas fui le feu. Nous l'avons allumé.\n“Il s'écrit tout seul maintenant”, a dit l'Archiviste. “Chaque page qu'il touche se fige. Mieux vaut aucune loi que la sienne.”\nAlors nous avons brûlé le Registre, et nos propres noms avec, pour que la Rubrique ne puisse pas nous écrire.\n\nL'un de nous s'est porté volontaire pour oublier, pour emporter la dernière allumette hors du Scriptorium. Si vous lisez ceci… »\n\nLe reste a brûlé."
+  },
+  "lore/choir_hymn/title": {
+    "en": "Hymn-sheet of the Cinder Choir",
+    "fr": "Feuillet d'hymne du Chœur des Cendres"
+  },
+  "lore/choir_hymn/text": {
+    "en": "Sing the ink back to the well,\nsing the well back to the book,\nsing the book back to the hand\nthat wrote us still, that wrote us safe.\n\nNo more Blank and no more Fray,\nno more hounds and no more hunger.\nWhen every page is written whole\nwe will not have to change again.",
+    "fr": "Chantons l'encre jusqu'au puits,\nchantons le puits jusqu'au livre,\nchantons le livre jusqu'à la main\nqui nous écrivit immobiles, qui nous écrivit à l'abri.\n\nPlus de Blanc et plus d'Effiloche,\nplus de chiens et plus de faim.\nQuand chaque page sera écrite entière,\nnous n'aurons plus à changer jamais."
+  },
+  "lore/reliquary/title": {
+    "en": "The Drowned Reliquary",
+    "fr": "Le Reliquaire noyé"
+  },
+  "lore/reliquary/text": {
+    "en": "A stone box on an island no one could reach, until you made the water hold. Inside, wrapped in waxed cloth, an eye of blue glass.\n\nA saint drowned herself in this spring rather than be written still. The orchard folk kept her eye. They said it could look at the Blank and not go mad.",
+    "fr": "Un coffret de pierre sur une île que personne ne pouvait atteindre, jusqu'à ce que vous fassiez tenir l'eau. Dedans, enveloppé de toile cirée, un œil de verre bleu.\n\nUne sainte s'est noyée dans cette source plutôt que d'être écrite immobile. Les gens du verger ont gardé son œil. Ils disaient qu'il pouvait regarder le Blanc sans devenir fou."
+  },
+  "lore/scriptorium_door/title": {
+    "en": "The Sealed Door",
+    "fr": "La porte scellée"
+  },
+  "lore/scriptorium_door/text": {
+    "en": "The Scriptorium's door is shut with ink. It fills every seam and pulses slowly, like something asleep.\n\nAcross the lintel, letters move as you watch them, forming a sentence with its last word missing:\n\nTHE ONE WHO BURNED THE LEDGER IS ____.\n\nThe ink waits for a name. You don't have one.\n\n(The Scriptorium will open in a later chapter.)",
+    "fr": "La porte du Scriptorium est fermée par l'encre. Elle remplit chaque jointure et palpite lentement, comme une chose endormie.\n\nSur le linteau, des lettres bougent sous vos yeux et forment une phrase dont le dernier mot manque :\n\nCELUI OU CELLE QUI A BRÛLÉ LE REGISTRE EST ____.\n\nL'encre attend un nom. Vous n'en avez pas.\n\n(Le Scriptorium s'ouvrira dans un prochain chapitre.)"
+  },
+  "npcs/ilse/name": {
+    "en": "Ilse Marrow",
+    "fr": "Ilse Marrow"
+  },
+  "npcs/ilse/title": {
+    "en": "Warden of Lanternfast",
+    "fr": "Gardienne de Tiens-Lanterne"
+  },
+  "npcs/ilse/barks/0/text": {
+    "en": "Don't drink from the well.",
+    "fr": "Ne buvez pas au puits."
+  },
+  "npcs/ilse/barks/1/text": {
+    "en": "Tamsin should have been back by now...",
+    "fr": "Tamsin devrait être rentrée, maintenant…"
+  },
+  "npcs/ilse/barks/2/text": {
+    "en": "The hearth holds. For now.",
+    "fr": "Le foyer tient. Pour l'instant."
+  },
+  "npcs/ilse/barks/3/text": {
+    "en": "Clear water. I keep tasting it to be sure.",
+    "fr": "De l'eau claire. Je n'arrête pas d'y goûter pour être sûre."
+  },
+  "npcs/ilse/barks/4/text": {
+    "en": "...make it stop singing...",
+    "fr": "…faites-le taire…"
+  },
+  "npcs/cale/name": {
+    "en": "Brother Cale",
+    "fr": "Frère Cale"
+  },
+  "npcs/cale/title": {
+    "en": "of the Cinder Choir",
+    "fr": "du Chœur des Cendres"
+  },
+  "npcs/cale/barks/2/text": {
+    "en": "Listen... listen to the well.",
+    "fr": "Écoutez… écoutez le puits."
+  },
+  "npcs/odo/name": {
+    "en": "Odo Fenn",
+    "fr": "Odo Fenn"
+  },
+  "npcs/odo/title": {
+    "en": "Tinker",
+    "fr": "Rétameur"
+  },
+  "origins/gravedigger/name": {
+    "en": "Gravedigger",
+    "fr": "Fossoyeur"
+  },
+  "origins/gravedigger/text": {
+    "en": "You remember the weight of a spade, and soil that had to be turned twice. The dead never frightened you. Their echoes feed you.",
+    "fr": "Vous vous souvenez du poids d'une bêche, et d'une terre qu'il fallait retourner deux fois. Les morts ne vous ont jamais fait peur. Leurs échos vous nourrissent."
+  },
+  "origins/lamplighter/name": {
+    "en": "Lamplighter",
+    "fr": "Allumeur de réverbères"
+  },
+  "origins/lamplighter/text": {
+    "en": "You remember climbing ladders at dusk, and the smell of lamp-oil on your hands. You know exactly how far a flask can be thrown.",
+    "fr": "Vous vous souvenez des échelles grimpées au crépuscule, et de l'odeur d'huile de lampe sur vos mains. Vous savez exactement jusqu'où on peut lancer une fiole."
+  },
+  "origins/cutpurse/name": {
+    "en": "Cutpurse",
+    "fr": "Coupe-bourse"
+  },
+  "origins/cutpurse/text": {
+    "en": "You remember crowds, and the exact moment a stranger looks away. You were never there when they looked back.",
+    "fr": "Vous vous souvenez des foules, et de l'instant précis où un inconnu détourne les yeux. Quand il les ramenait, vous n'étiez déjà plus là."
+  },
+  "props/oil_barrel/name": {
+    "en": "Oil Barrel",
+    "fr": "Baril d'huile"
+  },
+  "props/chest/name": {
+    "en": "Chest",
+    "fr": "Coffre"
+  },
+  "props/chest/interact/prompt": {
+    "en": "Open the chest",
+    "fr": "Ouvrir le coffre"
+  },
+  "props/page/name": {
+    "en": "Loose page",
+    "fr": "Page volante"
+  },
+  "props/page/interact/prompt": {
+    "en": "Read the page",
+    "fr": "Lire la page"
+  },
+  "props/waystone/name": {
+    "en": "Waystone",
+    "fr": "Pierre de halte"
+  },
+  "props/waystone/interact/prompt": {
+    "en": "Rest at the waystone (heal, clear Fray, refill Ember, save)",
+    "fr": "Faire halte à la pierre (soins, Effiloche dissipée, Braise rechargée, sauvegarde)"
+  },
+  "props/well/name": {
+    "en": "Lanternfast Well",
+    "fr": "Puits de Tiens-Lanterne"
+  },
+  "props/well/interact/prompt": {
+    "en": "Look into the well",
+    "fr": "Regarder dans le puits"
+  },
+  "props/scriptorium_door/name": {
+    "en": "Sealed Door",
+    "fr": "Porte scellée"
+  },
+  "props/scriptorium_door/interact/prompt": {
+    "en": "Examine the sealed door",
+    "fr": "Examiner la porte scellée"
+  },
+  "props/brazier/name": {
+    "en": "Brazier",
+    "fr": "Brasero"
+  },
+  "props/edict_stone/name": {
+    "en": "Edict Stone",
+    "fr": "Pierre d'Édit"
+  },
+  "props/edict_stone/interact/prompt": {
+    "en": "Read the stone",
+    "fr": "Lire la pierre"
+  },
+  "props/corpse/name": {
+    "en": "Body",
+    "fr": "Corps"
+  },
+  "props/corpse/interact/prompt": {
+    "en": "Search the body",
+    "fr": "Fouiller le corps"
+  },
+  "props/spring_shrine/name": {
+    "en": "Spring Shrine",
+    "fr": "Autel de la source"
+  },
+  "props/spring_shrine/interact/prompt": {
+    "en": "Kneel at the spring shrine",
+    "fr": "S'agenouiller à l'autel de la source"
+  },
+  "props/lectern/name": {
+    "en": "Chained Lectern",
+    "fr": "Lutrin enchaîné"
+  },
+  "props/lectern/interact/prompt": {
+    "en": "Approach the lectern",
+    "fr": "S'approcher du lutrin"
+  },
+  "quests/q_fouled_well/title": {
+    "en": "Ink in the Well",
+    "fr": "De l'encre dans le puits"
+  },
+  "quests/q_fouled_well/summary": {
+    "en": "Lanternfast's well has gone black with living ink. Its water comes from the spring in the Drowned Orchard.",
+    "fr": "Le puits de Tiens-Lanterne est noir d'encre vivante. Son eau vient de la source du Verger noyé."
+  },
+  "quests/q_fouled_well/stages/find_spring/text": {
+    "en": "Find what fouls Lanternfast's well. Its channel comes from the spring in the Drowned Orchard, east.",
+    "fr": "Trouver ce qui souille le puits de Tiens-Lanterne. Son canal vient de la source du Verger noyé, à l'est."
+  },
+  "quests/q_fouled_well/stages/find_spring/hint": {
+    "en": "Follow the road east through the gap in the ridge.",
+    "fr": "Suivez la route vers l'est, par la brèche dans la crête."
+  },
+  "quests/q_fouled_well/stages/deal/text": {
+    "en": "The Black Spring is choked with living ink, and something vast feeds in it.",
+    "fr": "La Source noire est engorgée d'encre vivante, et quelque chose d'immense s'y nourrit."
+  },
+  "quests/q_fouled_well/stages/deal/hint": {
+    "en": "Kill the Leech-Mother — or, if you understand the ink, burn it all clean. Brother Cale wants something else entirely.",
+    "fr": "Tuez la Mère-Sangsue ou, si vous comprenez l'encre, brûlez-la jusqu'à ce que l'eau soit propre. Frère Cale veut tout autre chose."
+  },
+  "quests/q_fouled_well/stages/report/text": {
+    "en": "Return to Warden Ilse in Lanternfast.",
+    "fr": "Retourner voir la Gardienne Ilse à Tiens-Lanterne."
+  },
+  "quests/q_fouled_well/outcomes/slain/text": {
+    "en": "The Leech-Mother is dead. Lanternfast's water runs grey, but drinkable.",
+    "fr": "La Mère-Sangsue est morte. L'eau de Tiens-Lanterne coule grise, mais buvable."
+  },
+  "quests/q_fouled_well/outcomes/burned/text": {
+    "en": "You burned the ink out of the spring. The water runs clear for the first time in fifty years.",
+    "fr": "Vous avez brûlé l'encre de la source. L'eau coule claire pour la première fois en cinquante ans."
+  },
+  "quests/q_fouled_well/outcomes/choir/text": {
+    "en": "You completed the Choir's rite. Lanternfast's well sings.",
+    "fr": "Vous avez achevé le rite du Chœur. Le puits de Tiens-Lanterne chante."
+  },
+  "quests/q_hush_bell/title": {
+    "en": "The Bell That Counts",
+    "fr": "La cloche qui compte"
+  },
+  "quests/q_hush_bell/summary": {
+    "en": "Something in the Hush still rings a bell for the dead. Under the Edict of Return, nothing there stays down.",
+    "fr": "Quelque chose, dans le Silence, sonne encore une cloche pour les morts. Sous l'Édit du Retour, rien n'y reste à terre."
+  },
+  "quests/q_hush_bell/stages/enter/text": {
+    "en": "A bell tolls somewhere in the Hush. Find what rings it.",
+    "fr": "Une cloche sonne quelque part dans le Silence. Trouver ce qui la fait sonner."
+  },
+  "quests/q_hush_bell/stages/enter/hint": {
+    "en": "The chapel stands in the middle of the graveyard.",
+    "fr": "La chapelle se dresse au milieu du cimetière."
+  },
+  "quests/q_hush_bell/stages/bell/text": {
+    "en": "The Bellwarden tolls for the uncounted dead. Silence the bell.",
+    "fr": "Le Sonneur sonne le glas des morts incomptés. Faire taire la cloche."
+  },
+  "quests/q_hush_bell/stages/bell/hint": {
+    "en": "Break it — or finish the rites it has waited fifty years for: light both chapel braziers. Or, if you know whose names these are, read them aloud at the lectern.",
+    "fr": "Brisez-le, ou achevez les rites qu'il attend depuis cinquante ans : allumez les deux braseros de la chapelle. Ou, si vous savez à qui sont ces noms, lisez-les à voix haute au lutrin."
+  },
+  "quests/q_hush_bell/outcomes/slain/text": {
+    "en": "You broke the Bellwarden. The Hush is quiet, though no one was ever counted.",
+    "fr": "Vous avez brisé le Sonneur. Le Silence est calme, même si personne n'a jamais été compté."
+  },
+  "quests/q_hush_bell/outcomes/rites/text": {
+    "en": "You lit the funeral fires the Bellwarden had waited for. It lay down among its graves.",
+    "fr": "Vous avez allumé les feux funéraires que le Sonneur attendait. Il s'est couché parmi ses tombes."
+  },
+  "quests/q_hush_bell/outcomes/named/text": {
+    "en": "You read every struck-out name aloud. The Uncounted are counted.",
+    "fr": "Vous avez lu à voix haute chaque nom barré. Les Incomptés sont comptés."
+  },
+  "quests/q_hush_bell/outcomes/named/effects/3/toast": {
+    "en": "Near the end of the list, one name is smudged with ash. The handwriting is yours.",
+    "fr": "Vers la fin de la liste, un nom est barbouillé de cendre. L'écriture est la vôtre."
+  },
+  "rules/cider_house_found/effects/0/toast": {
+    "en": "The rotten wall gives way. Cold air breathes out of the dark.",
+    "fr": "Le mur pourri cède. Un air froid s'exhale de l'obscurité."
+  },
+  "rules/hush_brazier_1/effects/1/toast": {
+    "en": "A funeral fire catches. Somewhere a bell falters.",
+    "fr": "Un feu funéraire prend. Quelque part, une cloche hésite."
+  },
+  "rules/hush_brazier_2/effects/1/toast": {
+    "en": "A funeral fire catches. Somewhere a bell falters.",
+    "fr": "Un feu funéraire prend. Quelque part, une cloche hésite."
+  },
+  "rules/hush_quiet_toast/effects/0/toast": {
+    "en": "The bell stops. Across the Hush, something exhales — the dead will stay down now.",
+    "fr": "La cloche s'arrête. À travers le Silence, quelque chose expire : les morts resteront à terre, désormais."
+  },
+  "rules/hint_road/effects/0/toast": {
+    "en": "Tip: oil barrels burst when struck, and fire ({key:spell1}, aimed with the mouse) ignites oil. Pick your ground.",
+    "fr": "Conseil : les barils d'huile éclatent quand on les frappe, et le feu ({key:spell1}, visé à la souris) enflamme l'huile. Choisissez votre terrain."
+  },
+  "rules/hint_hurt/effects/0/toast": {
+    "en": "Tip: red shapes on the ground are attacks about to land. Dodge ({key:dodge}) through them — you can't be hit mid-roll.",
+    "fr": "Conseil : les formes rouges au sol sont des attaques sur le point de frapper. Esquivez ({key:dodge}) à travers : on ne peut pas vous toucher pendant la roulade."
+  },
+  "rules/hint_echo/effects/0/toast": {
+    "en": "Tip: the slain leave echoes. {key:interact} harvests them: +Ember for spells, but +Fray. Hounds eat what you leave.",
+    "fr": "Conseil : les morts laissent des échos. {key:interact} les récolte : +Braise pour les sorts, mais +Effiloche. Les chiens mangent ce que vous laissez."
+  },
+  "rules/hint_gear_u/effects/0/toast": {
+    "en": "Tip: press {key:inventory} to equip. Gear changes how you fight, not just how hard.",
+    "fr": "Conseil : {key:inventory} pour équiper. L'équipement change votre façon de combattre, pas seulement sa force."
+  },
+  "rules/hint_gear_r/effects/0/toast": {
+    "en": "Tip: press {key:inventory} to equip. Rare gear changes how you fight — read its perks.",
+    "fr": "Conseil : {key:inventory} pour équiper. L'équipement rare change votre façon de combattre : lisez ses effets."
+  },
+  "rules/hint_marks/effects/0/toast": {
+    "en": "Cinder marks: Lanternfast's currency. A tinker would trade for them.",
+    "fr": "Marques de cendre : la monnaie de Tiens-Lanterne. Un rétameur en voudrait."
+  },
+  "species/human/name": {
+    "en": "Human",
+    "fr": "Humain"
+  },
+  "species/human/text": {
+    "en": "Most of the Vale's survivors. Their laws were written on common pages, and common pages burned first. They adapt, because there was never a page that said they couldn't.",
+    "fr": "La plupart des survivants du Val. Leurs lois étaient écrites sur des pages ordinaires, et les pages ordinaires ont brûlé les premières. Ils s'adaptent, parce qu'aucune page n'a jamais dit qu'ils ne le pouvaient pas."
+  },
+  "species/human/sexes/0/name": {
+    "en": "Female",
+    "fr": "Femme"
+  },
+  "species/human/sexes/1/name": {
+    "en": "Male",
+    "fr": "Homme"
+  },
+  "species/human/races/0/name": {
+    "en": "Valefolk",
+    "fr": "Gens du Val"
+  },
+  "species/human/races/0/text": {
+    "en": "Orchard and road people of the Cinder Vale. Sun-browned, stubborn, fond of cider and of grudges.",
+    "fr": "Gens des vergers et des routes du Val des Escarbilles. Hâlés, têtus, amateurs de cidre et de rancunes."
+  },
+  "species/human/races/1/name": {
+    "en": "Mirefolk",
+    "fr": "Gens des marais"
+  },
+  "species/human/races/1/text": {
+    "en": "From the marshes south of the Spring. They hold their breath longer than anyone and trust water more than land.",
+    "fr": "Venus des marais au sud de la Source. Ils retiennent leur souffle plus longtemps que quiconque et se fient plus à l'eau qu'à la terre."
+  },
+  "species/human/races/2/name": {
+    "en": "Highash folk",
+    "fr": "Gens des Hautes-Cendres"
+  },
+  "species/human/races/2/text": {
+    "en": "Northerners from the ash plateaus, where the snow falls grey. Pale, tall and quiet; they count everything twice.",
+    "fr": "Gens du nord, des plateaux de cendre où la neige tombe grise. Pâles, grands et silencieux ; ils comptent tout deux fois."
+  },
+  "species/emberkin/name": {
+    "en": "Emberkin",
+    "fr": "Cendrin"
+  },
+  "species/emberkin/text": {
+    "en": "People whose law was written on the Hearth pages. Warm to the touch, lit from within. They are kindled from another's coals rather than born, and have no sexes. When the Ledger burned, many of them simply went out.",
+    "fr": "Ceux dont la loi était écrite sur les pages du Foyer. Chauds au toucher, éclairés de l'intérieur. On les allume aux braises d'un autre plutôt qu'on ne les met au monde, et ils n'ont pas de sexe. Quand le Registre a brûlé, beaucoup se sont simplement éteints."
+  },
+  "species/emberkin/races/0/name": {
+    "en": "Brandborn",
+    "fr": "Nés-du-Brandon"
+  },
+  "species/emberkin/races/0/text": {
+    "en": "Bright and quick-burning, hard to stand near for long. Their cracks glow orange.",
+    "fr": "Vifs et prompts à se consumer, difficiles à côtoyer longtemps. Leurs fissures luisent d'orange."
+  },
+  "species/emberkin/races/1/name": {
+    "en": "Sootborn",
+    "fr": "Nés-de-la-Suie"
+  },
+  "species/emberkin/races/1/text": {
+    "en": "Banked coals: slow, patient, nearly black. Their light only shows when they are angry.",
+    "fr": "Des braises couvées : lents, patients, presque noirs. Leur lumière ne se montre que dans la colère."
+  },
+  "species/glossed/name": {
+    "en": "Glossed",
+    "fr": "Glossé"
+  },
+  "species/glossed/text": {
+    "en": "When the Ledger burned, some of the notes in its margins stood up and walked away. Paper-pale and ink-veined, they were written rather than born, and each remembers the hand that wrote them. The Choir calls them proof that the book is alive.",
+    "fr": "Quand le Registre a brûlé, certaines notes de ses marges se sont levées et sont parties. Pâles comme le papier, veinés d'encre, les Glossés ont été écrits plutôt que mis au monde, et chacun se souvient de la main qui l'a écrit. Le Chœur y voit la preuve que le livre est vivant."
+  },
+  "species/glossed/sexes/0/name": {
+    "en": "Female",
+    "fr": "Femme"
+  },
+  "species/glossed/sexes/1/name": {
+    "en": "Male",
+    "fr": "Homme"
+  },
+  "species/glossed/races/0/name": {
+    "en": "Rubricated",
+    "fr": "Rubriqués"
+  },
+  "species/glossed/races/0/text": {
+    "en": "Written in red ink, the colour of headings and warnings. People do what they say without knowing why.",
+    "fr": "Écrits à l'encre rouge, la couleur des titres et des avertissements. On fait ce qu'ils disent sans savoir pourquoi."
+  },
+  "species/glossed/races/1/name": {
+    "en": "Interlinear",
+    "fr": "Interlinéaires"
+  },
+  "species/glossed/races/1/text": {
+    "en": "Squeezed between other lines: thin, precise and easily overlooked.",
+    "fr": "Serrés entre d'autres lignes : minces, précis, et faciles à ne pas voir."
+  },
+  "species/glossed/races/2/name": {
+    "en": "Illuminated",
+    "fr": "Enluminés"
+  },
+  "species/glossed/races/2/text": {
+    "en": "Written by a patient hand in gold leaf and lapis. Beautiful, vain and easily torn.",
+    "fr": "Écrits par une main patiente, à la feuille d'or et au lapis. Beaux, vaniteux, et vite déchirés."
+  },
+  "traits/ashwalker/name": {
+    "en": "Ashwalker",
+    "fr": "Marche-cendre"
+  },
+  "traits/ashwalker/text": {
+    "en": "Burning ground does not harm you. Fight inside your own fires.",
+    "fr": "Le sol en feu ne vous blesse pas. Combattez au milieu de vos propres feux."
+  },
+  "traits/shatterhand/name": {
+    "en": "Shatterhand",
+    "fr": "Main qui brise"
+  },
+  "traits/shatterhand/text": {
+    "en": "Heavy attacks against frozen enemies shatter the ice and hurt everything nearby.",
+    "fr": "Les attaques lourdes contre un ennemi gelé font éclater la glace et blessent tout ce qui est autour."
+  },
+  "traits/smoke_step/name": {
+    "en": "Smoke-Step",
+    "fr": "Pas de fumée"
+  },
+  "traits/smoke_step/text": {
+    "en": "Dodging leaves a puff of steam; enemies lose sight of you inside it.",
+    "fr": "Esquiver laisse une bouffée de vapeur ; les ennemis vous y perdent de vue."
+  },
+  "traits/flask_wright/name": {
+    "en": "Flask-Wright",
+    "fr": "Fiolier"
+  },
+  "traits/flask_wright/text": {
+    "en": "Thrown flasks splash twice as wide.",
+    "fr": "Les fioles lancées éclaboussent deux fois plus large."
+  },
+  "traits/echo_eater/name": {
+    "en": "Echo-Eater",
+    "fr": "Mangeur d'échos"
+  },
+  "traits/echo_eater/text": {
+    "en": "Harvesting an echo heals you for 12.",
+    "fr": "Récolter un écho vous soigne de 12."
+  },
+  "traits/cold_blood/name": {
+    "en": "Cold Blood",
+    "fr": "Sang-froid"
+  },
+  "traits/cold_blood/text": {
+    "en": "Below 35% health your hits chill — and chilled wet things freeze.",
+    "fr": "Sous 35 % de santé, vos coups glacent, et ce qui est trempé et glacé gèle."
+  },
+  "traits/steady_mind/name": {
+    "en": "Steady Mind",
+    "fr": "Esprit posé"
+  },
+  "traits/steady_mind/text": {
+    "en": "You gain 40% less Fray from casting.",
+    "fr": "Vos sorts vous donnent 40 % d'Effiloche en moins."
+  },
+  "traits/fray_conduit/name": {
+    "en": "Fray Conduit",
+    "fr": "Conduit d'Effiloche"
+  },
+  "traits/fray_conduit/text": {
+    "en": "Above 50 Fray your spells deal double damage instead of +50%. Live near the rupture.",
+    "fr": "Au-delà de 50 d'Effiloche, vos sorts infligent le double de dégâts au lieu de +50 %. Vivez au bord de la rupture."
+  },
+  "traits/heavy_hand/name": {
+    "en": "Heavy Hand",
+    "fr": "Main lourde"
+  },
+  "traits/heavy_hand/text": {
+    "en": "Heavy attacks always stagger and hurl targets back — into fire, water or each other.",
+    "fr": "Les attaques lourdes font toujours vaciller et projettent la cible : dans le feu, dans l'eau, ou contre les autres."
+  },
+  "traits/scavenger/name": {
+    "en": "Scavenger's Sense",
+    "fr": "Flair du charognard"
+  },
+  "traits/scavenger/text": {
+    "en": "Creatures drop loot more often; echoes linger twice as long.",
+    "fr": "Les créatures laissent plus souvent du butin ; les échos durent deux fois plus longtemps."
+  },
+  "traits/ember_hunger/name": {
+    "en": "Ember Hunger",
+    "fr": "Faim de braise"
+  },
+  "traits/ember_hunger/text": {
+    "en": "Killing blows restore 1 Ember.",
+    "fr": "Les coups fatals rendent 1 Braise."
+  },
+  "zones/cinder_road/name": {
+    "en": "The Cinder Road",
+    "fr": "La Route des escarbilles"
+  },
+  "zones/cinder_road/description": {
+    "en": "Between the pages, nothing is promised.",
+    "fr": "Entre les pages, rien n'est promis."
+  },
+  "zones/ash_crater/name": {
+    "en": "The Ash Crater",
+    "fr": "Le Cratère de cendre"
+  },
+  "zones/ash_crater/description": {
+    "en": "You wake on warm glass. The ash is falling the wrong way.",
+    "fr": "Vous vous éveillez sur du verre tiède. La cendre tombe dans le mauvais sens."
+  },
+  "zones/lanternfast/name": {
+    "en": "Lanternfast",
+    "fr": "Tiens-Lanterne"
+  },
+  "zones/lanternfast/description": {
+    "en": "Forty souls and a page of the Ledger nailed above the hearth.",
+    "fr": "Quarante âmes et une page du Registre clouée au-dessus du foyer."
+  },
+  "zones/drowned_orchard/name": {
+    "en": "The Drowned Orchard",
+    "fr": "Le Verger noyé"
+  },
+  "zones/drowned_orchard/description": {
+    "en": "Dead trees in a flooded mire. Oil seeps from the ground. Here, fire is hungry.",
+    "fr": "Des arbres morts dans un marais inondé. L'huile suinte du sol. Ici, le feu a faim."
+  },
+  "zones/orchard_spring/name": {
+    "en": "The Black Spring",
+    "fr": "La Source noire"
+  },
+  "zones/orchard_spring/description": {
+    "en": "The source of Lanternfast's water. It is choked with living ink.",
+    "fr": "L'origine de l'eau de Tiens-Lanterne. Elle est engorgée d'encre vivante."
+  },
+  "zones/cider_house/name": {
+    "en": "The Old Cider House",
+    "fr": "La Vieille Cidrerie"
+  },
+  "zones/cider_house/description": {
+    "en": "Walled up from the inside. Someone hid something here.",
+    "fr": "Murée de l'intérieur. Quelqu'un a caché quelque chose ici."
+  },
+  "zones/the_hush/name": {
+    "en": "The Hush",
+    "fr": "Le Silence"
+  },
+  "zones/the_hush/description": {
+    "en": "A graveyard under the Edict of Return. Nothing here stays dead unless someone remembers it.",
+    "fr": "Un cimetière sous l'Édit du Retour. Rien n'y reste mort, à moins que quelqu'un ne s'en souvienne."
+  },
+  "zones/hush_chapel/name": {
+    "en": "Chapel of the Uncounted",
+    "fr": "La Chapelle des Incomptés"
+  },
+  "zones/hush_chapel/description": {
+    "en": "The bell is silent. Something inside is not.",
+    "fr": "La cloche s'est tue. Ce qu'il y a dedans, non."
+  }
+}

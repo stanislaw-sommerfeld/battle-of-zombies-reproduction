@@ -41,6 +41,8 @@ try {
   await page.waitForSelector(".title-screen");
   await page.click("[data-act=new]");
   await page.click("[data-origin=gravedigger]");
+  // walk through the character creator with its defaults
+  for (let i = 0; i < 12 && (await page.$(".creator")); i++) await page.click("[data-act=next]");
   await wait(500);
 
   // 1. read the note at the crater

@@ -1,33 +1,49 @@
-// Boot: load the content bundle, create the game, run the loop.
+// Boot: load settings and the content bundle, pick the language, create the
+// game, run the loop.
 import type { ContentBundle } from "./data/types.js";
 import { Input } from "./core/input.js";
+import { SettingsStore } from "./core/settings.js";
 import { Game } from "./game.js";
 import { Renderer } from "./render/renderer.js";
 import { Ui } from "./ui/ui.js";
 import { Sfx } from "./audio/sfx.js";
+import { ContentLocalizer, type Lang } from "./i18n/i18n.js";
 
 async function boot(): Promise<void> {
   const res = await fetch("data.bundle.json");
   if (!res.ok) throw new Error(`Could not load data.bundle.json (${res.status})`);
   const content = (await res.json()) as ContentBundle;
 
+  const settings = new SettingsStore(window.localStorage, navigator.language || "en");
+  const localizer = new ContentLocalizer(content, async (lang: Lang) => {
+    const r = await fetch(`locales/${lang}.json`);
+    if (!r.ok) throw new Error(`locales/${lang}.json: ${r.status}`);
+    return (await r.json()) as Record<string, string>;
+  });
+  await localizer.use(settings.value.language);
+
   const canvas = document.getElementById("game") as HTMLCanvasElement;
   const input = new Input(canvas);
   const game = new Game(content, window.localStorage);
   game.input = input;
   const renderer = new Renderer(canvas);
-  const ui = new Ui(game);
   const sfx = new Sfx(game.bus);
+  const apply = () => {
+    const s = settings.value;
+    input.setBindings(s.bindings);
+    sfx.setVolume(s.audio.volume, s.audio.muted);
+    renderer.shakeEnabled = s.display.screenShake;
+  };
+  apply();
+  settings.onChange(apply);
+  const ui = new Ui(game, input, settings, { setLanguage: (l) => localizer.use(l) });
   ui.onStart = () => {
     renderer.cam = { x: 0, y: 0 };
     game.mapDirty = true;
   };
-  window.addEventListener("keydown", (e) => {
-    if (e.code === "KeyM") game.toast(sfx.toggle() ? "Sound off" : "Sound on");
-  });
 
   // exposed for debugging and automated smoke tests
-  (window as unknown as { ashLedger: unknown }).ashLedger = { game, ui, input, renderer };
+  (window as unknown as { ashLedger: unknown }).ashLedger = { game, ui, input, renderer, settings, localizer };
 
   let last = performance.now();
   let wasBlocking = true;

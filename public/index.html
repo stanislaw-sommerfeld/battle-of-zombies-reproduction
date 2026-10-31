@@ -11,26 +11,36 @@
   <body>
     <canvas id="game"></canvas>
     <div id="hud" class="hidden">
-      <div id="vitals">
-        <div id="level"></div>
-        <div class="bar hp"><div id="hp-fill" class="fill"></div><span id="hp-text"></span></div>
-        <div class="bar st"><div id="st-fill" class="fill"></div></div>
-        <div class="bar xp"><div id="xp-fill" class="fill"></div></div>
-        <div id="ember" title="Ember: fuels spells. Harvest echoes (E) to regain it."></div>
-        <div id="fray" title="Fray: rises with spells and harvesting. Above 50 spells are stronger. At 100 reality ruptures.">
-          <div class="bar fray"><div id="fray-fill" class="fill"></div></div>
-          <span id="fray-label"></span>
+      <div id="vignette"></div>
+      <div id="vitals" class="hud-anchor tl">
+        <div class="portrait-frame">
+          <canvas id="portrait" width="128" height="128"></canvas>
+          <div id="level"></div>
         </div>
-        <div id="statuses"></div>
+        <div class="vital-bars">
+          <div class="bar hp"><div id="hp-ghost" class="ghost"></div><div id="hp-fill" class="fill"></div><span id="hp-text"></span></div>
+          <div class="bar st"><div id="st-fill" class="fill"></div></div>
+          <div class="res-row">
+            <div id="ember"></div>
+            <div id="fray">
+              <div class="bar fray"><div id="fray-fill" class="fill"></div><i class="tick" style="left: 50%"></i></div>
+              <span id="fray-label"></span>
+            </div>
+          </div>
+          <div class="bar xp"><div id="xp-fill" class="fill"></div></div>
+          <div id="statuses"></div>
+        </div>
       </div>
-      <div id="zone"></div>
-      <canvas id="minimap" width="160" height="120"></canvas>
-      <div id="quests"></div>
-      <div id="boss"><div id="boss-name"></div><div class="bar"><div id="boss-fill" class="fill"></div></div></div>
+      <div id="zone-panel" class="hud-anchor tr">
+        <div id="zone"></div>
+        <div class="minimap-frame"><canvas id="minimap" width="160" height="120"></canvas></div>
+        <div id="quests"></div>
+      </div>
+      <div id="boss" class="hud-anchor tc"><div id="boss-name"></div><div class="bar"><div id="boss-fill" class="fill"></div></div></div>
       <div id="zone-banner"></div>
-      <div id="prompt"></div>
-      <div id="abilities"></div>
-      <div id="toasts"></div>
+      <div id="prompt" class="hud-anchor bc"></div>
+      <div id="abilities" class="hud-anchor bc"></div>
+      <div id="toasts" class="hud-anchor bl"></div>
     </div>
     <div id="overlay"></div>
     <div id="loading">Gathering ash…</div>

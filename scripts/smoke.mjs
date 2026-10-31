@@ -26,6 +26,8 @@ try {
   await page.screenshot({ path: `${shots}/01-title.png` });
   await page.click("[data-act=new]");
   await page.click(`[data-origin=${process.env.ORIGIN ?? "lamplighter"}]`);
+  // walk through the character creator with its defaults
+  for (let i = 0; i < 12 && (await page.$(".creator")); i++) await page.click("[data-act=next]");
   await wait(1500);
   await page.screenshot({ path: `${shots}/02-start.png` });
 

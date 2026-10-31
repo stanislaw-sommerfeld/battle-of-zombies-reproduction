@@ -77,3 +77,11 @@ Add a world rule with a `toast` effect and `"kind": "hint"`. Rules fire once by 
 - Origins: starting attributes, gear, and a trait.
 - Traits (`data/traits`): perks plus optional attribute `requires`. Three random eligible traits are offered on each level-up.
 - Abilities (`data/abilities`): a projectile spell on Q or R with an element, Ember cost, Fray and scaling. Learn one with the `learnAbility` effect.
+
+## Species, peoples and cosmetics
+
+`data/species/*.json`: a species has `races` (peoples) with skin, hair and eye palettes, optional `sexes` (omit them and the creator skips the step), height and weight ranges, and `features` drawn on the body (`embers`, `ink_veins`, `glow_eyes`). `data/cosmetics/*.json` holds hairstyles, outfits, marks and the `cloth` palette; `species` limits an option to some species. Shapes are drawn in `src/render/character.ts`. All of it is cosmetic.
+
+## Translations
+
+After adding or changing English text, run `npm run build && node scripts/i18n.mjs sync fr`, then fill the `fr` fields in `locales/fr.content.json`. Write `{key:interact}` instead of a key name.

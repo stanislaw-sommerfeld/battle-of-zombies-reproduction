@@ -5,6 +5,7 @@ import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { bundleData } from "./data-lib.mjs";
+import { flatten, localeFiles } from "./i18n.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
@@ -24,6 +25,12 @@ export function writeBundle(outDir) {
   return bundle;
 }
 
+/** Content translations, flattened to path -> text (dist/locales/<lang>.json). */
+export function writeLocales(outDir) {
+  mkdirSync(join(outDir, "locales"), { recursive: true });
+  for (const { lang, file } of localeFiles()) writeFileSync(join(outDir, "locales", `${lang}.json`), JSON.stringify(flatten(file, lang)));
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   rmSync(dist, { recursive: true, force: true });
   mkdirSync(dist, { recursive: true });
@@ -31,6 +38,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (tsc.status !== 0) process.exit(tsc.status ?? 1);
   cpSync(join(root, "public"), dist, { recursive: true });
   const bundle = writeBundle(dist);
+  writeLocales(dist);
   const counts = Object.entries(bundle).map(([k, v]) => `${k}:${Object.keys(v).length}`).join(" ");
   console.log(`Built dist/ (${counts})`);
 }

@@ -8,7 +8,7 @@ You wake in a crater where the ash falls upward. A note in your own handwriting 
 
 ## Play
 
-- **Online:** after the first deploy, at `https://<owner>.github.io/<repo>/` (see [Deployment](#deployment)).
+- **Online:** https://stanislaw-sommerfeld.github.io/battle-of-zombies-reproduction/
 - **Locally:**
   ```bash
   npm install
@@ -16,6 +16,8 @@ You wake in a crater where the ash falls upward. A note in your own handwriting 
   ```
 
 ### Controls
+
+Defaults below; every action can be rebound in **Settings → Controls** (keys follow position, so WASD is ZQSD on AZERTY).
 
 | Action | Input |
 | --- | --- |
@@ -35,7 +37,9 @@ You wake in a crater where the ash falls upward. A note in your own handwriting 
 - **Character building:** 3 origins, 4 attributes, 11 traits that change how you fight (e.g. heavy attacks shatter frozen enemies), equipment with qualitative perks and drawbacks, random affixes, and a relic or two.
 - **A quest with three resolutions:** kill the Leech-Mother, burn the spring clean, or complete the Cinder Choir's rite. D&D-style d20 skill checks appear in dialogue. The choice permanently rewrites local laws, NPC dialogue and who lives in town.
 - **A second quest** in the Hush (kill the boss, light the funeral fires, or read the dead's names aloud). **Odo's shop** with cinder marks, contextual tips, a **minimap** with fog of war.
-- **Save/load** (versioned, localStorage) at waystones and from the pause menu. When you die you rise at your last rest.
+- **Save/load:** an autosave at waystones plus three manual slots, each exportable to a JSON file and importable on another browser. When you die you rise at your last rest.
+- **Character creator:** origin, species, people, sex (when the species has one), height, weight, skin, hair, eyes, marks and clothing, with a live preview. Cosmetic only; the species are provisional (see [the story workshop](docs/STORY_WORKSHOP.md)).
+- **Settings:** English or French (interface and all game text), key rebinding, volume, interface size, screen shake, minimap, tips; exportable as a file.
 
 ## Scripts
 
@@ -58,6 +62,7 @@ The project's only dependency is TypeScript.
 - [Game design](docs/GAME_DESIGN.md): pillars, signature mechanics, loops
 - [Architecture](docs/ARCHITECTURE.md): systems and how they talk
 - [World](docs/WORLD.md) and [Narrative](docs/NARRATIVE.md)
+- [Atelier d'histoire](docs/STORY_WORKSHOP.md) (French): open questions for a deeper story
 - [Content guide](docs/CONTENT_GUIDE.md): how to add weapons, enemies, quests, zones…
 - [Roadmap](docs/ROADMAP.md)
 

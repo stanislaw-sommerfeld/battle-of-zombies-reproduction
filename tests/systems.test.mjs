@@ -13,7 +13,7 @@ const { rollLoot } = await js("items/loot.js");
 const { EventBus } = await js("core/events.js");
 const { QuestSystem } = await js("quests/quests.js");
 const { evaluate, applyEffects, skillCheck } = await js("narrative/rules.js");
-const { migrate, SAVE_VERSION, writeSave, readSave } = await js("save/save.js");
+const { migrate, SAVE_VERSION, writeSlot, readSlot, latestSlot, LEGACY_SAVE_KEY, exportSaveFile, parseSaveFile } = await js("save/save.js");
 const { bundle: content } = bundleData(join(import.meta.dirname, "..", "data"));
 
 test("fire on a wet target fizzles; frost on a wet target freezes; oil flares", () => {
@@ -144,12 +144,22 @@ test("quest started after the problem was already solved skips straight to repor
   assert.equal(q.stage("q_fouled_well"), "report");
 });
 
-test("saves round-trip and reject unknown versions", () => {
+test("save slots round-trip, migrate v1 saves and reject foreign files", () => {
   const store = new Map();
   const storage = { getItem: (k) => store.get(k) ?? null, setItem: (k, v) => store.set(k, v), removeItem: (k) => store.delete(k) };
-  const data = { version: SAVE_VERSION, savedAt: 1, region: "cinder_vale", playTime: 3, player: {}, inventory: {}, world: {}, quests: {}, insights: {}, lore: [] };
-  writeSave(storage, data);
-  assert.deepEqual(readSave(storage), data);
+  const player = { origin: "lamplighter", x: 1, y: 2, hp: 3, ember: 1, fray: 0, xp: 0, level: 1, unspent: 0, pendingTraits: 0, attributes: { might: 1, finesse: 1, wits: 1, resolve: 1 }, traits: [], abilities: [], waystone: [1, 2] };
+  const base = { savedAt: 1, region: "cinder_vale", playTime: 3, inventory: { nextUid: 1, items: [], equipped: {} }, world: {}, quests: {}, insights: { learned: [], counters: {} }, lore: [] };
+  const data = { ...base, version: SAVE_VERSION, player: { ...player, look: null } };
+  writeSlot(storage, "2", data);
+  assert.deepEqual(readSlot(storage, "2"), data);
+  // a version-1 save in the old single key moves to the autosave slot and gains `look`
+  store.set(LEGACY_SAVE_KEY, JSON.stringify({ ...base, version: 1, savedAt: 5, player }));
+  assert.equal(readSlot(storage, "auto").player.look, null);
+  assert.equal(store.has(LEGACY_SAVE_KEY), false);
+  assert.equal(latestSlot(storage), "auto");
+  assert.deepEqual(parseSaveFile(exportSaveFile(data)), data);
+  assert.throws(() => parseSaveFile(JSON.stringify({ format: "something-else" })));
+  assert.throws(() => parseSaveFile(JSON.stringify({ ...data, player: { ...data.player, hp: "lots" } })));
   assert.throws(() => migrate({ version: SAVE_VERSION + 1 }));
   assert.throws(() => migrate({}));
 });
