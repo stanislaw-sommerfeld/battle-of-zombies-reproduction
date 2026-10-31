@@ -1,8 +1,48 @@
 [
-  { "id": "ragged_coat", "name": "Ragged Coat", "type": "coat", "icon": "▲", "resist": { "physical": 0.05 }, "description": "It was someone's best coat once." },
-  { "id": "oilskin_coat", "name": "Oilskin Coat", "type": "coat", "icon": "▲", "color": "#8a7a40", "resist": { "fire": 0.3 }, "maxHealth": 5, "rollAffixes": true, "description": "Waxed against the mire. Sheds burning oil." },
-  { "id": "warden_coat", "name": "Warden's Coat", "type": "coat", "icon": "▲", "rarity": "uncommon", "resist": { "physical": 0.15 }, "maxHealth": 15, "description": "Lanternfast's colours, faded to ash." },
-  { "id": "tallow_charm", "name": "Tallow Charm", "type": "charm", "icon": "○", "maxHealth": 10, "rollAffixes": true, "description": "A saint's candle stub on a string. Superstition, mostly." },
+  {
+    "id": "ragged_coat",
+    "name": "Ragged Coat",
+    "type": "coat",
+    "icon": "▲",
+    "resist": {
+      "physical": 0.05
+    },
+    "description": "It was someone's best coat once."
+  },
+  {
+    "id": "oilskin_coat",
+    "name": "Oilskin Coat",
+    "type": "coat",
+    "icon": "▲",
+    "color": "#8a7a40",
+    "resist": {
+      "fire": 0.3
+    },
+    "maxHealth": 5,
+    "rollAffixes": true,
+    "description": "Waxed against the mire. Sheds burning oil."
+  },
+  {
+    "id": "warden_coat",
+    "name": "Warden's Coat",
+    "type": "coat",
+    "icon": "▲",
+    "rarity": "uncommon",
+    "resist": {
+      "physical": 0.15
+    },
+    "maxHealth": 15,
+    "description": "Lanternfast's colours, faded to ash."
+  },
+  {
+    "id": "tallow_charm",
+    "name": "Tallow Charm",
+    "type": "charm",
+    "icon": "○",
+    "maxHealth": 10,
+    "rollAffixes": true,
+    "description": "A saint's candle stub on a string. Superstition, mostly."
+  },
   {
     "id": "rimeglass_shard",
     "name": "Rimeglass Shard",
@@ -10,7 +50,9 @@
     "rarity": "rare",
     "icon": "◇",
     "color": "#aee8ff",
-    "perks": ["rime_edge"],
+    "perks": [
+      "rime_edge"
+    ],
     "description": "A sliver of the Page of Stillness, frozen solid. Everything you strike remembers cold."
   },
   {
@@ -20,7 +62,10 @@
     "rarity": "relic",
     "icon": "◉",
     "color": "#7fd0ff",
-    "perks": ["steady_mind", "fray_conduit"],
+    "perks": [
+      "steady_mind",
+      "fray_conduit"
+    ],
     "description": "Found on an island no one could reach. It looks at the Blank without flinching."
   },
   {
@@ -30,12 +75,95 @@
     "rarity": "relic",
     "icon": "◎",
     "color": "#d0a0ff",
-    "perks": ["echo_eater"],
-    "drawbacks": ["choir_hunger"],
+    "perks": [
+      "echo_eater"
+    ],
+    "drawbacks": [
+      "choir_hunger"
+    ],
     "description": "Carved from a singer's finger-bone. It hums when echoes are near."
   },
-  { "id": "ashbread", "name": "Ashbread", "type": "consumable", "icon": "◒", "color": "#c9a46a", "stack": 10, "use": [{ "heal": 30 }], "description": "Grey, dense, filling. Restores 30 health. (C)" },
-  { "id": "oil_flask", "name": "Oil Flask", "type": "consumable", "icon": "⚱", "color": "#8a7030", "stack": 10, "throwable": { "liquid": "oil", "radius": 1.6 }, "description": "Throw (F) to splash oil. Oil burns. Creatures in it become Oiled — fire flares on them." },
-  { "id": "water_flask", "name": "Water Flask", "type": "consumable", "icon": "⚱", "color": "#5fb0ff", "stack": 10, "throwable": { "liquid": "water", "radius": 1.6 }, "description": "Throw (F) to splash water: puts out fire, soaks creatures (Wet). Wet things freeze." },
-  { "id": "choir_tincture", "name": "Choir Tincture", "type": "key", "icon": "♁", "color": "#d0a0ff", "description": "Warm, violet, faintly humming. Brother Cale wants it poured into the spring." }
+  {
+    "id": "ashbread",
+    "name": "Ashbread",
+    "type": "consumable",
+    "icon": "◒",
+    "color": "#c9a46a",
+    "stack": 10,
+    "use": [
+      {
+        "heal": 30
+      }
+    ],
+    "description": "Grey, dense, filling. Restores 30 health. (C)"
+  },
+  {
+    "id": "oil_flask",
+    "name": "Oil Flask",
+    "type": "consumable",
+    "icon": "⚱",
+    "color": "#8a7030",
+    "stack": 10,
+    "throwable": {
+      "liquid": "oil",
+      "radius": 1.6
+    },
+    "description": "Throw (F) to splash oil. Oil burns. Creatures in it become Oiled — fire flares on them."
+  },
+  {
+    "id": "water_flask",
+    "name": "Water Flask",
+    "type": "consumable",
+    "icon": "⚱",
+    "color": "#5fb0ff",
+    "stack": 10,
+    "throwable": {
+      "liquid": "water",
+      "radius": 1.6
+    },
+    "description": "Throw (F) to splash water: puts out fire, soaks creatures (Wet). Wet things freeze."
+  },
+  {
+    "id": "choir_tincture",
+    "name": "Choir Tincture",
+    "type": "key",
+    "icon": "♁",
+    "color": "#d0a0ff",
+    "description": "Warm, violet, faintly humming. Brother Cale wants it poured into the spring."
+  },
+  {
+    "id": "cinder_mark",
+    "name": "Cinder Mark",
+    "type": "material",
+    "icon": "◈",
+    "color": "#d9b26a",
+    "stack": 99,
+    "description": "A stamped disc of fused ash. Lanternfast trades in them."
+  },
+  {
+    "id": "bell_tongue",
+    "name": "Bell-Tongue Charm",
+    "type": "charm",
+    "rarity": "rare",
+    "icon": "◬",
+    "color": "#c9b8ff",
+    "perks": [
+      "tolling_blow"
+    ],
+    "maxHealth": 10,
+    "description": "A sliver of the chapel bell. Your third strike rings."
+  },
+  {
+    "id": "folio_locket",
+    "name": "Folio-Ash Locket",
+    "type": "charm",
+    "rarity": "relic",
+    "icon": "◍",
+    "color": "#efe4c8",
+    "perks": [
+      "steady_mind",
+      "scavenger_sense"
+    ],
+    "description": "Ash from the Folio of the Uncounted, sealed in brass. It is warm when you say names aloud."
+  }
 ]

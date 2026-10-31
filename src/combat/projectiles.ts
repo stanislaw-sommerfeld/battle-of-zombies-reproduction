@@ -75,7 +75,7 @@ function impact(g: Game, p: Projectile, target?: Actor): void {
     if (g.player.invuln <= 0) p.applies.forEach((s) => g.applyStatusTo(g.player, s));
   } else if (target) {
     const e = target as Enemy;
-    const info: HitInfo = { target: e, heavy: false, element: p.element, fromBehind: false, melee: false };
+    const info: HitInfo = { target: e, heavy: false, element: p.element, fromBehind: false, melee: false, combo: 0 };
     let mult = 1;
     if (p.fromPlayer) for (const pk of g.perks()) if (pk.damageMult) mult *= pk.damageMult(g, info);
     const res = computeDamage({ base: p.damage, element: p.element, resist: e.def.resist, targetStatuses: e.statuses, multiplier: mult });
@@ -93,10 +93,7 @@ function impact(g: Game, p: Projectile, target?: Actor): void {
   }
   // fire bolts light braziers
   if (p.element === "fire") {
-    for (const pr of g.props) if (pr.def.shape === "brazier" && !pr.params.lit && dist(pr.pos, p.pos) < 40) {
-      pr.params.lit = true;
-      g.bus.emit("PropInteracted", { propId: pr.def.id, spawnId: pr.spawnId, zone: g.zoneAt(pr.pos)?.id ?? "" });
-    }
+    g.lightBraziers(p.pos);
   }
   g.bus.emit("Noise", { x: p.pos.x, y: p.pos.y, radius: 140, source: "impact" });
 }

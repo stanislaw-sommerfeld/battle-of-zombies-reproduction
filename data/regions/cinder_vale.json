@@ -513,16 +513,13 @@
       ]
     },
     {
-      "id": "hush_folio",
+      "id": "hush_lectern",
       "kind": "prop",
-      "ref": "page",
+      "ref": "lectern",
       "at": [
         11,
         28
-      ],
-      "params": {
-        "lore": "chapel_folio"
-      }
+      ]
     },
     {
       "id": "hush_hoard",

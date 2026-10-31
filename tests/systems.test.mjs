@@ -153,3 +153,33 @@ test("saves round-trip and reject unknown versions", () => {
   assert.throws(() => migrate({ version: SAVE_VERSION + 1 }));
   assert.throws(() => migrate({}));
 });
+
+test("flow field routes around a wall through the gap", async () => {
+  const { TileMap } = await js("world/tilemap.js");
+  const { PathField } = await js("ai/pathfield.js");
+  const region = {
+    id: "t", tileSize: 32, legend: { "#": "rock", ".": "ash" }, zones: [], spawns: [],
+    map: ["#######", "#.....#", "#.###.#", "#..#..#", "#######"],
+  };
+  const map = new TileMap(region, content.tiles);
+  const pf = new PathField(map);
+  pf.update({ x: 4.5 * 32, y: 3.5 * 32 }); // target on the right of the wall
+  let pos = { x: 1.5 * 32, y: 3.5 * 32 }; // creature on the left
+  const visited = [];
+  for (let i = 0; i < 12; i++) {
+    const step = pf.nextStep(pos);
+    if (!step) break;
+    pos = step;
+    visited.push(map.cellAt(pos).join(","));
+  }
+  assert.ok(visited.includes("3,1"), `path should go over the top of the wall: ${visited}`);
+  assert.equal(visited.at(-1), "4,3");
+});
+
+test("explored bitmap survives encode/decode", async () => {
+  const { encodeBits, decodeBits } = await js("game.js");
+  const bits = new Uint8Array(4800);
+  for (let i = 0; i < bits.length; i += 7) bits[i] = 1;
+  assert.deepEqual(decodeBits(encodeBits(bits), bits.length), bits);
+  assert.equal(decodeBits("", 10).reduce((a, b) => a + b, 0), 0);
+});

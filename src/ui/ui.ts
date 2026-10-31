@@ -7,6 +7,7 @@ import type { AttributeId } from "../data/types.js";
 import { EQUIP_SLOTS, resolveItem, slotFor, type ResolvedItem } from "../items/inventory.js";
 import { perkText } from "../effects/perks.js";
 import { recomputePlayerStats, useItem } from "../entities/player.js";
+import { Minimap } from "./minimap.js";
 
 const $ = <T extends HTMLElement = HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector(sel) as T;
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -31,9 +32,11 @@ export class Ui implements UiBridge {
   private last: Record<string, string> = {};
   private traitOptions: string[] = [];
   onStart?: () => void;
+  private minimap: Minimap;
 
   constructor(private g: Game) {
     g.ui = this;
+    this.minimap = new Minimap($("#minimap") as HTMLCanvasElement, g);
     g.bus.on("Toast", (t) => this.toast(t.text, t.kind));
     g.bus.on("AreaEntered", (a) => this.zoneBanner(a.zone, a.first));
     g.bus.on("GameSaved", () => this.toast("Saved.", "save"));
@@ -403,14 +406,14 @@ export class Ui implements UiBridge {
     el.className = `toast ${kind}`;
     el.textContent = text;
     box.appendChild(el);
-    this.toasts.push({ el, t: kind === "insight" || kind === "quest" ? 7 : 4.5 });
+    this.toasts.push({ el, t: kind === "insight" || kind === "quest" || kind === "hint" ? 7 : 4.5 });
     while (this.toasts.length > 5) this.toasts.shift()!.el.remove();
   }
 
   private zoneBanner(zoneId: string, first: boolean): void {
     const z = this.g.content.zones[zoneId];
     if (!z) return;
-    const ed = this.g.content.edicts[z.edict];
+    const ed = this.g.zoneEdict(z.id);
     const el = $("#zone-banner");
     el.innerHTML = `<div class="zname">${esc(z.name)}</div>${ed && ed.id !== "blank" ? `<div class="zedict">${esc(ed.name)} — ${esc(ed.text)}</div>` : ""}${first && z.description ? `<div class="zdesc">${esc(z.description)}</div>` : ""}`;
     el.classList.add("show");
@@ -436,6 +439,7 @@ export class Ui implements UiBridge {
     if (this.screen !== "playing") return;
     const g = this.g;
     const p = g.player;
+    this.minimap.update(dt);
     const pct = (a: number, b: number) => `${Math.max(0, Math.min(100, (a / b) * 100)).toFixed(1)}%`;
     $("#hp-fill").style.width = pct(p.hp, p.maxHp);
     $("#st-fill").style.width = pct(p.stamina, p.maxStamina);
@@ -474,7 +478,7 @@ export class Ui implements UiBridge {
 
     // zone + edict
     const z = g.currentZone;
-    const ed = z ? g.content.edicts[z.edict] : undefined;
+    const ed = z ? g.zoneEdict(z.id) : undefined;
     this.set("#zone", z ? `<b>${esc(z.name)}</b>${ed && ed.id !== "blank" ? `<span>${esc(ed.name)}</span>` : ""}` : "");
 
     // statuses on player

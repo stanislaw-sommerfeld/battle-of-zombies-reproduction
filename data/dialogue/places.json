@@ -2,92 +2,485 @@
   {
     "id": "spring",
     "entries": [
-      { "if": { "flag": "spring_state", "exists": true }, "node": "settled" },
-      { "node": "shrine" }
+      {
+        "if": {
+          "flag": "spring_state",
+          "exists": true
+        },
+        "node": "settled"
+      },
+      {
+        "node": "shrine"
+      }
     ],
     "nodes": {
       "shrine": {
         "speaker": "Spring Shrine",
         "text": "A little shrine of river stones. Ink laps at its base and draws back, laps and draws back, like breathing. In the deep pool, something vast turns over in its sleep.",
         "options": [
-          { "text": "Pour the Choir's tincture into the spring.", "if": { "hasItem": "choir_tincture" }, "effects": [{ "takeItem": "choir_tincture" }, { "setFlag": "spring_state", "value": "choir_rite" }], "goto": "poured" },
-          { "text": "(Remember: ink burns like oil.) Think about fire.", "if": { "insight": "ink_burns_clean" }, "goto": "think" },
-          { "text": "Study the ink.", "if": { "not": { "insight": "ink_burns_clean" } }, "check": { "attr": "wits", "dc": 12 }, "once": "studied_ink", "goto": "study_ok", "failGoto": "study_fail" },
-          { "text": "[Leave]", "goto": "end" }
+          {
+            "text": "Pour the Choir's tincture into the spring.",
+            "if": {
+              "hasItem": "choir_tincture"
+            },
+            "effects": [
+              {
+                "takeItem": "choir_tincture"
+              },
+              {
+                "setFlag": "spring_state",
+                "value": "choir_rite"
+              }
+            ],
+            "goto": "poured"
+          },
+          {
+            "text": "(Remember: ink burns like oil.) Think about fire.",
+            "if": {
+              "insight": "ink_burns_clean"
+            },
+            "goto": "think"
+          },
+          {
+            "text": "Study the ink.",
+            "if": {
+              "not": {
+                "insight": "ink_burns_clean"
+              }
+            },
+            "check": {
+              "attr": "wits",
+              "dc": 12
+            },
+            "once": "studied_ink",
+            "goto": "study_ok",
+            "failGoto": "study_fail"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
         ]
       },
       "poured": {
         "speaker": "Spring Shrine",
         "text": "The tincture spreads through the ink like a bruise. The ink goes still... and then begins, very softly, to hum.\n\nFar to the west, in Lanternfast, you imagine the well beginning to sing.",
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       },
       "think": {
         "speaker": "Spring Shrine",
         "text": "The ink shrinks from heat the way it shrinks from you. Under the Edict of Kindling, one good flame would run all the way around the pool. Burn enough of it and the spring will remember being water — and whatever feeds here will have nothing left to eat.",
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       },
       "study_ok": {
         "speaker": "Spring Shrine",
         "text": "You watch long enough to see the ink flinch from a falling ember, then catch, briefly, with a violet flame. It burns. Ink is only oil that remembers.",
-        "effects": [{ "grantInsight": "ink_burns_clean" }],
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "effects": [
+          {
+            "grantInsight": "ink_burns_clean"
+          }
+        ],
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       },
       "study_fail": {
         "speaker": "Spring Shrine",
         "text": "The ink watches you back. You look away first.",
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       },
       "settled": {
         "speaker": "Spring Shrine",
         "text": "The spring is quiet.",
         "variants": [
-          { "if": { "flag": "spring_state", "eq": "burned_clean" }, "text": "Clear water bubbles up between the stones. You can see the bottom of the pool, and something glinting on the little island in its middle." },
-          { "if": { "flag": "spring_state", "eq": "leech_slain" }, "text": "Without its mother the ink is thinning, drifting apart in slow black threads." },
-          { "if": { "flag": "spring_state", "eq": "choir_rite" }, "text": "The spring hums to itself. When you lean close, the ink rearranges into letters you almost recognise." }
+          {
+            "if": {
+              "flag": "spring_state",
+              "eq": "burned_clean"
+            },
+            "text": "Clear water bubbles up between the stones. You can see the bottom of the pool, and something glinting on the little island in its middle."
+          },
+          {
+            "if": {
+              "flag": "spring_state",
+              "eq": "leech_slain"
+            },
+            "text": "Without its mother the ink is thinning, drifting apart in slow black threads."
+          },
+          {
+            "if": {
+              "flag": "spring_state",
+              "eq": "choir_rite"
+            },
+            "text": "The spring hums to itself. When you lean close, the ink rearranges into letters you almost recognise."
+          }
         ],
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       }
     }
   },
   {
     "id": "well",
     "entries": [
-      { "if": { "flag": "well_singing", "eq": true }, "node": "singing" },
-      { "if": { "flag": "well_clean", "eq": true }, "node": "clean" },
-      { "node": "fouled" }
+      {
+        "if": {
+          "flag": "well_singing",
+          "eq": true
+        },
+        "node": "singing"
+      },
+      {
+        "if": {
+          "flag": "well_clean",
+          "eq": true
+        },
+        "node": "clean"
+      },
+      {
+        "node": "fouled"
+      }
     ],
     "nodes": {
       "fouled": {
         "speaker": "Lanternfast Well",
         "text": "The well is full to the brim with something black that moves against the wind. A bucket hangs in it, half-dissolved.",
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       },
       "clean": {
         "speaker": "Lanternfast Well",
         "text": "Cold, clean water. You drink, and feel a little more like whoever you used to be.",
-        "effects": [{ "heal": 40 }],
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "effects": [
+          {
+            "heal": 40
+          }
+        ],
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       },
       "singing": {
         "speaker": "Lanternfast Well",
         "text": "The water hums. Your reflection mouths words you don't know, and does not blink when you do.",
-        "effects": [{ "fray": 15 }],
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "effects": [
+          {
+            "fray": 15
+          }
+        ],
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       }
     }
   },
   {
     "id": "odo",
-    "entries": [{ "if": { "flag": "odo_gift", "eq": true }, "node": "later" }, { "node": "gift" }],
+    "entries": [
+      {
+        "if": {
+          "flag": "odo_gift",
+          "eq": true
+        },
+        "node": "later"
+      },
+      {
+        "node": "gift"
+      }
+    ],
     "nodes": {
       "gift": {
         "text": "Odo Fenn, tinker. Came back the moment I heard the water ran clean. Here — flasks, on the house.\n\nA tinker's advice: oil on hounds, then fire. Water on anything burning, including you. Water then rime, and a thing stays put.",
-        "effects": [{ "giveItem": "oil_flask", "count": 3 }, { "giveItem": "water_flask", "count": 2 }, { "setFlag": "odo_gift", "value": true }],
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "effects": [
+          {
+            "giveItem": "oil_flask",
+            "count": 3
+          },
+          {
+            "giveItem": "water_flask",
+            "count": 2
+          },
+          {
+            "setFlag": "odo_gift",
+            "value": true
+          }
+        ],
+        "options": [
+          {
+            "text": "Show me what you sell.",
+            "goto": "shop"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       },
       "later": {
         "text": "Flasks are cheap; skin's expensive. And mind the Hush — there's a bell in that chapel that still rings.",
-        "options": [{ "text": "[Leave]", "goto": "end" }]
+        "variants": [
+          {
+            "if": {
+              "flag": "hush_quieted",
+              "exists": true
+            },
+            "text": "Heard the bell stop. First quiet night in fifty years. What do you need?"
+          }
+        ],
+        "options": [
+          {
+            "text": "Show me what you sell.",
+            "goto": "shop"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
+      },
+      "shop": {
+        "text": "Cinder marks only. Hounds swallow them, don't ask me why.",
+        "options": [
+          {
+            "text": "Two oil flasks — 3 marks",
+            "if": {
+              "hasItem": "cinder_mark",
+              "count": 3
+            },
+            "effects": [
+              {
+                "takeItem": "cinder_mark",
+                "count": 3
+              },
+              {
+                "giveItem": "oil_flask",
+                "count": 2
+              }
+            ],
+            "goto": "shop"
+          },
+          {
+            "text": "Two water flasks — 3 marks",
+            "if": {
+              "hasItem": "cinder_mark",
+              "count": 3
+            },
+            "effects": [
+              {
+                "takeItem": "cinder_mark",
+                "count": 3
+              },
+              {
+                "giveItem": "water_flask",
+                "count": 2
+              }
+            ],
+            "goto": "shop"
+          },
+          {
+            "text": "Three loaves of ashbread — 4 marks",
+            "if": {
+              "hasItem": "cinder_mark",
+              "count": 4
+            },
+            "effects": [
+              {
+                "takeItem": "cinder_mark",
+                "count": 4
+              },
+              {
+                "giveItem": "ashbread",
+                "count": 3
+              }
+            ],
+            "goto": "shop"
+          },
+          {
+            "text": "An oilskin coat — 10 marks",
+            "if": {
+              "hasItem": "cinder_mark",
+              "count": 10
+            },
+            "effects": [
+              {
+                "takeItem": "cinder_mark",
+                "count": 10
+              },
+              {
+                "giveItem": "oilskin_coat",
+                "count": 1
+              }
+            ],
+            "goto": "shop"
+          },
+          {
+            "text": "Haggle: “Lanternfast owes me, Odo.”",
+            "if": {
+              "flag": "faction.lanternfast",
+              "gte": 3
+            },
+            "once": "odo_haggled",
+            "effects": [
+              {
+                "giveItem": "cinder_mark",
+                "count": 4
+              }
+            ],
+            "goto": "haggle"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
+      },
+      "haggle": {
+        "text": "...The Warden does speak well of you. Fine. Take these back, call it a loan I'll forget about.",
+        "options": [
+          {
+            "text": "Back to the wares.",
+            "goto": "shop"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "folio",
+    "entries": [
+      {
+        "if": {
+          "flag": "hush_quieted",
+          "exists": true
+        },
+        "node": "quiet"
+      },
+      {
+        "node": "lectern"
+      }
+    ],
+    "nodes": {
+      "lectern": {
+        "speaker": "Chained Lectern",
+        "text": "A charred folio, chained to the lectern. Page after page of names, every one struck through. The bell tolls each time your eyes move down the list.",
+        "options": [
+          {
+            "text": "Read the folio.",
+            "effects": [
+              {
+                "readLore": "chapel_folio"
+              }
+            ],
+            "goto": "end"
+          },
+          {
+            "text": "Read the names aloud, every one, so they are counted.",
+            "if": {
+              "flag": "knows_burning",
+              "eq": true
+            },
+            "check": {
+              "attr": "resolve",
+              "dc": 13
+            },
+            "effects": [
+              {
+                "setFlag": "hush_quieted",
+                "value": "named"
+              }
+            ],
+            "goto": "named",
+            "failEffects": [
+              {
+                "fray": 25
+              }
+            ],
+            "failGoto": "falter"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
+      },
+      "named": {
+        "speaker": "Chained Lectern",
+        "text": "You read until your voice is ash. With every name the bell rings softer, and the last name is barely a breath. Behind you, something enormous kneels.",
+        "options": [
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
+      },
+      "falter": {
+        "speaker": "Chained Lectern",
+        "text": "The names pile up in your throat. The Blank leans in close to listen. (+25 Fray. You can try again, if you dare.)",
+        "options": [
+          {
+            "text": "Try again.",
+            "goto": "lectern"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
+      },
+      "quiet": {
+        "speaker": "Chained Lectern",
+        "text": "The folio lies open. The ink of the struck-out lines has gone pale, as if the names have finally been allowed to rest.",
+        "options": [
+          {
+            "text": "Read the folio.",
+            "effects": [
+              {
+                "readLore": "chapel_folio"
+              }
+            ],
+            "goto": "end"
+          },
+          {
+            "text": "[Leave]",
+            "goto": "end"
+          }
+        ]
       }
     }
   }

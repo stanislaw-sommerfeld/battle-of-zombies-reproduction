@@ -153,6 +153,26 @@ try {
   await wait(200);
   check("world reacts: tinker Odo arrived", await ev(() => window.ashLedger.game.npcs.some((n) => n.def.id === "odo")));
   await page.screenshot({ path: `${shots}/13-hub-after.png` });
+  await ev(() => window.ashLedger.game.giveItem("cinder_mark", 10));
+  await pickTraits();
+  await wait(100);
+  await pickTraits();
+  await ev(() => {
+    const g = window.ashLedger.game;
+    const odo = g.npcs.find((n) => n.def.id === "odo");
+    g.player.pos = { x: odo.pos.x + 20, y: odo.pos.y };
+  });
+  await wait(200);
+  const oilBefore = await ev(() => window.ashLedger.game.inventory.count("oil_flask"));
+  const odoFocus = await ev(() => window.ashLedger.game.focus?.prompt);
+  await ev(() => window.ashLedger.game.interact());
+  await wait(150);
+  check("Odo is interactable", odoFocus?.includes("Odo") ?? false, odoFocus);
+  await choose("Show me what you sell");
+  await choose("Two oil flasks");
+  await choose("[Leave]");
+  const shop = await ev(() => ({ oil: window.ashLedger.game.inventory.count("oil_flask"), marks: window.ashLedger.game.inventory.count("cinder_mark") }));
+  check("Odo sells flasks for cinder marks", shop.oil === oilBefore + 3 + 2 && shop.marks === 7, JSON.stringify({ oilBefore, ...shop }));
 
   // 8. save / load round trip
   const before = await ev(() => {
@@ -166,9 +186,10 @@ try {
   await wait(400);
   const after = await ev(() => {
     const g = window.ashLedger.game;
-    return { lv: g.progress.level, items: g.inventory.items.length, flags: Object.keys(g.world.flags).length, wall: g.map.get(70, 23), odo: g.npcs.some((n) => n.def.id === "odo") };
+    return { lv: g.progress.level, items: g.inventory.items.length, flags: Object.keys(g.world.flags).length, wall: g.map.get(70, 23), odo: g.npcs.some((n) => n.def.id === "odo"), explored: g.exploredCount };
   });
-  check("save/load preserves progress and world changes", before.lv === after.lv && before.items === after.items && before.flags === after.flags && after.wall === "planks" && after.odo, JSON.stringify(after));
+  check("minimap exploration is saved", after.explored > 300, String(after.explored));
+  check("save/load preserves progress and world changes", before.lv === after.lv && before.items === after.items && before.flags <= after.flags && after.wall === "planks" && after.odo, JSON.stringify(after));
 
   // 9. the Hush: echoes rise under the Edict of Return
   await tp(18, 38);
@@ -186,6 +207,35 @@ try {
   await wait(7000);
   check("an unharvested echo rises in the Hush", await ev(() => window.ashLedger.game.enemies.some((e) => e.risen)));
   await page.screenshot({ path: `${shots}/14-hush.png` });
+
+  // 9b. "The Bell That Counts": silence the bell by lighting both funeral braziers with Ember Bolt
+  check("Hush quest starts on discovery", await ev(() => window.ashLedger.game.quests.state("q_hush_bell") !== "inactive"));
+  for (const [bx, by] of [[8, 28], [14, 28]]) {
+    for (let attempt = 0; attempt < 8; attempt++) {
+      const lit = await ev(([bx, by]) => window.ashLedger.game.props.find((p) => p.def.shape === "brazier" && Math.hypot(p.pos.x - (bx + 0.5) * 32, p.pos.y - (by + 0.5) * 32) < 4)?.params.lit, [bx, by]);
+      if (lit) break;
+      await pickTraits();
+      await ev(([bx, by]) => {
+        const g = window.ashLedger.game;
+        g.player.pos = { x: (bx + 0.5) * 32, y: (by + 3.5) * 32 };
+        g.player.ember = g.player.maxEmber;
+        g.player.fray = 0;
+        g.aim = { x: (bx + 0.5) * 32, y: (by + 0.5) * 32 };
+        window.ashLedger.input.press("spell1");
+      }, [bx, by]);
+      await wait(900);
+    }
+  }
+  await wait(600);
+  await page.screenshot({ path: `${shots}/15-chapel-rites.png` });
+  const hush = await ev(() => {
+    const g = window.ashLedger.game;
+    return { q: g.quests.progress.q_hush_bell, warden: g.enemies.some((e) => e.def.id === "bellwarden"), edict: g.edictAtCell(11, 30).id, charm: g.inventory.count("bell_tongue") };
+  });
+  check("lighting the funeral fires completes the quest peacefully", hush.q?.outcome === "rites", JSON.stringify(hush.q));
+  check("Bellwarden lies down instead of fighting", !hush.warden);
+  check("world scar: the Hush's Edict of Return breaks", hush.edict === "quiet_return", hush.edict);
+  check("rites reward received", hush.charm === 1);
 
   // 10. death screen
   await ev(() => {

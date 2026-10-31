@@ -32,7 +32,8 @@ export type Effect =
   | { grantInsight: string }
   | { learnAbility: string }
   | { faction: string; delta: number }
-  | { toast: string }
+  | { toast: string; kind?: string }
+  | { readLore: string }
   | { heal: number }
   | { fray: number }
   | { clearLiquid: { zone: string; liquid: LiquidId } }
@@ -333,7 +334,7 @@ export interface OriginDef {
 export interface PropDef {
   id: string;
   name: string;
-  shape: "barrel" | "chest" | "page" | "waystone" | "well" | "door" | "brazier" | "edict_stone" | "corpse" | "spring";
+  shape: "barrel" | "chest" | "page" | "waystone" | "well" | "door" | "brazier" | "edict_stone" | "corpse" | "spring" | "lectern";
   solid?: boolean;
   radius: number;
   health?: number;

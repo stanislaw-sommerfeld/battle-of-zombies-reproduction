@@ -22,6 +22,18 @@ The quest can be resolved *before* it is accepted. World rules set `spring_state
 
 Reward choice: the Lanternhook (fire build) or Tamsin's Quiet Knife (stealth build), or both with Might 14 (and a standing penalty).
 
+## Quest: The Bell That Counts (`q_hush_bell`)
+
+Starts when you first enter the Hush (a world rule, so there's no quest giver).
+
+| Resolution | How | World result |
+| --- | --- | --- |
+| **Slain** | kill the Bellwarden | the Gravewrit Maul; the Hush's Edict of Return breaks |
+| **Rites** | light both chapel braziers with any fire (Ember Bolt, the Lanternhook, burning oil) | the Bellwarden lies down without a fight; Bell-Tongue Charm (the third combo hit stuns) |
+| **Named** | read the Folio first, then read the names aloud at the lectern (Resolve 13; each failure costs +25 Fray) | Folio-Ash Locket; `counted_the_uncounted`; a hint that your own name is in the book |
+
+All three set `hush_quieted`. That flag rewrites both Hush zones to *Edict of Return (Broken)*, and Ilse and Odo react to it.
+
 ## Flags in use
 
-`spring_state`, `well_clean`, `well_singing`, `read_own_note`, `read_tamsin_note`, `told_tamsin`, `knows_rubric`, `knows_burning`, `saw_scriptorium`, `bellwarden_slain`, `cider_house_opened`, `cale_refused`, `cale_honest`, `cale_rewarded`, `odo_gift`, `ink_cleared_<zone>`, `rule.<id>`.
+`spring_state`, `well_clean`, `well_singing`, `read_own_note`, `read_tamsin_note`, `told_tamsin`, `knows_rubric`, `knows_burning`, `saw_scriptorium`, `hush_quieted`, `hush_braziers`, `counted_the_uncounted`, `odo_haggled`, `lit_<spawnId>`, `cider_house_opened`, `cale_refused`, `cale_honest`, `cale_rewarded`, `odo_gift`, `ink_cleared_<zone>`, `rule.<id>`.

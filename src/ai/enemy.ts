@@ -149,7 +149,9 @@ export function updateEnemy(g: Game, e: Enemy, dt: number): void {
       break;
     case "investigate": {
       const goal = e.goal ?? e.home;
-      if (dist(e.pos, goal) > 12) steer(g, e, goal, e.def.speed * 0.7 * sm, dt);
+      // hunters that just lost the player follow the trail around corners
+      const trail = e.awareOfPlayer && !g.map.lineClear(e.pos, goal) ? g.paths.nextStep(e.pos) : undefined;
+      if (dist(e.pos, goal) > 12) steer(g, e, trail ?? goal, e.def.speed * 0.7 * sm, dt);
       if (e.aiT <= 0) e.ai = "return";
       break;
     }
@@ -210,6 +212,12 @@ function alertPack(g: Game, e: Enemy): void {
   g.fx.text(e.pos, "howls", "#e0c080");
 }
 
+/** Where to walk to reach `t`: straight at it when visible, else along the flow field. */
+function approach(g: Game, e: Enemy, t: Actor): Vec {
+  if (t !== g.player || g.map.lineClear(e.pos, t.pos)) return t.pos;
+  return g.paths.nextStep(e.pos) ?? t.pos;
+}
+
 function engage(g: Game, e: Enemy, t: Actor, dt: number, sm: number): void {
   const d = dist(e.pos, t.pos);
   const ang = angleTo(e.pos, t.pos);
@@ -231,15 +239,15 @@ function engage(g: Game, e: Enemy, t: Actor, dt: number, sm: number): void {
     // keep distance
     const ideal = 150;
     if (d < ideal * 0.7) steer(g, e, { x: e.pos.x - Math.cos(ang) * 60, y: e.pos.y - Math.sin(ang) * 60 }, speed, dt);
-    else if (d > ideal) steer(g, e, t.pos, speed * 0.8, dt);
+    else if (d > ideal) steer(g, e, approach(g, e, t), speed * 0.8, dt);
     else strafe(g, e, t, speed * 0.6, dt);
   } else if (b === "lunger" && d < 120 && d > 60) {
     strafe(g, e, t, speed * 0.9, dt);
     if (Math.random() < dt * 0.6) e.strafe *= -1;
     // creep closer while circling
-    steer(g, e, t.pos, speed * 0.3, dt);
+    steer(g, e, approach(g, e, t), speed * 0.3, dt);
   } else {
-    steer(g, e, t.pos, speed, dt);
+    steer(g, e, approach(g, e, t), speed, dt);
   }
 }
 

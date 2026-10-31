@@ -1,147 +1,573 @@
 {
   "id": "ilse",
   "entries": [
-    { "if": { "quest": "q_fouled_well", "state": "completed" }, "node": "after" },
-    { "if": { "quest": "q_fouled_well", "state": "active", "stage": "report" }, "node": "report" },
-    { "if": { "quest": "q_fouled_well", "state": "active" }, "node": "progress" },
-    { "if": { "flag": "spring_state", "exists": true }, "node": "early_report" },
-    { "node": "intro" }
+    {
+      "if": {
+        "quest": "q_fouled_well",
+        "state": "completed"
+      },
+      "node": "after"
+    },
+    {
+      "if": {
+        "quest": "q_fouled_well",
+        "state": "active",
+        "stage": "report"
+      },
+      "node": "report"
+    },
+    {
+      "if": {
+        "quest": "q_fouled_well",
+        "state": "active"
+      },
+      "node": "progress"
+    },
+    {
+      "if": {
+        "flag": "spring_state",
+        "exists": true
+      },
+      "node": "early_report"
+    },
+    {
+      "node": "intro"
+    }
   ],
   "nodes": {
     "intro": {
       "text": "You walked out of the Crater. People don't, usually.\n\nI'm Ilse Marrow. I keep the hearth-page of Lanternfast, and the hearth keeps us. Whatever you are, you're welcome to the warmth — but not the water. Our well's gone black.",
       "options": [
-        { "text": "What happened to the well?", "goto": "well" },
-        { "text": "What is this place?", "goto": "place" },
-        { "text": "The ash in the Crater fell upward. Does that happen often?", "check": { "attr": "wits", "dc": 11 }, "goto": "crater_ok", "failGoto": "crater_fail", "once": "ilse_asked_crater" },
-        { "text": "[Leave]", "goto": "end" }
+        {
+          "text": "What happened to the well?",
+          "goto": "well"
+        },
+        {
+          "text": "What is this place?",
+          "goto": "place"
+        },
+        {
+          "text": "The ash in the Crater fell upward. Does that happen often?",
+          "check": {
+            "attr": "wits",
+            "dc": 11
+          },
+          "goto": "crater_ok",
+          "failGoto": "crater_fail",
+          "once": "ilse_asked_crater"
+        },
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
       ]
     },
     "menu": {
       "text": "Anything else?",
       "options": [
-        { "text": "What happened to the well?", "goto": "well", "if": { "quest": "q_fouled_well", "state": "inactive" } },
-        { "text": "What is this place?", "goto": "place" },
-        { "text": "The ash in the Crater fell upward. Does that happen often?", "check": { "attr": "wits", "dc": 11 }, "goto": "crater_ok", "failGoto": "crater_fail", "once": "ilse_asked_crater" },
-        { "text": "[Leave]", "goto": "end" }
+        {
+          "text": "What happened to the well?",
+          "goto": "well",
+          "if": {
+            "quest": "q_fouled_well",
+            "state": "inactive"
+          }
+        },
+        {
+          "text": "What is this place?",
+          "goto": "place"
+        },
+        {
+          "text": "The ash in the Crater fell upward. Does that happen often?",
+          "check": {
+            "attr": "wits",
+            "dc": 11
+          },
+          "goto": "crater_ok",
+          "failGoto": "crater_fail",
+          "once": "ilse_asked_crater"
+        },
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
       ]
     },
     "well": {
       "text": "Three days ago the water came up thick and dark and moving. Living ink — the kind that crawls off torn pages. Our well is fed by a channel from the spring in the Drowned Orchard, east past the ridge.\n\nI sent Tamsin, my runner. She hasn't come back.",
       "options": [
-        { "text": "I'll find out what's fouling the spring.", "effects": [{ "startQuest": "q_fouled_well" }], "goto": "accept" },
-        { "text": "What's in it for me?", "goto": "reward" },
-        { "text": "Not my problem.", "goto": "end" }
+        {
+          "text": "I'll find out what's fouling the spring.",
+          "effects": [
+            {
+              "startQuest": "q_fouled_well"
+            }
+          ],
+          "goto": "accept"
+        },
+        {
+          "text": "What's in it for me?",
+          "goto": "reward"
+        },
+        {
+          "text": "Not my problem.",
+          "goto": "end"
+        }
       ]
     },
     "reward": {
       "text": "Honest, at least. I have a warden's hook that has burned three hounds to cinders, and Tamsin's knife — if it comes to that. Clean water, and one of them is yours.",
       "options": [
-        { "text": "Deal.", "effects": [{ "startQuest": "q_fouled_well" }], "goto": "accept" },
-        { "text": "I'll think about it.", "goto": "end" }
+        {
+          "text": "Deal.",
+          "effects": [
+            {
+              "startQuest": "q_fouled_well"
+            }
+          ],
+          "goto": "accept"
+        },
+        {
+          "text": "I'll think about it.",
+          "goto": "end"
+        }
       ]
     },
     "accept": {
       "text": "Thank you. Take the road south and east, through the gap in the ridge. The orchard lives under the Edict of Kindling — anything there burns twice as hot. Mind the oil seeps. Use them, if you're clever.\n\nAnd if you find Tamsin... bring her home. One way or another.",
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "place": {
       "text": "Lanternfast. Forty souls and a page of the Ledger nailed above the hearth. It says warmth is owed to all who shelter here, and the world still listens: wounds close, and the hounds can't follow you through the gate.\n\nOutside our walls, every law is somebody else's.",
-      "options": [{ "text": "Ask something else.", "goto": "menu" }, { "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "Ask something else.",
+          "goto": "menu"
+        },
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "crater_ok": {
       "text": "You noticed. Most don't — they're too busy being grateful to be alive.\n\nThe Crater holds a page that remembers the sky. The old scribes said places like that are where the Ledger is trying to put itself back together. Don't tell Brother Cale I said so. He'd make a hymn of it.",
-      "effects": [{ "giveXp": 15 }],
-      "options": [{ "text": "Ask something else.", "goto": "menu" }, { "text": "[Leave]", "goto": "end" }]
+      "effects": [
+        {
+          "giveXp": 15
+        }
+      ],
+      "options": [
+        {
+          "text": "Ask something else.",
+          "goto": "menu"
+        },
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "crater_fail": {
       "text": "Ash does what ash likes. That's the whole trouble with the world.",
-      "options": [{ "text": "Ask something else.", "goto": "menu" }, { "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "Ask something else.",
+          "goto": "menu"
+        },
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "progress": {
       "text": "The spring. East, through the ridge. Tamsin went that way.",
-      "variants": [{ "if": { "insight": "ink_burns_clean" }, "text": "You've learned something out there; I can see it on you. Ink burns, doesn't it? Then burn it clean, if you can." }],
+      "variants": [
+        {
+          "if": {
+            "insight": "ink_burns_clean"
+          },
+          "text": "You've learned something out there; I can see it on you. Ink burns, doesn't it? Then burn it clean, if you can."
+        }
+      ],
       "options": [
-        { "text": "I found Tamsin. The hounds got to her first.", "if": { "flag": "read_tamsin_note", "eq": true }, "once": "told_tamsin", "effects": [{ "faction": "lanternfast", "delta": 1 }], "goto": "tamsin_told" },
-        { "text": "On my way.", "goto": "end" }
+        {
+          "text": "I found Tamsin. The hounds got to her first.",
+          "if": {
+            "flag": "read_tamsin_note",
+            "eq": true
+          },
+          "once": "told_tamsin",
+          "effects": [
+            {
+              "faction": "lanternfast",
+              "delta": 1
+            }
+          ],
+          "goto": "tamsin_told"
+        },
+        {
+          "text": "On my way.",
+          "goto": "end"
+        }
       ]
     },
     "early_report": {
       "text": "You've been to the spring already, haven't you? Something's changed in the well. Tell me.",
-      "effects": [{ "startQuest": "q_fouled_well" }],
-      "options": [{ "text": "Let me tell you what happened.", "goto": "report" }]
+      "effects": [
+        {
+          "startQuest": "q_fouled_well"
+        }
+      ],
+      "options": [
+        {
+          "text": "Let me tell you what happened.",
+          "goto": "report"
+        }
+      ]
     },
     "report": {
       "text": "Tell me what you found.",
       "variants": [
-        { "if": { "flag": "spring_state", "eq": "leech_slain" }, "text": "The water's coming up grey instead of black. Grey I can boil. You killed it, didn't you — whatever was in the spring." },
-        { "if": { "flag": "spring_state", "eq": "burned_clean" }, "text": "The water is... clear. Clear. I haven't seen it clear since I was a girl. What did you do?" },
-        { "if": { "flag": "spring_state", "eq": "choir_rite" }, "text": "The well is singing. Do you hear it? It's singing, and the children won't stop listening to it. What did you DO out there?" }
+        {
+          "if": {
+            "flag": "spring_state",
+            "eq": "leech_slain"
+          },
+          "text": "The water's coming up grey instead of black. Grey I can boil. You killed it, didn't you — whatever was in the spring."
+        },
+        {
+          "if": {
+            "flag": "spring_state",
+            "eq": "burned_clean"
+          },
+          "text": "The water is... clear. Clear. I haven't seen it clear since I was a girl. What did you do?"
+        },
+        {
+          "if": {
+            "flag": "spring_state",
+            "eq": "choir_rite"
+          },
+          "text": "The well is singing. Do you hear it? It's singing, and the children won't stop listening to it. What did you DO out there?"
+        }
       ],
       "options": [
-        { "text": "I found Tamsin. The hounds got to her first.", "if": { "flag": "read_tamsin_note", "eq": true }, "once": "told_tamsin", "effects": [{ "faction": "lanternfast", "delta": 1 }], "goto": "tamsin_told" },
-        { "text": "A bloated leech-mother was feeding the ink. She's dead.", "if": { "flag": "spring_state", "eq": "leech_slain" }, "effects": [{ "completeQuest": "q_fouled_well", "outcome": "slain" }], "goto": "reward_choice" },
-        { "text": "I burned the ink out of the spring. The mother fled into the deep.", "if": { "flag": "spring_state", "eq": "burned_clean" }, "effects": [{ "completeQuest": "q_fouled_well", "outcome": "burned" }], "goto": "reward_choice" },
-        { "text": "Brother Cale asked me to finish the Choir's rite. I did.", "if": { "flag": "spring_state", "eq": "choir_rite" }, "effects": [{ "completeQuest": "q_fouled_well", "outcome": "choir" }], "goto": "choir_end" },
-        { "text": "The ink is gone. Nothing was ever wrong.", "if": { "flag": "spring_state", "eq": "choir_rite" }, "check": { "attr": "wits", "dc": 15 }, "effects": [{ "completeQuest": "q_fouled_well", "outcome": "choir" }, { "faction": "lanternfast", "delta": 3 }], "goto": "lie_ok", "failEffects": [{ "completeQuest": "q_fouled_well", "outcome": "choir" }, { "faction": "lanternfast", "delta": -1 }], "failGoto": "lie_fail" }
+        {
+          "text": "I found Tamsin. The hounds got to her first.",
+          "if": {
+            "flag": "read_tamsin_note",
+            "eq": true
+          },
+          "once": "told_tamsin",
+          "effects": [
+            {
+              "faction": "lanternfast",
+              "delta": 1
+            }
+          ],
+          "goto": "tamsin_told"
+        },
+        {
+          "text": "A bloated leech-mother was feeding the ink. She's dead.",
+          "if": {
+            "flag": "spring_state",
+            "eq": "leech_slain"
+          },
+          "effects": [
+            {
+              "completeQuest": "q_fouled_well",
+              "outcome": "slain"
+            }
+          ],
+          "goto": "reward_choice"
+        },
+        {
+          "text": "I burned the ink out of the spring. The mother fled into the deep.",
+          "if": {
+            "flag": "spring_state",
+            "eq": "burned_clean"
+          },
+          "effects": [
+            {
+              "completeQuest": "q_fouled_well",
+              "outcome": "burned"
+            }
+          ],
+          "goto": "reward_choice"
+        },
+        {
+          "text": "Brother Cale asked me to finish the Choir's rite. I did.",
+          "if": {
+            "flag": "spring_state",
+            "eq": "choir_rite"
+          },
+          "effects": [
+            {
+              "completeQuest": "q_fouled_well",
+              "outcome": "choir"
+            }
+          ],
+          "goto": "choir_end"
+        },
+        {
+          "text": "The ink is gone. Nothing was ever wrong.",
+          "if": {
+            "flag": "spring_state",
+            "eq": "choir_rite"
+          },
+          "check": {
+            "attr": "wits",
+            "dc": 15
+          },
+          "effects": [
+            {
+              "completeQuest": "q_fouled_well",
+              "outcome": "choir"
+            },
+            {
+              "faction": "lanternfast",
+              "delta": 3
+            }
+          ],
+          "goto": "lie_ok",
+          "failEffects": [
+            {
+              "completeQuest": "q_fouled_well",
+              "outcome": "choir"
+            },
+            {
+              "faction": "lanternfast",
+              "delta": -1
+            }
+          ],
+          "failGoto": "lie_fail"
+        }
       ]
     },
     "tamsin_told": {
       "text": "...Then she found it before I did. She always did run ahead.\n\nThank you for telling me. Most wouldn't have bothered.",
-      "options": [{ "text": "Go on.", "goto": "report", "if": { "quest": "q_fouled_well", "state": "active", "stage": "report" } }, { "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "Go on.",
+          "goto": "report",
+          "if": {
+            "quest": "q_fouled_well",
+            "state": "active",
+            "stage": "report"
+          }
+        },
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "reward_choice": {
       "text": "Then I keep my word. Take your pick.",
       "options": [
-        { "text": "The Lanternhook. (Fire hook: heavy attacks ignite what they strike.)", "effects": [{ "giveItem": "lanternhook" }], "goto": "thanks" },
-        { "text": "Tamsin's quiet knife. (Fast knife: backstabs, steam on dodge.)", "effects": [{ "giveItem": "wardens_knife" }], "goto": "thanks" },
-        { "text": "I'll take both. I earned them.", "check": { "attr": "might", "dc": 14 }, "once": "ilse_both_tried", "effects": [{ "giveItem": "lanternhook" }, { "giveItem": "wardens_knife" }, { "faction": "lanternfast", "delta": -1 }], "goto": "both_ok", "failGoto": "both_fail" }
+        {
+          "text": "The Lanternhook. (Fire hook: heavy attacks ignite what they strike.)",
+          "effects": [
+            {
+              "giveItem": "lanternhook"
+            }
+          ],
+          "goto": "thanks"
+        },
+        {
+          "text": "Tamsin's quiet knife. (Fast knife: backstabs, steam on dodge.)",
+          "effects": [
+            {
+              "giveItem": "wardens_knife"
+            }
+          ],
+          "goto": "thanks"
+        },
+        {
+          "text": "I'll take both. I earned them.",
+          "check": {
+            "attr": "might",
+            "dc": 14
+          },
+          "once": "ilse_both_tried",
+          "effects": [
+            {
+              "giveItem": "lanternhook"
+            },
+            {
+              "giveItem": "wardens_knife"
+            },
+            {
+              "faction": "lanternfast",
+              "delta": -1
+            }
+          ],
+          "goto": "both_ok",
+          "failGoto": "both_fail"
+        }
       ]
     },
     "both_ok": {
       "text": "...Ha. Fine. Fine! Take both and get out of my sight before I change my mind.",
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "both_fail": {
       "text": "No. Pick one, or pick none.",
-      "options": [{ "text": "Fine.", "goto": "reward_choice" }]
+      "options": [
+        {
+          "text": "Fine.",
+          "goto": "reward_choice"
+        }
+      ]
     },
     "thanks": {
       "text": "Lanternfast won't forget this. Neither will I. If you're looking for trouble, the Hush lies west — the old graveyard. Nothing there stays dead. Don't go until you're ready.",
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "choir_end": {
       "text": "Get out.\n\n...No. Stay. You're the only one who came back. But don't ever ask me for anything again.",
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "lie_ok": {
       "text": "...Nothing wrong. Yes. Yes, you're right. Listen to it — it's almost beautiful. Thank you, stranger.\n\n(She believes you. You are not sure that is better.)",
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "lie_fail": {
       "text": "Don't. I've buried enough liars to know the look. The Choir got to you.",
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "after": {
       "text": "Back again.",
       "variants": [
-        { "if": { "flag": "well_clean", "eq": true }, "text": "The children are drinking from the well again. That's your doing, stranger. Lanternfast remembers." },
-        { "if": { "flag": "well_singing", "eq": true }, "text": "The well sings at night. I've stopped sleeping." }
+        {
+          "if": {
+            "flag": "well_clean",
+            "eq": true
+          },
+          "text": "The children are drinking from the well again. That's your doing, stranger. Lanternfast remembers."
+        },
+        {
+          "if": {
+            "flag": "well_singing",
+            "eq": true
+          },
+          "text": "The well sings at night. I've stopped sleeping."
+        }
       ],
       "options": [
-        { "text": "What lies behind the sealed door in the orchard cliffs?", "if": { "flag": "saw_scriptorium", "eq": true }, "goto": "scriptorium" },
-        { "text": "I've read about the night the Ledger burned. The Scribes lit the fire themselves.", "if": { "flag": "knows_burning", "eq": true }, "once": "ilse_told_burning", "goto": "burning" },
-        { "text": "[Leave]", "goto": "end" }
+        {
+          "text": "The bell in the Hush has stopped.",
+          "if": {
+            "flag": "hush_quieted",
+            "exists": true
+          },
+          "once": "ilse_told_hush",
+          "effects": [
+            {
+              "faction": "lanternfast",
+              "delta": 1
+            },
+            {
+              "giveItem": "cinder_mark",
+              "count": 5
+            }
+          ],
+          "goto": "hush_told"
+        },
+        {
+          "text": "What lies behind the sealed door in the orchard cliffs?",
+          "if": {
+            "flag": "saw_scriptorium",
+            "eq": true
+          },
+          "goto": "scriptorium"
+        },
+        {
+          "text": "I've read about the night the Ledger burned. The Scribes lit the fire themselves.",
+          "if": {
+            "flag": "knows_burning",
+            "eq": true
+          },
+          "once": "ilse_told_burning",
+          "goto": "burning"
+        },
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
       ]
     },
     "scriptorium": {
       "text": "The Scriptorium. Where the Ledger was kept. Ink seals it now, and they say the lock wants a name — the name of whoever struck the match. Nobody living knows it.\n\nYou look at me like you might.",
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     },
     "burning": {
       "text": "The Scribes? On purpose?\n\n...My grandmother said the fire started in the Scriptorium and walked out of it on two legs. I thought it was a story for frightening children.",
-      "effects": [{ "giveXp": 20 }],
-      "options": [{ "text": "[Leave]", "goto": "end" }]
+      "effects": [
+        {
+          "giveXp": 20
+        }
+      ],
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
+    },
+    "hush_told": {
+      "text": "I heard. Half the town came out to listen to the quiet.\n\nTake these marks. It isn't much, but it's what we have.",
+      "variants": [
+        {
+          "if": {
+            "flag": "hush_quieted",
+            "eq": "named"
+          },
+          "text": "You read them? All of them? My grandmother's sister is in that book.\n\nTake these marks. It isn't much, but it's what we have."
+        }
+      ],
+      "options": [
+        {
+          "text": "[Leave]",
+          "goto": "end"
+        }
+      ]
     }
   }
 }

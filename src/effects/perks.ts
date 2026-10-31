@@ -11,6 +11,8 @@ export interface HitInfo {
   element: Element;
   fromBehind: boolean;
   melee: boolean;
+  /** Position in the light-attack combo (1-3), 0 for heavies and spells. */
+  combo: number;
 }
 
 export interface Perk {
@@ -137,6 +139,15 @@ export const PERKS: Record<string, Perk> = {
   steady_mind: {
     text: "You gain 40% less Fray from casting.",
     frayMult: 0.6,
+  },
+  tolling_blow: {
+    text: "The third strike of a light combo tolls like a bell, stunning the target.",
+    onHit(g, h) {
+      if (h.combo === 3) {
+        g.applyStatusTo(h.target, "stunned", 1.1);
+        g.fx.text(h.target.pos, "DONG", "#c9b8ff");
+      }
+    },
   },
   fray_conduit: {
     text: "Spells cast above 50 Fray deal double damage instead of +50%.",

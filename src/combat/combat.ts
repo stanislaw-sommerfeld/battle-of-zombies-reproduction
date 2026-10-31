@@ -27,7 +27,7 @@ export function playerMelee(g: Game, heavy: boolean, angle: number, combo: numbe
     if (Math.abs(angleDiff(angle, angleTo(p.pos, e.pos))) > arc / 2 && d > 8) continue;
     if (!g.map.lineClear(p.pos, e.pos)) continue;
     const fromBehind = Math.abs(angleDiff(e.facing, angleTo(e.pos, p.pos))) > (2 * Math.PI) / 3;
-    const info: HitInfo = { target: e, heavy, element: ws.element, fromBehind, melee: true };
+    const info: HitInfo = { target: e, heavy, element: ws.element, fromBehind, melee: true, combo };
     let mult = 1;
     let crit = g.rng.chance(0.03 * g.progress.attributes.finesse);
     if (p.critReady > 0) {
@@ -76,6 +76,7 @@ export function playerMelee(g: Game, heavy: boolean, angle: number, combo: numbe
     g.hitstop = heavy ? 0.085 : 0.045;
     g.fx.shake(heavy ? 6 : 2.5);
   }
+  if (ws.element === "fire") g.lightBraziers({ x: p.pos.x + Math.cos(angle) * reach * 0.8, y: p.pos.y + Math.sin(angle) * reach * 0.8 }, 30);
   if (ws.element === "fire" && heavy) g.elementAt({ x: p.pos.x + Math.cos(angle) * reach * 0.7, y: p.pos.y + Math.sin(angle) * reach * 0.7 }, "fire", 0.5);
 }
 
