@@ -3,6 +3,7 @@
 import type { EventBus, EventName } from "../core/events.js";
 import type { InsightDef } from "../data/types.js";
 import { applyEffects, matches, type EffectHost } from "./rules.js";
+import { t } from "../i18n/i18n.js";
 
 export class InsightSystem {
   learned = new Set<string>();
@@ -22,7 +23,7 @@ export class InsightSystem {
     if (!def || this.learned.has(id)) return;
     this.learned.add(id);
     this.bus.emit("InsightGained", { insightId: id });
-    this.bus.emit("Toast", { text: `Insight — ${def.name}: ${def.text}`, kind: "insight" });
+    this.bus.emit("Toast", { text: t("toast.insight", { name: def.name, text: def.text }), kind: "insight" });
     if (this.host) {
       if (def.xp) this.host.giveXp(def.xp);
       applyEffects(def.effects, this.host);

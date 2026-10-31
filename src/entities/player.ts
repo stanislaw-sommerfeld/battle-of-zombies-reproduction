@@ -6,6 +6,8 @@ import type { Game } from "../game.js";
 import { PLAYER_FACTION } from "../game.js";
 import { applyEffects } from "../narrative/rules.js";
 import { newId, type Player } from "./entities.js";
+import { t } from "../i18n/i18n.js";
+import { actionKey, SPELL_ACTION } from "../i18n/keys.js";
 
 export const PLAYER_SPEED = 150;
 const COST = { light: 11, heavy: 26, dodge: 22, sprint: 16 };
@@ -216,12 +218,12 @@ export function castAbility(g: Game, key: "Q" | "R", angle: number): void {
   const id = g.progress.abilities.find((x) => g.content.abilities[x]?.key === key);
   const ab = id ? g.content.abilities[id] : undefined;
   if (!ab) {
-    g.toast(key === "R" ? "No ability bound to R yet. Some knowledge is hidden in the world." : "No ability bound.");
+    g.toast(key === "R" ? t("toast.noAbilityR", { key: actionKey(g.input, SPELL_ACTION[key]) }) : t("toast.noAbility"));
     return;
   }
   if ((p.cooldowns[ab.id] ?? 0) > 0) return;
   if (p.ember < ab.cost) {
-    g.fx.text(p.pos, "No Ember", "#ff8a5c");
+    g.fx.text(p.pos, t("fx.noEmber"), "#ff8a5c");
     return;
   }
   p.ember -= ab.cost;
@@ -260,7 +262,7 @@ export function throwFlask(g: Game): void {
   const p = g.player;
   const inst = g.inventory.items.find((i) => g.content.items[i.base]?.throwable);
   if (!inst) {
-    g.fx.text(p.pos, "No flasks", "#aaa");
+    g.fx.text(p.pos, t("fx.noFlasks"), "#aaa");
     return;
   }
   const def = g.content.items[inst.base];
@@ -295,7 +297,7 @@ export function throwFlask(g: Game): void {
 export function useConsumable(g: Game): void {
   const inst = g.inventory.items.find((i) => g.content.items[i.base]?.type === "consumable" && g.content.items[i.base]?.use);
   if (!inst) {
-    g.fx.text(g.player.pos, "Nothing to eat", "#aaa");
+    g.fx.text(g.player.pos, t("fx.nothingToEat"), "#aaa");
     return;
   }
   useItem(g, inst.uid);

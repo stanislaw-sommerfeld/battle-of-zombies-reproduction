@@ -363,4 +363,59 @@ export interface ContentBundle {
   origins: Record<string, OriginDef>;
   props: Record<string, PropDef>;
   rules: Record<string, import("../narrative/worldrules.js").WorldRuleDef>;
+  species: Record<string, SpeciesDef>;
+  cosmetics: Record<string, CosmeticDef>;
+}
+
+// ---------------------------------------------------------------- character creation
+
+/** Body features drawn on top of skin (see src/render/character.ts). */
+export type BodyFeature = "embers" | "ink_veins" | "gilt" | "glow_eyes";
+
+export interface SexDef {
+  id: string;
+  name: string;
+}
+
+export interface RaceDef {
+  id: string;
+  name: string;
+  text: string;
+  skin: string[];
+  hair: string[];
+  eyes: string[];
+  /** Colour of species features (ember cracks, ink veins, gilding). */
+  feature?: string;
+  /** Shifts the species' height range, in cm. */
+  heightOffset?: number;
+}
+
+export interface SpeciesDef {
+  id: string;
+  name: string;
+  text: string;
+  /** Empty or absent: the species has no sexes and the step is skipped. */
+  sexes?: SexDef[];
+  races: RaceDef[];
+  heightCm: [number, number];
+  weightKg: [number, number];
+  features?: BodyFeature[];
+  /** Head size relative to a human. */
+  headScale?: number;
+}
+
+export type CosmeticKind = "hair" | "outfit" | "mark" | "palette";
+
+export interface CosmeticDef {
+  id: string;
+  kind: CosmeticKind;
+  name: string;
+  /** Drawing routine (hair style, outfit cut, mark pattern). */
+  shape?: string;
+  /** Limits the option to these species. */
+  species?: string[];
+  /** Palettes only. */
+  colors?: string[];
+  /** Outfits only: can the hood be raised? */
+  hood?: boolean;
 }

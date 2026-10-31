@@ -3,6 +3,7 @@
 import type { EventBus, EventName } from "../core/events.js";
 import type { QuestDef, QuestStateId } from "../data/types.js";
 import { applyEffects, evaluate, matches, type EffectHost, type RuleContext } from "../narrative/rules.js";
+import { t } from "../i18n/i18n.js";
 
 export interface QuestProgress {
   state: QuestStateId;
@@ -32,7 +33,7 @@ export class QuestSystem {
     if (!def || this.state(id) !== "inactive") return;
     this.progress[id] = { state: "active", stage: def.start, counters: {} };
     this.bus.emit("QuestStarted", { questId: id });
-    this.bus.emit("Toast", { text: `Quest: ${def.title}`, kind: "quest" });
+    this.bus.emit("Toast", { text: t("toast.questStarted", { title: def.title }), kind: "quest" });
     this.checkImmediate(id);
   }
 
@@ -57,7 +58,7 @@ export class QuestSystem {
     const o = def.outcomes[outcome];
     if (o) applyEffects(o.effects, this.host);
     this.bus.emit("QuestCompleted", { questId: id, outcome });
-    this.bus.emit("Toast", { text: `Completed: ${def.title}${o ? " — " + o.text : ""}`, kind: "quest" });
+    this.bus.emit("Toast", { text: o ? t("toast.questCompletedOutcome", { title: def.title, outcome: o.text }) : t("toast.questCompleted", { title: def.title }), kind: "quest" });
   }
 
   fail(id: string): void {

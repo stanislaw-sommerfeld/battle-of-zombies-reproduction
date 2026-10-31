@@ -8,6 +8,7 @@ import { weaponStats } from "../entities/player.js";
 import type { Game } from "../game.js";
 import { LIQUID_BY_NAME } from "../world/surfaces.js";
 import { computeDamage } from "./damage.js";
+import { t } from "../i18n/i18n.js";
 
 export function playerMelee(g: Game, heavy: boolean, angle: number, combo: number): void {
   const p = g.player;
@@ -68,8 +69,8 @@ export function playerMelee(g: Game, heavy: boolean, angle: number, combo: numbe
   } else {
     const pt = { x: p.pos.x + Math.cos(angle) * reach, y: p.pos.y + Math.sin(angle) * reach };
     const [cx, cy] = g.map.cellAt(pt);
-    const t = g.map.def(cx, cy);
-    if (t?.breakable) g.fx.text(pt, "It cracks... a heavier blow?", "#bbb");
+    const tile = g.map.def(cx, cy);
+    if (tile?.breakable) g.fx.text(pt, t("fx.cracks"), "#bbb");
   }
 
   if (hitAny) {
@@ -188,7 +189,7 @@ export function damagePlayer(g: Game, amount: number, element: Element, source: 
     if (p.action.kind === "dodge" && attacker) {
       g.bus.emit("PerfectDodge", { attackerId: attacker.def.id });
       g.perks().forEach((pk) => pk.onPerfectDodge?.(g));
-      g.fx.text(p.pos, "Perfect dodge", "#e8e2ff");
+      g.fx.text(p.pos, t("fx.perfectDodge"), "#e8e2ff");
       p.invuln = 0; // one perfect dodge per roll
     }
     return;
@@ -234,7 +235,7 @@ export function areaHit(g: Game, at: Vec, radius: number, dmg: number, element: 
 export function shatter(g: Game, e: Enemy): void {
   delete e.statuses.frozen;
   g.fx.shatter(e.pos);
-  g.fx.text(e.pos, "SHATTER", "#d9f4ff");
+  g.fx.text(e.pos, t("fx.shatter"), "#d9f4ff");
   areaHit(g, e.pos, 70, 18 + g.progress.attributes.might * 3, "frost", g.player.faction, true, ["chilled"]);
   g.bus.emit("SurfaceReacted", { reaction: "shatter", zone: g.zoneAt(e.pos)?.id ?? "", x: e.pos.x, y: e.pos.y });
 }

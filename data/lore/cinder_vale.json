@@ -26,7 +26,7 @@
   {
     "id": "page_of_stillness",
     "title": "A Page of Stillness",
-    "text": "This page did not burn. It is cold enough to hurt, and the law written on it is short:\n\nWATER SHALL HOLD.\n\nWhen you read it aloud the cold climbs your arm and settles behind your eyes. You could say it again, you think. You could make water hold.\n\n(You learned Rime Lance — press R.)",
+    "text": "This page did not burn. It is cold enough to hurt, and the law written on it is short:\n\nWATER SHALL HOLD.\n\nWhen you read it aloud the cold climbs your arm and settles behind your eyes. You could say it again, you think. You could make water hold.\n\n(You learned Rime Lance — press {key:spell2}.)",
     "effects": [{ "learnAbility": "rime_lance" }, { "giveXp": 30 }]
   },
   {

@@ -3,6 +3,7 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { bundleData } from "./data-lib.mjs";
+import { report } from "./i18n.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const { bundle: c, errors } = bundleData(join(root, "data"));
@@ -153,9 +154,43 @@ for (const r of Object.values(c.regions)) {
 }
 if (!c.edicts.blank) err("edicts: a 'blank' edict is required");
 
+// character creation
+const HEX = /^#[0-9a-fA-F]{6}$/;
+const KINDS = new Set(["hair", "outfit", "mark", "palette"]);
+const SHAPES = { hair: ["none", "short", "long", "braid", "topknot", "wild", "flame", "quill"], outfit: ["cloak", "coat", "robe", "jerkin", "wraps"], mark: ["none", "scar", "freckles", "ash", "paint", "blot"] };
+if (!Object.keys(c.species ?? {}).length) err("species: at least one species is required");
+if (!c.cosmetics?.cloth?.colors?.length) err("cosmetics: a 'cloth' palette is required");
+if (!c.cosmetics?.mark_none) err("cosmetics: 'mark_none' is required");
+for (const x of Object.values(c.cosmetics ?? {})) {
+  const w = `cosmetic ${x.id}`;
+  if (!KINDS.has(x.kind)) err(`${w}: unknown kind "${x.kind}"`);
+  if (SHAPES[x.kind] && !SHAPES[x.kind].includes(x.shape)) err(`${w}: unknown ${x.kind} shape "${x.shape}"`);
+  (x.species ?? []).forEach((s) => has("species", s, w));
+  (x.colors ?? []).forEach((col) => HEX.test(col) || err(`${w}: bad colour ${col}`));
+}
+for (const sp of Object.values(c.species ?? {})) {
+  const w = `species ${sp.id}`;
+  if (!sp.races?.length) err(`${w}: needs at least one race`);
+  for (const k of ["heightCm", "weightKg"]) if (!(sp[k]?.[0] < sp[k]?.[1])) err(`${w}: ${k} must be [min, max]`);
+  for (const kind of ["hair", "outfit", "mark"])
+    if (!Object.values(c.cosmetics ?? {}).some((x) => x.kind === kind && (!x.species || x.species.includes(sp.id)))) err(`${w}: no ${kind} available`);
+  for (const r of sp.races ?? [])
+    for (const k of ["skin", "hair", "eyes"]) {
+      if (!r[k]?.length) err(`${w} race ${r.id}: empty ${k} palette`);
+      (r[k] ?? []).forEach((col) => HEX.test(col) || err(`${w} race ${r.id}: bad colour ${col}`));
+    }
+}
+
 if (errors.length) {
   console.error(`Data validation failed (${errors.length}):\n  ` + errors.join("\n  "));
   process.exit(1);
 }
 const counts = Object.entries(c).map(([k, v]) => `${k}:${Object.keys(v).length}`).join(" ");
 console.log(`Data OK (${counts})`);
+
+// Translations never fail the build (new content can ship in English first),
+// but gaps are reported. `node scripts/i18n.mjs check` lists them.
+for (const r of await report()) {
+  const gaps = r.missing.length + r.outdated.length;
+  console.log(`Translations ${r.lang}: ${r.total - r.missing.length}/${r.total}${r.outdated.length ? `, ${r.outdated.length} outdated` : ""}${gaps ? " (run node scripts/i18n.mjs check)" : ""}`);
+}

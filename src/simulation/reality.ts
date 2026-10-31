@@ -8,6 +8,7 @@ import type { Game } from "../game.js";
 import { createEnemy } from "../ai/enemy.js";
 import { Liquid } from "../world/surfaces.js";
 import { evaluate } from "../narrative/rules.js";
+import { t } from "../i18n/i18n.js";
 
 const BURN_DPS = 6;
 
@@ -145,7 +146,7 @@ export function rupture(g: Game): void {
         g.enemies.push(e);
       }
     }
-    g.toast("BLANK RUPTURE — unwritten things tear through the gap.");
+    g.toast(t("toast.ruptureEchoes"));
   } else if (roll === 1) {
     kind = "kindling";
     const [cx, cy] = g.map.cellAt(p.pos);
@@ -154,14 +155,14 @@ export function rupture(g: Game): void {
       const y = cy + g.rng.int(-5, 5);
       if (Math.abs(x - cx) + Math.abs(y - cy) > 1) g.surfaces.splash(x, y, 0.7, Liquid.Oil);
     }
-    g.toast("BLANK RUPTURE — the ground weeps oil.");
+    g.toast(t("toast.ruptureOil"));
   } else {
     kind = "stillness";
     for (const e of g.enemies) if (dist(e.pos, p.pos) < 220) g.applyStatusTo(e, "chilled", 4);
     g.applyStatusTo(p, "chilled", 3);
     const [cx, cy] = g.map.cellAt(p.pos);
     g.surfaces.applyElementArea(cx, cy, 4, "frost");
-    g.toast("BLANK RUPTURE — time stutters. Everything near you slows, you included.");
+    g.toast(t("toast.ruptureTime"));
   }
   g.bus.emit("RealityShifted", { kind, zone });
 }
@@ -191,7 +192,7 @@ function riseEcho(g: Game, pos: Vec, enemyId: string, zone: string, ec: { dead: 
   e.risen = true;
   g.enemies.push(e);
   g.fx.rise(pos);
-  g.fx.text(pos, "it rises", "#c9b8ff");
+  g.fx.text(pos, t("fx.rises"), "#c9b8ff");
   g.bus.emit("EchoRisen", { enemyId: def.id, zone });
 }
 

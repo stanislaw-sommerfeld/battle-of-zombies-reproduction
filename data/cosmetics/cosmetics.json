@@ -1,0 +1,26 @@
+[
+  { "id": "cloth", "kind": "palette", "name": "Cloth dyes", "colors": ["#3b4a4f", "#26323a", "#5a4632", "#6b2a24", "#3e4a2e", "#4a3a5a", "#7a6a4a", "#2a2a2e", "#8a7a64", "#5a5f66", "#1f3a3a", "#6a4a2a", "#a89a7a", "#4a1e2a"] },
+
+  { "id": "hair_none", "kind": "hair", "name": "Shaved", "shape": "none" },
+  { "id": "hair_short", "kind": "hair", "name": "Cropped", "shape": "short", "species": ["human", "glossed"] },
+  { "id": "hair_long", "kind": "hair", "name": "Long", "shape": "long", "species": ["human", "glossed"] },
+  { "id": "hair_braid", "kind": "hair", "name": "Braid", "shape": "braid", "species": ["human", "glossed"] },
+  { "id": "hair_topknot", "kind": "hair", "name": "Topknot", "shape": "topknot", "species": ["human", "glossed"] },
+  { "id": "hair_wild", "kind": "hair", "name": "Unkempt", "shape": "wild", "species": ["human"] },
+  { "id": "hair_flame", "kind": "hair", "name": "Flame crest", "shape": "flame", "species": ["emberkin"] },
+  { "id": "hair_smoulder", "kind": "hair", "name": "Smouldering locks", "shape": "wild", "species": ["emberkin"] },
+  { "id": "hair_quill", "kind": "hair", "name": "Quill fringe", "shape": "quill", "species": ["glossed"] },
+
+  { "id": "outfit_cloak", "kind": "outfit", "name": "Wayfarer's cloak", "shape": "cloak", "hood": true },
+  { "id": "outfit_coat", "kind": "outfit", "name": "Long coat", "shape": "coat" },
+  { "id": "outfit_robe", "kind": "outfit", "name": "Scribe's robe", "shape": "robe", "hood": true },
+  { "id": "outfit_jerkin", "kind": "outfit", "name": "Jerkin and breeches", "shape": "jerkin" },
+  { "id": "outfit_wraps", "kind": "outfit", "name": "Grave wrappings", "shape": "wraps", "hood": true },
+
+  { "id": "mark_none", "kind": "mark", "name": "None", "shape": "none" },
+  { "id": "mark_scar", "kind": "mark", "name": "Scar", "shape": "scar" },
+  { "id": "mark_freckles", "kind": "mark", "name": "Freckles", "shape": "freckles", "species": ["human"] },
+  { "id": "mark_ash", "kind": "mark", "name": "Ash tattoos", "shape": "ash" },
+  { "id": "mark_paint", "kind": "mark", "name": "War paint", "shape": "paint" },
+  { "id": "mark_blot", "kind": "mark", "name": "Ink blot", "shape": "blot", "species": ["glossed"] }
+]

@@ -95,7 +95,7 @@
         "heal": 30
       }
     ],
-    "description": "Grey, dense, filling. Restores 30 health. (C)"
+    "description": "Grey, dense, filling. Restores 30 health. ({key:use})"
   },
   {
     "id": "oil_flask",
@@ -108,7 +108,7 @@
       "liquid": "oil",
       "radius": 1.6
     },
-    "description": "Throw (F) to splash oil. Oil burns. Creatures in it become Oiled — fire flares on them."
+    "description": "Throw ({key:throw}) to splash oil. Oil burns. Creatures in it become Oiled — fire flares on them."
   },
   {
     "id": "water_flask",
@@ -121,7 +121,7 @@
       "liquid": "water",
       "radius": 1.6
     },
-    "description": "Throw (F) to splash water: puts out fire, soaks creatures (Wet). Wet things freeze."
+    "description": "Throw ({key:throw}) to splash water: puts out fire, soaks creatures (Wet). Wet things freeze."
   },
   {
     "id": "choir_tincture",

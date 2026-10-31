@@ -4,6 +4,7 @@
 import type { Enemy } from "../entities/entities.js";
 import type { Element } from "../data/types.js";
 import type { Game } from "../game.js";
+import { t, tx } from "../i18n/i18n.js";
 
 export interface HitInfo {
   target: Enemy;
@@ -145,7 +146,7 @@ export const PERKS: Record<string, Perk> = {
     onHit(g, h) {
       if (h.combo === 3) {
         g.applyStatusTo(h.target, "stunned", 1.1);
-        g.fx.text(h.target.pos, "DONG", "#c9b8ff");
+        g.fx.text(h.target.pos, t("fx.dong"), "#c9b8ff");
       }
     },
   },
@@ -155,5 +156,5 @@ export const PERKS: Record<string, Perk> = {
 };
 
 export function perkText(id: string): string {
-  return PERKS[id]?.text ?? id;
+  return tx(`perk.${id}`, PERKS[id]?.text ?? id);
 }

@@ -4,6 +4,7 @@ import type { Echo, Npc, Prop } from "../entities/entities.js";
 import type { Game } from "../game.js";
 import { applyEffects, evaluate } from "../narrative/rules.js";
 import { recomputePlayerStats } from "../entities/player.js";
+import { t } from "../i18n/i18n.js";
 
 export type Interactable =
   | { kind: "npc"; npc: Npc; prompt: string; pos: { x: number; y: number } }
@@ -20,7 +21,7 @@ export function nearestInteractable(g: Game): Interactable | undefined {
     const d = dist(n.pos, p) - 10;
     if (d < bestD) {
       bestD = d;
-      best = { kind: "npc", npc: n, prompt: `Speak with ${n.def.name}`, pos: n.pos };
+      best = { kind: "npc", npc: n, prompt: t("prompt.speak", { name: n.def.name }), pos: n.pos };
     }
   }
   for (const pr of g.props) {
@@ -40,7 +41,7 @@ export function nearestInteractable(g: Game): Interactable | undefined {
     if (d < bestD) {
       bestD = d;
       const name = g.content.enemies[ec.enemyId]?.name ?? "creature";
-      best = { kind: "echo", echo: ec, prompt: `Harvest the echo of the ${name} (+Ember, +Fray)`, pos: ec.pos };
+      best = { kind: "echo", echo: ec, prompt: t("prompt.harvest", { name }), pos: ec.pos };
     }
   }
   return best;
@@ -67,7 +68,7 @@ export function interact(g: Game, it: Interactable): void {
     p.statuses = {};
     g.progress.waystone = [pr.pos.x, pr.pos.y + 28];
     g.fx.rest(pr.pos);
-    g.toast("You rest at the waystone. Wounds close, the Fray quiets. (Game saved)");
+    g.toast(t("toast.rest"));
   }
   applyEffects(ia.effects, g);
   // spawn params can override what a generic prop (chest, page, corpse) contains
@@ -97,6 +98,6 @@ export function harvest(g: Game, ec: Echo): void {
   g.addFray(fray);
   g.perks().forEach((p) => p.onHarvest?.(g));
   g.fx.harvest(ec.pos, g.player.pos);
-  g.fx.text(g.player.pos, "+1 Ember", "#ffb35c");
+  g.fx.text(g.player.pos, t("fx.ember", { n: 1 }), "#ffb35c");
   g.bus.emit("EchoHarvested", { enemyId: ec.enemyId, zone: g.zoneAt(ec.pos)?.id ?? "" });
 }

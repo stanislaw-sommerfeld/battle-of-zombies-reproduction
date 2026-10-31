@@ -9,6 +9,7 @@ import { newId, type Actor, type Enemy } from "../entities/entities.js";
 import type { Game } from "../game.js";
 import type { GameEvents } from "../core/events.js";
 import { evaluate } from "../narrative/rules.js";
+import { t } from "../i18n/i18n.js";
 
 export function createEnemy(def: EnemyDef, pos: Vec, spawnId: string, zone: string): Enemy {
   return {
@@ -172,7 +173,7 @@ export function updateEnemy(g: Game, e: Enemy, dt: number): void {
         echo.dead = true;
         e.hp = Math.min(e.maxHp * 1.25, e.hp + 15);
         e.maxHp = Math.max(e.maxHp, e.hp);
-        g.fx.text(e.pos, "devours the echo", "#b9a4ff");
+        g.fx.text(e.pos, t("fx.devours"), "#b9a4ff");
         g.bus.emit("EchoEaten", { enemyId: echo.enemyId, byId: e.def.id });
         e.ai = "wander";
         e.target = undefined;
@@ -209,7 +210,7 @@ function alertPack(g: Game, e: Enemy): void {
     o.ai = "chase";
     o.lastSeen = { ...g.player.pos };
   }
-  g.fx.text(e.pos, "howls", "#e0c080");
+  g.fx.text(e.pos, t("fx.howls"), "#e0c080");
 }
 
 /** Where to walk to reach `t`: straight at it when visible, else along the flow field. */

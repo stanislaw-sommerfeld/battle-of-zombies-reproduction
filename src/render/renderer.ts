@@ -7,6 +7,7 @@ import { RARITY_COLOR } from "../game.js";
 import { resolveItem } from "../items/inventory.js";
 import { Liquid } from "../world/surfaces.js";
 import { weaponStats } from "../entities/player.js";
+import { drawCharacter } from "./character.js";
 
 interface Ambient {
   x: number;
@@ -34,6 +35,10 @@ export class Renderer {
   private darkness = 0.5;
   private ambient = [10, 12, 18];
   private t = 0;
+  private lastPlayerPos?: Vec;
+  private stride = 0;
+  /** Player setting: camera shake on hits. */
+  shakeEnabled = true;
 
   constructor(private canvas: HTMLCanvasElement) {
     this.ctx = canvas.getContext("2d")!;
@@ -236,7 +241,7 @@ export class Renderer {
     const k = 1 - Math.exp(-dt * 6);
     this.cam.x = this.cam.x === 0 ? tx : lerp(this.cam.x, tx, k);
     this.cam.y = this.cam.y === 0 ? ty : lerp(this.cam.y, ty, k);
-    const shake = g.fx.shakeAmt;
+    const shake = this.shakeEnabled ? g.fx.shakeAmt : 0;
     const sx = (Math.random() - 0.5) * shake;
     const sy = (Math.random() - 0.5) * shake;
 
@@ -437,7 +442,6 @@ export class Renderer {
     const a = p.action;
     this.shadow(x, y, 10);
     const ws = weaponStats(g);
-    const bob = Math.sin(this.t * 10) * (p.sprinting ? 1.5 : 0.6);
     // weapon arc during swings
     let wAngle = p.facing + 0.9;
     if (a.kind === "light" || a.kind === "heavy") {
@@ -465,28 +469,19 @@ export class Renderer {
       }
     };
     if (Math.sin(wAngle) < 0) drawWeapon();
-    // cloak
-    ctx.fillStyle = p.hitFlash > 0 ? "#fff" : "#3b4a4f";
-    ctx.beginPath();
-    ctx.moveTo(x - 10, y + 8);
-    ctx.quadraticCurveTo(x - 11, y - 8 + bob, x, y - 14 + bob);
-    ctx.quadraticCurveTo(x + 11, y - 8 + bob, x + 10, y + 8);
-    ctx.closePath();
-    ctx.fill();
-    // hood with face direction
-    ctx.fillStyle = p.hitFlash > 0 ? "#fff" : "#26323a";
-    ctx.beginPath();
-    ctx.arc(x, y - 12 + bob, 6.5, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = "#e8d7b0";
-    ctx.beginPath();
-    ctx.arc(x + Math.cos(p.facing) * 3, y - 12 + bob + Math.sin(p.facing) * 2, 1.6, 0, Math.PI * 2);
-    ctx.fill();
-    // lantern at the belt
-    ctx.fillStyle = "#ffcf7a";
-    ctx.beginPath();
-    ctx.arc(x - 6, y + 2, 2.2, 0, Math.PI * 2);
-    ctx.fill();
+    const moved = this.lastPlayerPos ? Math.hypot(x - this.lastPlayerPos.x, y - this.lastPlayerPos.y) : 0;
+    this.lastPlayerPos = { x, y };
+    const moving = moved > 0.05;
+    if (moving) this.stride += moved * 0.35;
+    drawCharacter(ctx, g.content, g.look, x, y, {
+      facing: p.facing,
+      bob: moving ? -Math.abs(Math.sin(this.stride)) * 0.9 : Math.sin(this.t * 2.2) * 0.35,
+      walk: this.stride,
+      moving,
+      flash: p.hitFlash > 0,
+      lantern: true,
+      t: this.t,
+    });
     if (Math.sin(wAngle) >= 0) drawWeapon();
     ctx.globalAlpha = 1;
     this.drawStatuses(p.pos, p.statuses, 10);

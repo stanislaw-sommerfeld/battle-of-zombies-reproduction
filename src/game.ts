@@ -14,7 +14,9 @@ import { rollLoot } from "./items/loot.js";
 import { InsightSystem } from "./narrative/insight.js";
 import { applyEffects, evaluate, type EffectHost, type RuleContext } from "./narrative/rules.js";
 import { QuestSystem } from "./quests/quests.js";
-import { SAVE_VERSION, readSave, writeSave, type SaveData, type SaveStorage } from "./save/save.js";
+import { SAVE_VERSION, deleteSlot, exportSaveFile, latestSlot, listSlots, parseSaveFile, readSlot, writeSlot, type SaveData, type SaveStorage, type SlotId, type SlotInfo } from "./save/save.js";
+import { defaultLook, sanitizeLook, type CharacterLook } from "./character/look.js";
+import { t } from "./i18n/i18n.js";
 import { Liquid, LIQUID_BY_NAME, SurfaceGrid } from "./world/surfaces.js";
 import { TileMap } from "./world/tilemap.js";
 import { WorldState } from "./world/worldstate.js";
@@ -77,6 +79,8 @@ export class Game implements EffectHost, RuleContext {
 
   player!: Player;
   progress!: PlayerProgress;
+  /** Appearance chosen in the character creator. */
+  look!: CharacterLook;
   enemies: Enemy[] = [];
   projectiles: Projectile[] = [];
   props: Prop[] = [];
@@ -118,9 +122,10 @@ export class Game implements EffectHost, RuleContext {
 
   // ---------------------------------------------------------------- setup
 
-  newGame(originId: string): void {
+  newGame(originId: string, look?: CharacterLook): void {
     const origin = this.content.origins[originId];
     this.resetState();
+    this.look = sanitizeLook(this.content, look ?? defaultLook(this.content));
     this.progress = {
       origin: originId,
       xp: 0,
@@ -153,6 +158,7 @@ export class Game implements EffectHost, RuleContext {
     this.loreRead = new Set(s.lore);
     this.playTime = s.playTime;
     const p = s.player;
+    this.look = p.look ? sanitizeLook(this.content, p.look) : defaultLook(this.content);
     this.progress = {
       origin: p.origin,
       xp: p.xp,
@@ -171,15 +177,48 @@ export class Game implements EffectHost, RuleContext {
     this.player.fray = p.fray;
   }
 
+  /** Loads the most recent save in any slot. */
   continueGame(): boolean {
-    const s = readSave(this.storage);
-    if (!s) return false;
+    const id = latestSlot(this.storage);
+    return id ? this.loadSlot(id) : false;
+  }
+
+  loadSlot(id: SlotId): boolean {
+    const s = readSlot(this.storage, id);
+    if (!s || !this.content.regions[s.region] || !this.content.origins[s.player.origin]) return false;
     this.loadSave(s);
     return true;
   }
 
+  /** After death: back to the last waystone (the autosave), else the newest save. */
+  riseFromDeath(): boolean {
+    return this.loadSlot("auto") || this.continueGame();
+  }
+
   hasSave(): boolean {
-    return !!readSave(this.storage);
+    return !!latestSlot(this.storage);
+  }
+
+  slots(): SlotInfo[] {
+    return listSlots(this.storage);
+  }
+
+  exportSlot(id: SlotId): string | undefined {
+    const s = readSlot(this.storage, id);
+    return s ? exportSaveFile(s) : undefined;
+  }
+
+  /** Validates an exported file and stores it in a slot. Throws a readable error. */
+  importToSlot(id: SlotId, text: string): SaveData {
+    const s = parseSaveFile(text);
+    if (!this.content.regions[s.region]) throw new Error(`unknown region "${s.region}"`);
+    if (!this.content.origins[s.player.origin]) throw new Error(`unknown origin "${s.player.origin}"`);
+    writeSlot(this.storage, id, s);
+    return s;
+  }
+
+  deleteSlot(id: SlotId): void {
+    deleteSlot(this.storage, id);
   }
 
   private resetState(): void {
@@ -336,7 +375,7 @@ export class Game implements EffectHost, RuleContext {
     if (r === "ink_burn" && this.hasPerk("ink_reader") && this.time > this.inkTick && dist(pos, this.player.pos) < 6 * this.map.ts) {
       this.inkTick = this.time + 3;
       this.addEmber(1);
-      this.fx.text(this.player.pos, "+1 Ember", "#ffb35c");
+      this.fx.text(this.player.pos, t("fx.ember", { n: 1 }), "#ffb35c");
     }
     // ink burned off a spring leaves clean water behind
     if (r === "ink_purified" && this.map.get(cx, cy) === "ink_water") this.surfaces.setLiquid(cx, cy, Liquid.Water);
@@ -346,7 +385,7 @@ export class Game implements EffectHost, RuleContext {
         this.clearLiquid(zone, "ink");
         this.world.set(`ink_cleared_${zone}`, true);
         this.bus.emit("RealityShifted", { kind: "ink_cleared", zone });
-        this.toast(`The ink in ${this.content.zones[zone]?.name ?? zone} burns away. The water runs clear.`);
+        this.toast(t("toast.inkCleared", { zone: this.content.zones[zone]?.name ?? zone }));
       }
     }
   }
@@ -408,11 +447,11 @@ export class Game implements EffectHost, RuleContext {
     const isPlayer = a === this.player;
     if (outcome === "fizzled") {
       this.surfaces.addSteam(...this.map.cellAt(a.pos), 2);
-      this.fx.text(a.pos, "fizzle", "#cfe3ee");
+      this.fx.text(a.pos, t("fx.fizzle"), "#cfe3ee");
     } else if (outcome === "froze") {
-      this.fx.text(a.pos, "FROZEN", "#bfe9ff");
+      this.fx.text(a.pos, t("fx.frozen"), "#bfe9ff");
     } else if (outcome === "flared") {
-      this.fx.text(a.pos, "FLARE", "#ff9d3c");
+      this.fx.text(a.pos, t("fx.flare"), "#ff9d3c");
     }
     const applied = outcome === "froze" ? "frozen" : outcome === "fizzled" ? "steam" : s;
     if (outcome !== "refreshed")
@@ -526,7 +565,7 @@ export class Game implements EffectHost, RuleContext {
     if (!def) return false;
     const inst = this.inventory.add(item, count, affixes);
     if (!inst) {
-      this.toast("Your pack is full.");
+      this.toast(t("toast.packFull"));
       return false;
     }
     const r = resolveItem(this.content, inst);
@@ -571,6 +610,7 @@ export class Game implements EffectHost, RuleContext {
       version: SAVE_VERSION,
       savedAt: Date.now(),
       region: this.region.id,
+      zone: this.currentZone?.id,
       playTime: this.playTime,
       player: {
         ...this.progress,
@@ -580,6 +620,7 @@ export class Game implements EffectHost, RuleContext {
         hp: p.hp,
         ember: p.ember,
         fray: p.fray,
+        look: { ...this.look },
       },
       inventory: this.inventory.serialize(),
       world: this.world.serialize(),
@@ -589,9 +630,17 @@ export class Game implements EffectHost, RuleContext {
     };
   }
 
-  save(): void {
-    writeSave(this.storage, this.makeSave());
-    this.bus.emit("GameSaved", { slot: "auto" });
+  /** Waystones, new games and quitting write the autosave; the pause menu writes manual slots. */
+  save(slot: SlotId = "auto"): boolean {
+    try {
+      writeSlot(this.storage, slot, this.makeSave());
+    } catch (e) {
+      console.warn("Save failed:", e);
+      this.toast(t("toast.saveFailed"), "boss");
+      return false;
+    }
+    this.bus.emit("GameSaved", { slot });
+    return true;
   }
 
   // ---------------------------------------------------------------- RuleContext
@@ -633,14 +682,14 @@ export class Game implements EffectHost, RuleContext {
   }
   giveXp(n: number): void {
     this.progress.xp += n;
-    this.fx.text({ x: this.player.pos.x, y: this.player.pos.y - 20 }, `+${n} XP`, "#d9c38a");
+    this.fx.text({ x: this.player.pos.x, y: this.player.pos.y - 20 }, t("fx.xp", { n }), "#d9c38a");
     while (this.progress.xp >= this.xpForNext()) {
       this.progress.xp -= this.xpForNext();
       this.progress.level++;
       this.progress.unspent++;
       this.progress.pendingTraits++;
       this.bus.emit("LevelUp", { level: this.progress.level });
-      this.toast(`Level ${this.progress.level}. Choose a trait and spend an attribute point (I).`);
+      this.toast(t("toast.levelUp", { level: this.progress.level }));
       recomputePlayerStats(this);
       this.player.hp = this.player.maxHp;
     }
@@ -665,12 +714,12 @@ export class Game implements EffectHost, RuleContext {
     if (!a || this.progress.abilities.includes(id)) return;
     this.progress.abilities = this.progress.abilities.filter((x) => this.content.abilities[x]?.key !== a.key);
     this.progress.abilities.push(id);
-    this.toast(`New ability [${a.key}]: ${a.name} — ${a.description}`);
+    this.toast(t("toast.newAbility", { key: a.key, name: a.name, text: a.description }));
   }
   changeFaction(id: string, delta: number): void {
     this.world.changeFaction(id, delta);
     const f = this.content.factions[id];
-    this.toast(`${f?.name ?? id}: ${delta > 0 ? "+" : ""}${delta} standing`);
+    this.toast(t("toast.standing", { name: f?.name ?? id, delta: `${delta > 0 ? "+" : ""}${delta}` }));
   }
   toast(text: string, kind?: string): void {
     this.bus.emit("Toast", { text, kind });

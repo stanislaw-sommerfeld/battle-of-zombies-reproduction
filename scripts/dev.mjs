@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 import { tscCommand } from "./build.mjs";
 import { bundleData } from "./data-lib.mjs";
 import { serve } from "./serve.mjs";
+import { flatten, localeFiles } from "./i18n.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 mkdirSync(join(root, "dist"), { recursive: true });
@@ -22,4 +23,6 @@ serve([join(root, "public"), join(root, "dist")], Number(process.env.PORT ?? 517
     if (errors.length) console.error("Data errors:\n  " + errors.join("\n  "));
     return JSON.stringify(bundle);
   },
+  // translations are re-read on every request too
+  ...Object.fromEntries(localeFiles().map(({ lang, file }) => [`/locales/${lang}.json`, () => JSON.stringify(flatten(file, lang))])),
 });
